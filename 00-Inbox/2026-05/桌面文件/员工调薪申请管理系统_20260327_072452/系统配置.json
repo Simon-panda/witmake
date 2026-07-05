@@ -1,0 +1,43 @@
+{
+  "system_name": "员工调薪申请管理系统",
+  "version": "1.0.0",
+  "created_date": "2026-03-27",
+  "created_by": "数字化机加工企业专属智能助手",
+  "company": "上海治通汽车部件有限公司",
+  "modules": [
+    {
+      "name": "员工基本信息管理",
+      "description": "管理员工基本信息、薪资结构",
+      "data_file": "数据文件/员工基本信息表.csv"
+    },
+    {
+      "name": "调薪申请流程管理",
+      "description": "管理调薪申请、审批全流程",
+      "data_file": "数据文件/调薪申请记录表.csv"
+    },
+    {
+      "name": "部门薪资统计分析",
+      "description": "部门薪资数据统计与分析",
+      "data_file": "数据文件/部门统计表.csv"
+    }
+  ],
+  "feishu_integration": {
+    "enabled": true,
+    "app_name": "员工调薪申请管理系统",
+    "tables": [
+      "员工基本信息表",
+      "调薪申请记录表"
+    ],
+    "automation": [
+      "审批流程通知",
+      "数据同步",
+      "报表生成"
+    ]
+  },
+  "implementation_plan": {
+    "phase1": "基础表格搭建（第1周）",
+    "phase2": "流程配置（第2周）",
+    "phase3": "自动化配置（第3周）",
+    "phase4": "培训上线（第4周）"
+  }
+}

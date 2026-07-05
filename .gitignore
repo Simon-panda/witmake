@@ -1,0 +1,11 @@
+# Obsidian workspace files (personal layout, changes frequently)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Trash
+.trash/
