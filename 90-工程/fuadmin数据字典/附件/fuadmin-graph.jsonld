@@ -1,0 +1,5217 @@
+{
+ "@context": {
+  "name": "http://schema.org/name",
+  "@type": "@type",
+  "domain": "http://schema.org/domainIncludes",
+  "module": "http://schema.org/isPartOf"
+ },
+ "@type": "Dataset",
+ "name": "fuadmin MES/ERP 知识图谱",
+ "dateCreated": "2026-07-23",
+ "nodes": [
+  {
+   "@id": "module:logistics-物流",
+   "name": "logistics-物流",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:payment-付款",
+   "name": "payment-付款",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:purchase-采购",
+   "name": "purchase-采购",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:return-退货",
+   "name": "return-退货",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:settlement-结算",
+   "name": "settlement-结算",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:supplier-供应商",
+   "name": "supplier-供应商",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:warehouse-仓储",
+   "name": "warehouse-仓储",
+   "@type": "Module",
+   "domain": "01-供应链域"
+  },
+  {
+   "@id": "module:bad-不良品",
+   "name": "bad-不良品",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:newscheduling-新排程",
+   "name": "newscheduling-新排程",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:plan-生产计划",
+   "name": "plan-生产计划",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:production-生产",
+   "name": "production-生产",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:qrcode-二维码追溯",
+   "name": "qrcode-二维码追溯",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:shift-班次",
+   "name": "shift-班次",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:tf-TF铸造",
+   "name": "tf-TF铸造",
+   "@type": "Module",
+   "domain": "02-生产铸造域"
+  },
+  {
+   "@id": "module:device-设备装置",
+   "name": "device-设备装置",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:equipment-设备",
+   "name": "equipment-设备",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:fixture-工装夹具",
+   "name": "fixture-工装夹具",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:inspection-质量检验",
+   "name": "inspection-质量检验",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:knife-刀具",
+   "name": "knife-刀具",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:maintenance-维修保养",
+   "name": "maintenance-维修保养",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:measuring-测量计量",
+   "name": "measuring-测量计量",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:process-工艺技术",
+   "name": "process-工艺技术",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:product-产品",
+   "name": "product-产品",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:tool-工具工装",
+   "name": "tool-工具工装",
+   "@type": "Module",
+   "domain": "03-质量技术域"
+  },
+  {
+   "@id": "module:customer-客户",
+   "name": "customer-客户",
+   "@type": "Module",
+   "domain": "04-订单项目域"
+  },
+  {
+   "@id": "module:finance-财务",
+   "name": "finance-财务",
+   "@type": "Module",
+   "domain": "04-订单项目域"
+  },
+  {
+   "@id": "module:order-订单",
+   "name": "order-订单",
+   "@type": "Module",
+   "domain": "04-订单项目域"
+  },
+  {
+   "@id": "module:project-项目",
+   "name": "project-项目",
+   "@type": "Module",
+   "domain": "04-订单项目域"
+  },
+  {
+   "@id": "module:att-考勤打卡",
+   "name": "att-考勤打卡",
+   "@type": "Module",
+   "domain": "05-人事系统域"
+  },
+  {
+   "@id": "module:dailyreport-日报任务",
+   "name": "dailyreport-日报任务",
+   "@type": "Module",
+   "domain": "05-人事系统域"
+  },
+  {
+   "@id": "module:hr-人力能力",
+   "name": "hr-人力能力",
+   "@type": "Module",
+   "domain": "05-人事系统域"
+  },
+  {
+   "@id": "module:system-用户权限",
+   "name": "system-用户权限",
+   "@type": "Module",
+   "domain": "05-人事系统域"
+  },
+  {
+   "@id": "module:answer-定制模块",
+   "name": "answer-定制模块",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:liqiang-定制模块",
+   "name": "liqiang-定制模块",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:lizhu-定制模块",
+   "name": "lizhu-定制模块",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-alarm",
+   "name": "misc-alarm",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-commentsmessage",
+   "name": "misc-commentsmessage",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-cooperation",
+   "name": "misc-cooperation",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-definition",
+   "name": "misc-definition",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-demo",
+   "name": "misc-demo",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-external",
+   "name": "misc-external",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-go",
+   "name": "misc-go",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-management",
+   "name": "misc-management",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-objective",
+   "name": "misc-objective",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-public",
+   "name": "misc-public",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-safety",
+   "name": "misc-safety",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-site",
+   "name": "misc-site",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-ticket",
+   "name": "misc-ticket",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-total",
+   "name": "misc-total",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-triangle",
+   "name": "misc-triangle",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:misc-zj2315",
+   "name": "misc-zj2315",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:test-定制模块",
+   "name": "test-定制模块",
+   "@type": "Module",
+   "domain": "06-其他定制"
+  },
+  {
+   "@id": "module:django-auth框架",
+   "name": "django-auth框架",
+   "@type": "Module",
+   "domain": "07-框架表"
+  },
+  {
+   "@id": "table:generator_logistics_balance_mode",
+   "name": "generator_logistics_balance_mode",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_beginning_record",
+   "name": "generator_logistics_beginning_record",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_detail_map",
+   "name": "generator_logistics_detail_map",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_product_stock",
+   "name": "generator_logistics_product_stock",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_product_stock_copy1",
+   "name": "generator_logistics_product_stock_copy1",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_push_log",
+   "name": "generator_logistics_push_log",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_shipment",
+   "name": "generator_logistics_shipment",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_transaction_table",
+   "name": "generator_logistics_transaction_table",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_transaction_table_copy1",
+   "name": "generator_logistics_transaction_table_copy1",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_waybill",
+   "name": "generator_logistics_waybill",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_logistics_waybill_copy1",
+   "name": "generator_logistics_waybill_copy1",
+   "@type": "DatabaseTable",
+   "module": "logistics-物流"
+  },
+  {
+   "@id": "table:generator_payment_application",
+   "name": "generator_payment_application",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_application_gh",
+   "name": "generator_payment_application_gh",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_application_tf",
+   "name": "generator_payment_application_tf",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_application_zt",
+   "name": "generator_payment_application_zt",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_record",
+   "name": "generator_payment_record",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_record_gh",
+   "name": "generator_payment_record_gh",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_record_tf",
+   "name": "generator_payment_record_tf",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_payment_record_zt",
+   "name": "generator_payment_record_zt",
+   "@type": "DatabaseTable",
+   "module": "payment-付款"
+  },
+  {
+   "@id": "table:generator_purchase_material",
+   "name": "generator_purchase_material",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_material_gh",
+   "name": "generator_purchase_material_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_material_tf",
+   "name": "generator_purchase_material_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_material_zt",
+   "name": "generator_purchase_material_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order",
+   "name": "generator_purchase_order",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_copy1",
+   "name": "generator_purchase_order_copy1",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_detail",
+   "name": "generator_purchase_order_detail",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_detail_copy1",
+   "name": "generator_purchase_order_detail_copy1",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_detail_gh",
+   "name": "generator_purchase_order_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_detail_tf",
+   "name": "generator_purchase_order_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_detail_zt",
+   "name": "generator_purchase_order_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_document",
+   "name": "generator_purchase_order_document",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_document_copy1",
+   "name": "generator_purchase_order_document_copy1",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_document_gh",
+   "name": "generator_purchase_order_document_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_document_tf",
+   "name": "generator_purchase_order_document_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_document_zt",
+   "name": "generator_purchase_order_document_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_gh",
+   "name": "generator_purchase_order_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_tf",
+   "name": "generator_purchase_order_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_order_zt",
+   "name": "generator_purchase_order_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition",
+   "name": "generator_purchase_requisition",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_detail",
+   "name": "generator_purchase_requisition_detail",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_detail_gh",
+   "name": "generator_purchase_requisition_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_detail_tf",
+   "name": "generator_purchase_requisition_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_detail_zt",
+   "name": "generator_purchase_requisition_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_gh",
+   "name": "generator_purchase_requisition_gh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_tf",
+   "name": "generator_purchase_requisition_tf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_purchase_requisition_zt",
+   "name": "generator_purchase_requisition_zt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorder",
+   "name": "generator_historicalpurchaseorder",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorderdetail",
+   "name": "generator_historicalpurchaseorderdetail",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorderdetailgh",
+   "name": "generator_historicalpurchaseorderdetailgh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorderdetailtf",
+   "name": "generator_historicalpurchaseorderdetailtf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorderdetailzt",
+   "name": "generator_historicalpurchaseorderdetailzt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseordergh",
+   "name": "generator_historicalpurchaseordergh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseordertf",
+   "name": "generator_historicalpurchaseordertf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaseorderzt",
+   "name": "generator_historicalpurchaseorderzt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisition",
+   "name": "generator_historicalpurchaserequisition",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiondetail",
+   "name": "generator_historicalpurchaserequisitiondetail",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiondetailgh",
+   "name": "generator_historicalpurchaserequisitiondetailgh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiondetailtf",
+   "name": "generator_historicalpurchaserequisitiondetailtf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiondetailzt",
+   "name": "generator_historicalpurchaserequisitiondetailzt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiongh",
+   "name": "generator_historicalpurchaserequisitiongh",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitiontf",
+   "name": "generator_historicalpurchaserequisitiontf",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_historicalpurchaserequisitionzt",
+   "name": "generator_historicalpurchaserequisitionzt",
+   "@type": "DatabaseTable",
+   "module": "purchase-采购"
+  },
+  {
+   "@id": "table:generator_return_order",
+   "name": "generator_return_order",
+   "@type": "DatabaseTable",
+   "module": "return-退货"
+  },
+  {
+   "@id": "table:generator_return_order_detail",
+   "name": "generator_return_order_detail",
+   "@type": "DatabaseTable",
+   "module": "return-退货"
+  },
+  {
+   "@id": "table:generator_settlement_bill",
+   "name": "generator_settlement_bill",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_detail",
+   "name": "generator_settlement_bill_detail",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_detail_gh",
+   "name": "generator_settlement_bill_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_detail_tf",
+   "name": "generator_settlement_bill_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_detail_zt",
+   "name": "generator_settlement_bill_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_gh",
+   "name": "generator_settlement_bill_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_tf",
+   "name": "generator_settlement_bill_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_bill_zt",
+   "name": "generator_settlement_bill_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice",
+   "name": "generator_settlement_invoice",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_detail",
+   "name": "generator_settlement_invoice_detail",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_detail_gh",
+   "name": "generator_settlement_invoice_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_detail_tf",
+   "name": "generator_settlement_invoice_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_detail_zt",
+   "name": "generator_settlement_invoice_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_gh",
+   "name": "generator_settlement_invoice_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_payment_allocation",
+   "name": "generator_settlement_invoice_payment_allocation",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_payment_allocation_gh",
+   "name": "generator_settlement_invoice_payment_allocation_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_payment_allocation_tf",
+   "name": "generator_settlement_invoice_payment_allocation_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_payment_allocation_zt",
+   "name": "generator_settlement_invoice_payment_allocation_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_tf",
+   "name": "generator_settlement_invoice_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_invoice_zt",
+   "name": "generator_settlement_invoice_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_payment_allocation",
+   "name": "generator_settlement_payment_allocation",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_payment_allocation_gh",
+   "name": "generator_settlement_payment_allocation_gh",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_payment_allocation_tf",
+   "name": "generator_settlement_payment_allocation_tf",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_settlement_payment_allocation_zt",
+   "name": "generator_settlement_payment_allocation_zt",
+   "@type": "DatabaseTable",
+   "module": "settlement-结算"
+  },
+  {
+   "@id": "table:generator_supplier",
+   "name": "generator_supplier",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_gh",
+   "name": "generator_supplier_gh",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_material_mapping",
+   "name": "generator_supplier_material_mapping",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_material_mapping_gh",
+   "name": "generator_supplier_material_mapping_gh",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_material_mapping_tf",
+   "name": "generator_supplier_material_mapping_tf",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_material_mapping_zt",
+   "name": "generator_supplier_material_mapping_zt",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_tf",
+   "name": "generator_supplier_tf",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_supplier_zt",
+   "name": "generator_supplier_zt",
+   "@type": "DatabaseTable",
+   "module": "supplier-供应商"
+  },
+  {
+   "@id": "table:generator_warehouse_inventory",
+   "name": "generator_warehouse_inventory",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_inventory_gh",
+   "name": "generator_warehouse_inventory_gh",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_inventory_tf",
+   "name": "generator_warehouse_inventory_tf",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_inventory_zt",
+   "name": "generator_warehouse_inventory_zt",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction",
+   "name": "generator_warehouse_transaction",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_detail",
+   "name": "generator_warehouse_transaction_detail",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_detail_copy1",
+   "name": "generator_warehouse_transaction_detail_copy1",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_detail_gh",
+   "name": "generator_warehouse_transaction_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_detail_tf",
+   "name": "generator_warehouse_transaction_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_detail_zt",
+   "name": "generator_warehouse_transaction_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_gh",
+   "name": "generator_warehouse_transaction_gh",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_tf",
+   "name": "generator_warehouse_transaction_tf",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_warehouse_transaction_zt",
+   "name": "generator_warehouse_transaction_zt",
+   "@type": "DatabaseTable",
+   "module": "warehouse-仓储"
+  },
+  {
+   "@id": "table:generator_bad_product",
+   "name": "generator_bad_product",
+   "@type": "DatabaseTable",
+   "module": "bad-不良品"
+  },
+  {
+   "@id": "table:generator_bad_product_record",
+   "name": "generator_bad_product_record",
+   "@type": "DatabaseTable",
+   "module": "bad-不良品"
+  },
+  {
+   "@id": "table:generator_defective_product",
+   "name": "generator_defective_product",
+   "@type": "DatabaseTable",
+   "module": "bad-不良品"
+  },
+  {
+   "@id": "table:generator_rework_record_header",
+   "name": "generator_rework_record_header",
+   "@type": "DatabaseTable",
+   "module": "bad-不良品"
+  },
+  {
+   "@id": "table:generator_newscheduling",
+   "name": "generator_newscheduling",
+   "@type": "DatabaseTable",
+   "module": "newscheduling-新排程"
+  },
+  {
+   "@id": "table:generator_newscheduling_temp",
+   "name": "generator_newscheduling_temp",
+   "@type": "DatabaseTable",
+   "module": "newscheduling-新排程"
+  },
+  {
+   "@id": "table:generator_plan_delivery_plan",
+   "name": "generator_plan_delivery_plan",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_plan_delivery_plan_log",
+   "name": "generator_plan_delivery_plan_log",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_plan_inventory_snapshot",
+   "name": "generator_plan_inventory_snapshot",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_plan_monthly_start_stock",
+   "name": "generator_plan_monthly_start_stock",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_plan_product_config",
+   "name": "generator_plan_product_config",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_scheduling",
+   "name": "generator_scheduling",
+   "@type": "DatabaseTable",
+   "module": "plan-生产计划"
+  },
+  {
+   "@id": "table:generator_production_knife_issue",
+   "name": "generator_production_knife_issue",
+   "@type": "DatabaseTable",
+   "module": "production-生产"
+  },
+  {
+   "@id": "table:generator_production_line",
+   "name": "generator_production_line",
+   "@type": "DatabaseTable",
+   "module": "production-生产"
+  },
+  {
+   "@id": "table:generator_production_tracking",
+   "name": "generator_production_tracking",
+   "@type": "DatabaseTable",
+   "module": "production-生产"
+  },
+  {
+   "@id": "table:generator_qrcode_in",
+   "name": "generator_qrcode_in",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_qrcode_out",
+   "name": "generator_qrcode_out",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_qrcode_sendout",
+   "name": "generator_qrcode_sendout",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_box_code_verify",
+   "name": "generator_box_code_verify",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_exception_qrcode",
+   "name": "generator_exception_qrcode",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:extraneous_product_qrcode",
+   "name": "extraneous_product_qrcode",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_registration_qrcode",
+   "name": "generator_registration_qrcode",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:track_route",
+   "name": "track_route",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:track_route_step",
+   "name": "track_route_step",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:track_station",
+   "name": "track_station",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:track_station_job_code_map",
+   "name": "track_station_job_code_map",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_tracking_transfer",
+   "name": "generator_tracking_transfer",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_tracking_waste_record",
+   "name": "generator_tracking_waste_record",
+   "@type": "DatabaseTable",
+   "module": "qrcode-二维码追溯"
+  },
+  {
+   "@id": "table:generator_shift_schedule",
+   "name": "generator_shift_schedule",
+   "@type": "DatabaseTable",
+   "module": "shift-班次"
+  },
+  {
+   "@id": "table:generator_shift_template",
+   "name": "generator_shift_template",
+   "@type": "DatabaseTable",
+   "module": "shift-班次"
+  },
+  {
+   "@id": "table:generator_shift_template_member",
+   "name": "generator_shift_template_member",
+   "@type": "DatabaseTable",
+   "module": "shift-班次"
+  },
+  {
+   "@id": "table:generator_tf_add_golduse",
+   "name": "generator_tf_add_golduse",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_add_golduse_production_plan",
+   "name": "generator_tf_add_golduse_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_cast_inspection",
+   "name": "generator_tf_cast_inspection",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_cast_inspection_production_plan",
+   "name": "generator_tf_cast_inspection_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_coremaking",
+   "name": "generator_tf_coremaking",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_coremaking_batch_relation",
+   "name": "generator_tf_coremaking_batch_relation",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_furnace_power_display",
+   "name": "generator_tf_furnace_power_display",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_furnace_situation",
+   "name": "generator_tf_furnace_situation",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_furnace_smelt",
+   "name": "generator_tf_furnace_smelt",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_furnace_smelt_production_plan",
+   "name": "generator_tf_furnace_smelt_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_mould",
+   "name": "generator_tf_mould",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_mould_daily",
+   "name": "generator_tf_mould_daily",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_mould_operate",
+   "name": "generator_tf_mould_operate",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_mould_scanreport",
+   "name": "generator_tf_mould_scanreport",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_pouring_records",
+   "name": "generator_tf_pouring_records",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_pouring_records_production_plan",
+   "name": "generator_tf_pouring_records_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_product",
+   "name": "generator_tf_product",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_production_plan",
+   "name": "generator_tf_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_rapid_goldtest",
+   "name": "generator_tf_rapid_goldtest",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_rapid_goldtest_production_plan",
+   "name": "generator_tf_rapid_goldtest_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_stove_extract",
+   "name": "generator_tf_stove_extract",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_stove_extract_production_plan",
+   "name": "generator_tf_stove_extract_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_stove_spectrum",
+   "name": "generator_tf_stove_spectrum",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_stove_spectrum_production_plan",
+   "name": "generator_tf_stove_spectrum_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_tensile_strength",
+   "name": "generator_tf_tensile_strength",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_tensile_strength_production_plan",
+   "name": "generator_tf_tensile_strength_production_plan",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_tilt_information",
+   "name": "generator_tf_tilt_information",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tf_transfer_cart",
+   "name": "generator_tf_transfer_cart",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_ingredients",
+   "name": "generator_ingredients",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_tfdl",
+   "name": "generator_tfdl",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_ingredients_split",
+   "name": "generator_ingredients_split",
+   "@type": "DatabaseTable",
+   "module": "tf-TF铸造"
+  },
+  {
+   "@id": "table:generator_device_cutting_fluid_check",
+   "name": "generator_device_cutting_fluid_check",
+   "@type": "DatabaseTable",
+   "module": "device-设备装置"
+  },
+  {
+   "@id": "table:generator_device_eff",
+   "name": "generator_device_eff",
+   "@type": "DatabaseTable",
+   "module": "device-设备装置"
+  },
+  {
+   "@id": "table:generator_devices",
+   "name": "generator_devices",
+   "@type": "DatabaseTable",
+   "module": "device-设备装置"
+  },
+  {
+   "@id": "table:generator_devices_log",
+   "name": "generator_devices_log",
+   "@type": "DatabaseTable",
+   "module": "device-设备装置"
+  },
+  {
+   "@id": "table:generator_equipment_inspection",
+   "name": "generator_equipment_inspection",
+   "@type": "DatabaseTable",
+   "module": "equipment-设备"
+  },
+  {
+   "@id": "table:generator_equipment_maintenance_records",
+   "name": "generator_equipment_maintenance_records",
+   "@type": "DatabaseTable",
+   "module": "equipment-设备"
+  },
+  {
+   "@id": "table:generator_equipment_repair",
+   "name": "generator_equipment_repair",
+   "@type": "DatabaseTable",
+   "module": "equipment-设备"
+  },
+  {
+   "@id": "table:generator_equipment_repair_report",
+   "name": "generator_equipment_repair_report",
+   "@type": "DatabaseTable",
+   "module": "equipment-设备"
+  },
+  {
+   "@id": "table:generator_equipment_repair_report_cc_personnel",
+   "name": "generator_equipment_repair_report_cc_personnel",
+   "@type": "DatabaseTable",
+   "module": "equipment-设备"
+  },
+  {
+   "@id": "table:generator_fixture_maintenance_rc",
+   "name": "generator_fixture_maintenance_rc",
+   "@type": "DatabaseTable",
+   "module": "fixture-工装夹具"
+  },
+  {
+   "@id": "table:generator_fixture_usage_rc",
+   "name": "generator_fixture_usage_rc",
+   "@type": "DatabaseTable",
+   "module": "fixture-工装夹具"
+  },
+  {
+   "@id": "table:generator_fixtures",
+   "name": "generator_fixtures",
+   "@type": "DatabaseTable",
+   "module": "fixture-工装夹具"
+  },
+  {
+   "@id": "table:generator_inspection_items",
+   "name": "generator_inspection_items",
+   "@type": "DatabaseTable",
+   "module": "inspection-质量检验"
+  },
+  {
+   "@id": "table:generator_inspection_points",
+   "name": "generator_inspection_points",
+   "@type": "DatabaseTable",
+   "module": "inspection-质量检验"
+  },
+  {
+   "@id": "table:generator_inspection_standards",
+   "name": "generator_inspection_standards",
+   "@type": "DatabaseTable",
+   "module": "inspection-质量检验"
+  },
+  {
+   "@id": "table:generator_quality_inspection",
+   "name": "generator_quality_inspection",
+   "@type": "DatabaseTable",
+   "module": "inspection-质量检验"
+  },
+  {
+   "@id": "table:generator_qualityrapid_response",
+   "name": "generator_qualityrapid_response",
+   "@type": "DatabaseTable",
+   "module": "inspection-质量检验"
+  },
+  {
+   "@id": "table:generator_knife_detail",
+   "name": "generator_knife_detail",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_knife_life_standards",
+   "name": "generator_knife_life_standards",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_knife_life_standards_copy1",
+   "name": "generator_knife_life_standards_copy1",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_knife_requisition",
+   "name": "generator_knife_requisition",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_knife_statistics",
+   "name": "generator_knife_statistics",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_djgkcsl",
+   "name": "generator_djgkcsl",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_djgsy",
+   "name": "generator_djgsy",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_djkc",
+   "name": "generator_djkc",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_abnormal_tool_filtering_data",
+   "name": "generator_abnormal_tool_filtering_data",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_daily_tool_summary",
+   "name": "generator_daily_tool_summary",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_eng_tool_knives",
+   "name": "generator_eng_tool_knives",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:knife_jobcode",
+   "name": "knife_jobcode",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_machine_tool_change",
+   "name": "generator_machine_tool_change",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_old_knife_recycle",
+   "name": "generator_old_knife_recycle",
+   "@type": "DatabaseTable",
+   "module": "knife-刀具"
+  },
+  {
+   "@id": "table:generator_maintenance_records",
+   "name": "generator_maintenance_records",
+   "@type": "DatabaseTable",
+   "module": "maintenance-维修保养"
+  },
+  {
+   "@id": "table:generator_maintenance_schedule",
+   "name": "generator_maintenance_schedule",
+   "@type": "DatabaseTable",
+   "module": "maintenance-维修保养"
+  },
+  {
+   "@id": "table:generator_calibration_record",
+   "name": "generator_calibration_record",
+   "@type": "DatabaseTable",
+   "module": "measuring-测量计量"
+  },
+  {
+   "@id": "table:generator_cmm_inspection_log",
+   "name": "generator_cmm_inspection_log",
+   "@type": "DatabaseTable",
+   "module": "measuring-测量计量"
+  },
+  {
+   "@id": "table:generator_measuring_instrument",
+   "name": "generator_measuring_instrument",
+   "@type": "DatabaseTable",
+   "module": "measuring-测量计量"
+  },
+  {
+   "@id": "table:generator_jgdm",
+   "name": "generator_jgdm",
+   "@type": "DatabaseTable",
+   "module": "process-工艺技术"
+  },
+  {
+   "@id": "table:generator_process_inventory",
+   "name": "generator_process_inventory",
+   "@type": "DatabaseTable",
+   "module": "process-工艺技术"
+  },
+  {
+   "@id": "table:generator_product",
+   "name": "generator_product",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_product_plm_rufa",
+   "name": "generator_product_plm_rufa",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_product_ready",
+   "name": "generator_product_ready",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_product_szb",
+   "name": "generator_product_szb",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_product_urgent_mark",
+   "name": "generator_product_urgent_mark",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_product_urgent_record",
+   "name": "generator_product_urgent_record",
+   "@type": "DatabaseTable",
+   "module": "product-产品"
+  },
+  {
+   "@id": "table:generator_tool_replacement",
+   "name": "generator_tool_replacement",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_tool_return_table",
+   "name": "generator_tool_return_table",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_tool_scrap",
+   "name": "generator_tool_scrap",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_tool_storage",
+   "name": "generator_tool_storage",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_tools",
+   "name": "generator_tools",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_take_tool",
+   "name": "generator_take_tool",
+   "@type": "DatabaseTable",
+   "module": "tool-工具工装"
+  },
+  {
+   "@id": "table:generator_company",
+   "name": "generator_company",
+   "@type": "DatabaseTable",
+   "module": "customer-客户"
+  },
+  {
+   "@id": "table:generator_finance_rule",
+   "name": "generator_finance_rule",
+   "@type": "DatabaseTable",
+   "module": "finance-财务"
+  },
+  {
+   "@id": "table:generator_finance_subsidies",
+   "name": "generator_finance_subsidies",
+   "@type": "DatabaseTable",
+   "module": "finance-财务"
+  },
+  {
+   "@id": "table:generator_order_detail_document_mapping",
+   "name": "generator_order_detail_document_mapping",
+   "@type": "DatabaseTable",
+   "module": "order-订单"
+  },
+  {
+   "@id": "table:generator_order_detail_document_mapping_gh",
+   "name": "generator_order_detail_document_mapping_gh",
+   "@type": "DatabaseTable",
+   "module": "order-订单"
+  },
+  {
+   "@id": "table:generator_order_detail_document_mapping_tf",
+   "name": "generator_order_detail_document_mapping_tf",
+   "@type": "DatabaseTable",
+   "module": "order-订单"
+  },
+  {
+   "@id": "table:generator_order_detail_document_mapping_zt",
+   "name": "generator_order_detail_document_mapping_zt",
+   "@type": "DatabaseTable",
+   "module": "order-订单"
+  },
+  {
+   "@id": "table:generator_customer_order",
+   "name": "generator_customer_order",
+   "@type": "DatabaseTable",
+   "module": "order-订单"
+  },
+  {
+   "@id": "table:generator_project_attendance",
+   "name": "generator_project_attendance",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_info",
+   "name": "generator_project_info",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary",
+   "name": "generator_project_material_summary",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_detail",
+   "name": "generator_project_material_summary_detail",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_detail_copy1",
+   "name": "generator_project_material_summary_detail_copy1",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_detail_gh",
+   "name": "generator_project_material_summary_detail_gh",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_detail_tf",
+   "name": "generator_project_material_summary_detail_tf",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_detail_zt",
+   "name": "generator_project_material_summary_detail_zt",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_gh",
+   "name": "generator_project_material_summary_gh",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_tf",
+   "name": "generator_project_material_summary_tf",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_material_summary_zt",
+   "name": "generator_project_material_summary_zt",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_personal",
+   "name": "generator_project_personal",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:generator_project_schedule",
+   "name": "generator_project_schedule",
+   "@type": "DatabaseTable",
+   "module": "project-项目"
+  },
+  {
+   "@id": "table:att_transaction",
+   "name": "att_transaction",
+   "@type": "DatabaseTable",
+   "module": "att-考勤打卡"
+  },
+  {
+   "@id": "table:generator_dailyreport",
+   "name": "generator_dailyreport",
+   "@type": "DatabaseTable",
+   "module": "dailyreport-日报任务"
+  },
+  {
+   "@id": "table:generator_dailytask",
+   "name": "generator_dailytask",
+   "@type": "DatabaseTable",
+   "module": "dailyreport-日报任务"
+  },
+  {
+   "@id": "table:generator_monthlytask",
+   "name": "generator_monthlytask",
+   "@type": "DatabaseTable",
+   "module": "dailyreport-日报任务"
+  },
+  {
+   "@id": "table:generator_capability_score",
+   "name": "generator_capability_score",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_historicaljobcode",
+   "name": "generator_historicaljobcode",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_historicaljobcode_devices",
+   "name": "generator_historicaljobcode_devices",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_user_product_matrix",
+   "name": "generator_user_product_matrix",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_roster",
+   "name": "generator_roster",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_salary",
+   "name": "generator_salary",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_employment_registration",
+   "name": "generator_employment_registration",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_holiday_date",
+   "name": "generator_holiday_date",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_job_code",
+   "name": "generator_job_code",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_job_code_product",
+   "name": "generator_job_code_product",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:generator_jobcode_devices",
+   "name": "generator_jobcode_devices",
+   "@type": "DatabaseTable",
+   "module": "hr-人力能力"
+  },
+  {
+   "@id": "table:system_api_white_list",
+   "name": "system_api_white_list",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_area",
+   "name": "system_area",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_button",
+   "name": "system_button",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_category_dict",
+   "name": "system_category_dict",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_config",
+   "name": "system_config",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_dept",
+   "name": "system_dept",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_dict",
+   "name": "system_dict",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_dict_item",
+   "name": "system_dict_item",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_file",
+   "name": "system_file",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_generator_template",
+   "name": "system_generator_template",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_login_log",
+   "name": "system_login_log",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_menu",
+   "name": "system_menu",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_menu_button",
+   "name": "system_menu_button",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_menu_column_field",
+   "name": "system_menu_column_field",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_post",
+   "name": "system_post",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_product_szb",
+   "name": "system_product_szb",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_role",
+   "name": "system_role",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_role_column",
+   "name": "system_role_column",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_role_dept",
+   "name": "system_role_dept",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_role_menu",
+   "name": "system_role_menu",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_role_permission",
+   "name": "system_role_permission",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_users",
+   "name": "system_users",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_users_groups",
+   "name": "system_users_groups",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_users_post",
+   "name": "system_users_post",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_users_role",
+   "name": "system_users_role",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:system_users_user_permissions",
+   "name": "system_users_user_permissions",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:generator_authorization",
+   "name": "generator_authorization",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:generator_inform",
+   "name": "generator_inform",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:generator_users_ticket",
+   "name": "generator_users_ticket",
+   "@type": "DatabaseTable",
+   "module": "system-用户权限"
+  },
+  {
+   "@id": "table:generator_answer_list",
+   "name": "generator_answer_list",
+   "@type": "DatabaseTable",
+   "module": "answer-定制模块"
+  },
+  {
+   "@id": "table:generator_answer_sheet",
+   "name": "generator_answer_sheet",
+   "@type": "DatabaseTable",
+   "module": "answer-定制模块"
+  },
+  {
+   "@id": "table:generator_liqiang_inventory",
+   "name": "generator_liqiang_inventory",
+   "@type": "DatabaseTable",
+   "module": "liqiang-定制模块"
+  },
+  {
+   "@id": "table:generator_liqiang_logistics_cost",
+   "name": "generator_liqiang_logistics_cost",
+   "@type": "DatabaseTable",
+   "module": "liqiang-定制模块"
+  },
+  {
+   "@id": "table:generator_liqiang_report_journals",
+   "name": "generator_liqiang_report_journals",
+   "@type": "DatabaseTable",
+   "module": "liqiang-定制模块"
+  },
+  {
+   "@id": "table:generator_lizhu_count_data",
+   "name": "generator_lizhu_count_data",
+   "@type": "DatabaseTable",
+   "module": "lizhu-定制模块"
+  },
+  {
+   "@id": "table:generator_lizhu_error_data",
+   "name": "generator_lizhu_error_data",
+   "@type": "DatabaseTable",
+   "module": "lizhu-定制模块"
+  },
+  {
+   "@id": "table:generator_lizhu_robot_data",
+   "name": "generator_lizhu_robot_data",
+   "@type": "DatabaseTable",
+   "module": "lizhu-定制模块"
+  },
+  {
+   "@id": "table:generator_alarm_records",
+   "name": "generator_alarm_records",
+   "@type": "DatabaseTable",
+   "module": "misc-alarm"
+  },
+  {
+   "@id": "table:generator_commentsmessage",
+   "name": "generator_commentsmessage",
+   "@type": "DatabaseTable",
+   "module": "misc-commentsmessage"
+  },
+  {
+   "@id": "table:generator_cooperation",
+   "name": "generator_cooperation",
+   "@type": "DatabaseTable",
+   "module": "misc-cooperation"
+  },
+  {
+   "@id": "table:generator_definition_five_s",
+   "name": "generator_definition_five_s",
+   "@type": "DatabaseTable",
+   "module": "misc-definition"
+  },
+  {
+   "@id": "table:demo",
+   "name": "demo",
+   "@type": "DatabaseTable",
+   "module": "misc-demo"
+  },
+  {
+   "@id": "table:external_data_d",
+   "name": "external_data_d",
+   "@type": "DatabaseTable",
+   "module": "misc-external"
+  },
+  {
+   "@id": "table:external_data_jzt",
+   "name": "external_data_jzt",
+   "@type": "DatabaseTable",
+   "module": "misc-external"
+  },
+  {
+   "@id": "table:external_data_ym",
+   "name": "external_data_ym",
+   "@type": "DatabaseTable",
+   "module": "misc-external"
+  },
+  {
+   "@id": "table:go_view_data",
+   "name": "go_view_data",
+   "@type": "DatabaseTable",
+   "module": "misc-go"
+  },
+  {
+   "@id": "table:go_view_project",
+   "name": "go_view_project",
+   "@type": "DatabaseTable",
+   "module": "misc-go"
+  },
+  {
+   "@id": "table:generator_management_area_allocation",
+   "name": "generator_management_area_allocation",
+   "@type": "DatabaseTable",
+   "module": "misc-management"
+  },
+  {
+   "@id": "table:generator_objective",
+   "name": "generator_objective",
+   "@type": "DatabaseTable",
+   "module": "misc-objective"
+  },
+  {
+   "@id": "table:generator_public_data",
+   "name": "generator_public_data",
+   "@type": "DatabaseTable",
+   "module": "misc-public"
+  },
+  {
+   "@id": "table:generator_safety_inspection",
+   "name": "generator_safety_inspection",
+   "@type": "DatabaseTable",
+   "module": "misc-safety"
+  },
+  {
+   "@id": "table:generator_site_management",
+   "name": "generator_site_management",
+   "@type": "DatabaseTable",
+   "module": "misc-site"
+  },
+  {
+   "@id": "table:generator_ticket",
+   "name": "generator_ticket",
+   "@type": "DatabaseTable",
+   "module": "misc-ticket"
+  },
+  {
+   "@id": "table:generator_total_power",
+   "name": "generator_total_power",
+   "@type": "DatabaseTable",
+   "module": "misc-total"
+  },
+  {
+   "@id": "table:generator_triangle_beam_count_data",
+   "name": "generator_triangle_beam_count_data",
+   "@type": "DatabaseTable",
+   "module": "misc-triangle"
+  },
+  {
+   "@id": "table:generator_triangle_beam_monitoring_system",
+   "name": "generator_triangle_beam_monitoring_system",
+   "@type": "DatabaseTable",
+   "module": "misc-triangle"
+  },
+  {
+   "@id": "table:zj2315_e38_data",
+   "name": "zj2315_e38_data",
+   "@type": "DatabaseTable",
+   "module": "misc-zj2315"
+  },
+  {
+   "@id": "table:zj2315_e38_inspection_data",
+   "name": "zj2315_e38_inspection_data",
+   "@type": "DatabaseTable",
+   "module": "misc-zj2315"
+  },
+  {
+   "@id": "table:zj2315_e38_threaded_hole",
+   "name": "zj2315_e38_threaded_hole",
+   "@type": "DatabaseTable",
+   "module": "misc-zj2315"
+  },
+  {
+   "@id": "table:generator_test",
+   "name": "generator_test",
+   "@type": "DatabaseTable",
+   "module": "test-定制模块"
+  },
+  {
+   "@id": "table:generator_test_demo",
+   "name": "generator_test_demo",
+   "@type": "DatabaseTable",
+   "module": "test-定制模块"
+  },
+  {
+   "@id": "table:auth_group",
+   "name": "auth_group",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:auth_group_permissions",
+   "name": "auth_group_permissions",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:auth_permission",
+   "name": "auth_permission",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_admin_log",
+   "name": "django_admin_log",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_clockedschedule",
+   "name": "django_celery_beat_clockedschedule",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_crontabschedule",
+   "name": "django_celery_beat_crontabschedule",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_intervalschedule",
+   "name": "django_celery_beat_intervalschedule",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_periodictask",
+   "name": "django_celery_beat_periodictask",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_periodictasks",
+   "name": "django_celery_beat_periodictasks",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_beat_solarschedule",
+   "name": "django_celery_beat_solarschedule",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_results_chordcounter",
+   "name": "django_celery_results_chordcounter",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_results_groupresult",
+   "name": "django_celery_results_groupresult",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_celery_results_taskresult",
+   "name": "django_celery_results_taskresult",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_content_type",
+   "name": "django_content_type",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_migrations",
+   "name": "django_migrations",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  },
+  {
+   "@id": "table:django_session",
+   "name": "django_session",
+   "@type": "DatabaseTable",
+   "module": "django-auth框架"
+  }
+ ],
+ "relationships": [
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_balance_mode",
+   "fromColumn": "product_stock_id",
+   "to": "table:generator_logistics_product_stock",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_detail_map",
+   "fromColumn": "order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_detail_map",
+   "fromColumn": "shipment_id",
+   "to": "table:generator_logistics_shipment",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_push_log",
+   "fromColumn": "shipment_id",
+   "to": "table:generator_logistics_shipment",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table",
+   "fromColumn": "product_stock_id",
+   "to": "table:generator_logistics_product_stock",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table",
+   "fromColumn": "logistics_waybill_id",
+   "to": "table:generator_logistics_waybill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table",
+   "fromColumn": "balance_mode_id",
+   "to": "table:generator_logistics_balance_mode",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table_copy1",
+   "fromColumn": "product_stock_id",
+   "to": "table:generator_logistics_product_stock",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table_copy1",
+   "fromColumn": "logistics_waybill_id",
+   "to": "table:generator_logistics_waybill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_logistics_transaction_table_copy1",
+   "fromColumn": "balance_mode_id",
+   "to": "table:generator_logistics_balance_mode",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_gh",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_gh",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_tf",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_tf",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_zt",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_application_zt",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_record",
+   "fromColumn": "payment_application_id",
+   "to": "table:generator_payment_application",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_record_gh",
+   "fromColumn": "payment_application_id",
+   "to": "table:generator_payment_application",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_record_tf",
+   "fromColumn": "payment_application_id",
+   "to": "table:generator_payment_application",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_payment_record_zt",
+   "fromColumn": "payment_application_id",
+   "to": "table:generator_payment_application",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_copy1",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_copy1",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_copy1",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_gh",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_gh",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_gh",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_tf",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_tf",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_tf",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_zt",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_zt",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_order_detail_zt",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_requisition_detail",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_requisition_detail_gh",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_requisition_detail_tf",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_purchase_requisition_detail_zt",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorder",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetail",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetail",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetail",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetail",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailgh",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailgh",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailgh",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailgh",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailtf",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailtf",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailtf",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailtf",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailzt",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailzt",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailzt",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderdetailzt",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseordergh",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseordertf",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaseorderzt",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisition",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetail",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetail",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailgh",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailgh",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailtf",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailtf",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailzt",
+   "fromColumn": "purchase_requisition_id",
+   "to": "table:generator_purchase_requisition",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiondetailzt",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiongh",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitiontf",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicalpurchaserequisitionzt",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_gh",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_gh",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_tf",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_tf",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_zt",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_bill_detail_zt",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail",
+   "fromColumn": "settlement_invoice_id",
+   "to": "table:generator_settlement_invoice",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_gh",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_gh",
+   "fromColumn": "settlement_invoice_id",
+   "to": "table:generator_settlement_invoice",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_tf",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_tf",
+   "fromColumn": "settlement_invoice_id",
+   "to": "table:generator_settlement_invoice",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_zt",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_detail_zt",
+   "fromColumn": "settlement_invoice_id",
+   "to": "table:generator_settlement_invoice",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_gh",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation",
+   "fromColumn": "settlement_invoice_detail_id",
+   "to": "table:generator_settlement_invoice_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation",
+   "fromColumn": "settlement_payment_allocation_id",
+   "to": "table:generator_settlement_payment_allocation",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_gh",
+   "fromColumn": "settlement_invoice_detail_id",
+   "to": "table:generator_settlement_invoice_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_gh",
+   "fromColumn": "settlement_payment_allocation_id",
+   "to": "table:generator_settlement_payment_allocation",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_tf",
+   "fromColumn": "settlement_invoice_detail_id",
+   "to": "table:generator_settlement_invoice_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_tf",
+   "fromColumn": "settlement_payment_allocation_id",
+   "to": "table:generator_settlement_payment_allocation",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_zt",
+   "fromColumn": "settlement_invoice_detail_id",
+   "to": "table:generator_settlement_invoice_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_payment_allocation_zt",
+   "fromColumn": "settlement_payment_allocation_id",
+   "to": "table:generator_settlement_payment_allocation",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_tf",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_invoice_zt",
+   "fromColumn": "settlement_bill_id",
+   "to": "table:generator_settlement_bill",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation",
+   "fromColumn": "payment_record_id",
+   "to": "table:generator_payment_record",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_gh",
+   "fromColumn": "payment_record_id",
+   "to": "table:generator_payment_record",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_gh",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_tf",
+   "fromColumn": "payment_record_id",
+   "to": "table:generator_payment_record",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_tf",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_zt",
+   "fromColumn": "payment_record_id",
+   "to": "table:generator_payment_record",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_settlement_payment_allocation_zt",
+   "fromColumn": "settlement_bill_detail_id",
+   "to": "table:generator_settlement_bill_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping",
+   "fromColumn": "purchase_material_id",
+   "to": "table:generator_purchase_material",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping",
+   "fromColumn": "supplier_id",
+   "to": "table:generator_supplier",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_gh",
+   "fromColumn": "purchase_material_id",
+   "to": "table:generator_purchase_material",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_gh",
+   "fromColumn": "supplier_id",
+   "to": "table:generator_supplier",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_tf",
+   "fromColumn": "purchase_material_id",
+   "to": "table:generator_purchase_material",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_tf",
+   "fromColumn": "supplier_id",
+   "to": "table:generator_supplier",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_zt",
+   "fromColumn": "purchase_material_id",
+   "to": "table:generator_purchase_material",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_supplier_material_mapping_zt",
+   "fromColumn": "supplier_id",
+   "to": "table:generator_supplier",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail",
+   "fromColumn": "warehouse_transaction_id",
+   "to": "table:generator_warehouse_transaction",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_copy1",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_copy1",
+   "fromColumn": "warehouse_transaction_id",
+   "to": "table:generator_warehouse_transaction",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_copy1",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_gh",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_gh",
+   "fromColumn": "warehouse_transaction_id",
+   "to": "table:generator_warehouse_transaction",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_gh",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_tf",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_tf",
+   "fromColumn": "warehouse_transaction_id",
+   "to": "table:generator_warehouse_transaction",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_tf",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_zt",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_zt",
+   "fromColumn": "warehouse_transaction_id",
+   "to": "table:generator_warehouse_transaction",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_warehouse_transaction_detail_zt",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_bad_product",
+   "fromColumn": "ticket_id",
+   "to": "table:generator_users_ticket",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_bad_product_record",
+   "fromColumn": "bad_product_id",
+   "to": "table:generator_bad_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_plan_delivery_plan",
+   "fromColumn": "customer_order_id",
+   "to": "table:generator_customer_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_plan_delivery_plan",
+   "fromColumn": "product_config_id",
+   "to": "table:generator_plan_product_config",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_plan_delivery_plan_log",
+   "fromColumn": "delivery_plan_id",
+   "to": "table:generator_plan_delivery_plan",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_plan_inventory_snapshot",
+   "fromColumn": "product_config_id",
+   "to": "table:generator_plan_product_config",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_scheduling",
+   "fromColumn": "code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_scheduling",
+   "fromColumn": "production_line_id",
+   "to": "table:generator_production_line",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_production_tracking",
+   "fromColumn": "product_id",
+   "to": "table:generator_bad_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_production_tracking",
+   "fromColumn": "route_id",
+   "to": "table:track_route",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_qrcode_sendout",
+   "fromColumn": "customer_order_id",
+   "to": "table:generator_customer_order",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "qrcode-二维码追溯接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:extraneous_product_qrcode",
+   "fromColumn": "rework_record_header_id",
+   "to": "table:generator_rework_record_header",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "qrcode-二维码追溯接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:track_route_step",
+   "fromColumn": "route_id",
+   "to": "table:track_route",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:track_route_step",
+   "fromColumn": "station_id",
+   "to": "table:track_station",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:track_station_job_code_map",
+   "fromColumn": "job_code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "qrcode-二维码追溯接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:track_station_job_code_map",
+   "fromColumn": "station_id",
+   "to": "table:track_station",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_transfer",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_transfer",
+   "fromColumn": "tracking_id",
+   "to": "table:generator_production_tracking",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_transfer",
+   "fromColumn": "from_station_id",
+   "to": "table:track_station",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_transfer",
+   "fromColumn": "to_station_id",
+   "to": "table:track_station",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_waste_record",
+   "fromColumn": "tracking_id",
+   "to": "table:generator_production_tracking",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tracking_waste_record",
+   "fromColumn": "transfer_id",
+   "to": "table:generator_tracking_transfer",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_shift_template_member",
+   "fromColumn": "template_id",
+   "to": "table:generator_shift_template",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "shift-班次接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tf_coremaking",
+   "fromColumn": "mould_id",
+   "to": "table:generator_tf_mould",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tf_mould_operate",
+   "fromColumn": "mould_id",
+   "to": "table:generator_tf_mould",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tf_mould_scanreport",
+   "fromColumn": "code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_ingredients_split",
+   "fromColumn": "ingredients_id",
+   "to": "table:generator_ingredients",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_device_eff",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "type_id",
+   "to": "table:django_content_type",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "dept_id",
+   "to": "table:system_dept",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "type_id",
+   "to": "table:generator_inspection_standards",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices_log",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_inspection",
+   "fromColumn": "inspection_standards_id",
+   "to": "table:generator_inspection_standards",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_repair",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_repair_report_cc_personnel",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_fixture_maintenance_rc",
+   "fromColumn": "fixture_id",
+   "to": "table:generator_fixtures",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_fixture_usage_rc",
+   "fromColumn": "fixture_id",
+   "to": "table:generator_fixtures",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_fixtures",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_knife_life_standards",
+   "fromColumn": "production_line_id",
+   "to": "table:generator_production_line",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_knife_life_standards_copy1",
+   "fromColumn": "production_line_id",
+   "to": "table:generator_production_line",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:knife_jobcode",
+   "fromColumn": "job_code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_machine_tool_change",
+   "fromColumn": "production_line_id",
+   "to": "table:generator_production_line",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_maintenance_records",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "maintenance-维修保养接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_maintenance_schedule",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "maintenance-维修保养接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_calibration_record",
+   "fromColumn": "instrument_id",
+   "to": "table:generator_measuring_instrument",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_process_inventory",
+   "fromColumn": "product_id",
+   "to": "table:generator_bad_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_process_inventory",
+   "fromColumn": "station_id",
+   "to": "table:track_station",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_product_plm_rufa",
+   "fromColumn": "product_ready_id",
+   "to": "table:generator_product_ready",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_product_plm_rufa",
+   "fromColumn": "qrcode_in_id",
+   "to": "table:generator_qrcode_in",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_product_plm_rufa",
+   "fromColumn": "qrcode_out_id",
+   "to": "table:generator_qrcode_out",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_tool_replacement",
+   "fromColumn": "production_line_id",
+   "to": "table:generator_production_line",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping",
+   "fromColumn": "document_id",
+   "to": "table:generator_purchase_order_document",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_gh",
+   "fromColumn": "document_id",
+   "to": "table:generator_purchase_order_document",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_gh",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_tf",
+   "fromColumn": "document_id",
+   "to": "table:generator_purchase_order_document",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_tf",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_zt",
+   "fromColumn": "document_id",
+   "to": "table:generator_purchase_order_document",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_order_detail_document_mapping_zt",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_attendance",
+   "fromColumn": "user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail",
+   "fromColumn": "project_material_summary_id",
+   "to": "table:generator_project_material_summary",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_copy1",
+   "fromColumn": "project_material_summary_id",
+   "to": "table:generator_project_material_summary",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_copy1",
+   "fromColumn": "purchase_order_id",
+   "to": "table:generator_purchase_order",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_copy1",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_gh",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_gh",
+   "fromColumn": "project_material_summary_id",
+   "to": "table:generator_project_material_summary",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_gh",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_tf",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_tf",
+   "fromColumn": "project_material_summary_id",
+   "to": "table:generator_project_material_summary",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_tf",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_zt",
+   "fromColumn": "purchase_requisition_detail_id",
+   "to": "table:generator_purchase_requisition_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_zt",
+   "fromColumn": "project_material_summary_id",
+   "to": "table:generator_project_material_summary",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_material_summary_detail_zt",
+   "fromColumn": "purchase_order_detail_id",
+   "to": "table:generator_purchase_order_detail",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_project_schedule",
+   "fromColumn": "project_info_id",
+   "to": "table:generator_project_info",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_dailytask",
+   "fromColumn": "project_id",
+   "to": "table:go_view_project",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_monthlytask",
+   "fromColumn": "project_id",
+   "to": "table:go_view_project",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicaljobcode",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicaljobcode_devices",
+   "fromColumn": "devices_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicaljobcode_devices",
+   "fromColumn": "job_code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_historicaljobcode_devices",
+   "fromColumn": "history_user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_salary",
+   "fromColumn": "newscheduling_id",
+   "to": "table:generator_newscheduling",
+   "toColumn": "id",
+   "basis": "sample",
+   "confidence": "high",
+   "note": "hr-人力能力接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_job_code_product",
+   "fromColumn": "jobcode_id",
+   "to": "table:knife_jobcode",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_job_code_product",
+   "fromColumn": "product_id",
+   "to": "table:generator_bad_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_jobcode_devices",
+   "fromColumn": "devices_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_jobcode_devices",
+   "fromColumn": "job_code_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_dict_item",
+   "fromColumn": "dict_id",
+   "to": "table:system_category_dict",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_menu_button",
+   "fromColumn": "menu_id",
+   "to": "table:system_menu",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_menu_column_field",
+   "fromColumn": "menu_id",
+   "to": "table:system_menu",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_product_szb",
+   "fromColumn": "product_id",
+   "to": "table:generator_bad_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_column",
+   "fromColumn": "role_id",
+   "to": "table:system_role",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_dept",
+   "fromColumn": "role_id",
+   "to": "table:system_role",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_dept",
+   "fromColumn": "dept_id",
+   "to": "table:system_dept",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_menu",
+   "fromColumn": "role_id",
+   "to": "table:system_role",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_menu",
+   "fromColumn": "menu_id",
+   "to": "table:system_menu",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_role_permission",
+   "fromColumn": "role_id",
+   "to": "table:system_role",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users",
+   "fromColumn": "dept_id",
+   "to": "table:system_dept",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_groups",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_groups",
+   "fromColumn": "group_id",
+   "to": "table:system_users_groups",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_groups",
+   "fromColumn": "group_id",
+   "to": "table:auth_group",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_post",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_post",
+   "fromColumn": "post_id",
+   "to": "table:system_post",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_role",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_role",
+   "fromColumn": "role_id",
+   "to": "table:system_role",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_user_permissions",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_user_permissions",
+   "fromColumn": "permission_id",
+   "to": "table:system_role_permission",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users_user_permissions",
+   "fromColumn": "permission_id",
+   "to": "table:auth_permission",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_users_ticket",
+   "fromColumn": "ticket_id",
+   "to": "table:generator_users_ticket",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_users_ticket",
+   "fromColumn": "users_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_alarm_records",
+   "fromColumn": "device_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:auth_group_permissions",
+   "fromColumn": "group_id",
+   "to": "table:system_users_groups",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:auth_group_permissions",
+   "fromColumn": "permission_id",
+   "to": "table:system_role_permission",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:auth_group_permissions",
+   "fromColumn": "permission_id",
+   "to": "table:auth_permission",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:auth_group_permissions",
+   "fromColumn": "group_id",
+   "to": "table:auth_group",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:auth_permission",
+   "fromColumn": "content_type_id",
+   "to": "table:django_content_type",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_admin_log",
+   "fromColumn": "content_type_id",
+   "to": "table:django_content_type",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_admin_log",
+   "fromColumn": "user_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_beat_periodictask",
+   "fromColumn": "clocked_id",
+   "to": "table:django_celery_beat_clockedschedule",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_beat_periodictask",
+   "fromColumn": "crontab_id",
+   "to": "table:django_celery_beat_crontabschedule",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_beat_periodictask",
+   "fromColumn": "interval_id",
+   "to": "table:django_celery_beat_intervalschedule",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_beat_periodictask",
+   "fromColumn": "solar_id",
+   "to": "table:django_celery_beat_solarschedule",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "InnoDB硬外键"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_results_chordcounter",
+   "fromColumn": "group_id",
+   "to": "table:system_users_groups",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:django_celery_results_groupresult",
+   "fromColumn": "group_id",
+   "to": "table:system_users_groups",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "字段名惯例推断"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_rework_record_header",
+   "fromColumn": "id",
+   "to": "table:extraneous_product_qrcode",
+   "toColumn": "rework_record_header_id",
+   "basis": "fk",
+   "confidence": "high",
+   "note": "bad-不良品接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_newscheduling",
+   "fromColumn": "id",
+   "to": "table:generator_salary",
+   "toColumn": "newscheduling_id",
+   "basis": "sample",
+   "confidence": "high",
+   "note": "newscheduling-新排程接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_newscheduling",
+   "fromColumn": "device_code",
+   "to": "table:generator_devices",
+   "toColumn": "internal_code",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "newscheduling-新排程接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_newscheduling",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "newscheduling-新排程接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_shift_schedule",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "shift-班次接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "id",
+   "to": "table:generator_equipment_repair",
+   "toColumn": "device_id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "device-设备装置接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "id",
+   "to": "table:generator_equipment_inspection",
+   "toColumn": "inspection_equipment_id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "device-设备装置接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "id",
+   "to": "table:generator_equipment_maintenance_records",
+   "toColumn": "equipment_id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "device-设备装置接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_devices",
+   "fromColumn": "internal_code",
+   "to": "table:generator_newscheduling",
+   "toColumn": "device_code",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "device-设备装置接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_inspection",
+   "fromColumn": "inspection_equipment_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_inspection",
+   "fromColumn": "inspection_personnel_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_maintenance_records",
+   "fromColumn": "equipment_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_maintenance_records",
+   "fromColumn": "operator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_repair",
+   "fromColumn": "repair_applicant_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_repair",
+   "fromColumn": "direct_writer_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_equipment_repair_report",
+   "fromColumn": "equipment_id",
+   "to": "table:generator_devices",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "equipment-设备接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_maintenance_records",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "maintenance-维修保养接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_process_inventory",
+   "fromColumn": "product_id",
+   "to": "table:generator_product",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "process-工艺技术接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_jgdm",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "high",
+   "note": "process-工艺技术接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:att_transaction",
+   "fromColumn": "employee_code",
+   "to": "table:system_users",
+   "toColumn": "username",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "att-考勤打卡接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:att_transaction",
+   "fromColumn": "employee_code",
+   "to": "table:generator_roster",
+   "toColumn": "employee_id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "att-考勤打卡接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:att_transaction",
+   "fromColumn": "dept_name",
+   "to": "table:system_dept",
+   "toColumn": "name",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "att-考勤打卡接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_dailyreport",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "dailyreport-日报任务接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_dailytask",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "dailyreport-日报任务接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_monthlytask",
+   "fromColumn": "creator_id",
+   "to": "table:system_users",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "dailyreport-日报任务接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_capability_score",
+   "fromColumn": "user_code",
+   "to": "table:system_users",
+   "toColumn": "username",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "hr-人力能力接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_roster",
+   "fromColumn": "employee_id",
+   "to": "table:system_users",
+   "toColumn": "username",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "hr-人力能力接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:system_users",
+   "fromColumn": "id",
+   "to": "table:django_admin_log",
+   "toColumn": "user_id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "system-用户权限接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_users_ticket",
+   "fromColumn": "ticket_id",
+   "to": "table:generator_ticket",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "system-用户权限接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_site_management",
+   "fromColumn": "region_id",
+   "to": "table:generator_management_area_allocation",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_site_management",
+   "fromColumn": "classification_5_s_id",
+   "to": "table:generator_definition_five_s",
+   "toColumn": "id",
+   "basis": "fk",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  },
+  {
+   "@type": "Relationship",
+   "from": "table:generator_job_code",
+   "fromColumn": "parent_id",
+   "to": "table:generator_job_code",
+   "toColumn": "id",
+   "basis": "naming",
+   "confidence": "mid",
+   "note": "零散模块总览接口"
+  }
+ ]
+}
