@@ -101,7 +101,7 @@ GROUP BY device_id HAVING cnt >= 2 ORDER BY cnt DESC;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspection_details | json | Y | - | - | 规格/型号[推断] | mid |
+| inspection_details | json | Y | - | - | 待确认 | low |
 | inspection_time | datetime(6) | Y | - | - | 时间[推断] | high |
 | inspection_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -158,7 +158,7 @@ GROUP BY device_id HAVING cnt >= 2 ORDER BY cnt DESC;
 | stop_time | varchar(20) | Y | - | - | 时间[推断] | high |
 | maintain_time | varchar(20) | Y | - | - | 时间[推断] | high |
 | order_time | varchar(20) | Y | - | - | 时间[推断] | high |
-| inspection_states | int | Y | - | - | 规格/型号[推断] | mid |
+| inspection_states | int | Y | - | - | 数值字段[推断-待确认] | low |
 | difficulty_level | int | Y | - | - | 等级[推断] | mid |
 | emergency_level | int | Y | - | - | 等级[推断] | mid |
 | is_active | int | Y | - | - | 标志位（布尔）[推断] | mid |
@@ -202,7 +202,7 @@ GROUP BY device_id HAVING cnt >= 2 ORDER BY cnt DESC;
 | repair_applicant_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | warranty_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
-| inspection_states | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
+| inspection_states | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | history | varchar(1000) | Y | - | - | 文本字段[推断-待确认] | low |
 | quality_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | rate | varchar(255) | Y | - | - | 比率/百分比[推断] | high |
@@ -266,7 +266,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

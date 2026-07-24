@@ -322,7 +322,7 @@ LIMIT 50;
 | name | varchar(255) | Y | - | - | 名称[推断] | high |
 | save_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | url | varchar(100) | N | - | - | 路径/链接[推断] | mid |
-| size | bigint | Y | - | - | 数值字段[推断-待确认] | low |
+| size | bigint | Y | - | - | 尺寸[推断] | mid |
 | md5sum | varchar(36) | N | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
@@ -561,7 +561,7 @@ LIMIT 50;
 | dept_level | int | Y | - | - | 等级[推断] | mid |
 | regulatory_dept | json | Y | - | - | 部门[推断] | high |
 | work_dept | json | Y | - | - | 部门[推断] | high |
-| entry_time | datetime(6) | Y | - | - | 时间[推断] | high |
+| entry_time | datetime(6) | Y | - | - | 入职时间[推断] | mid |
 | wechat_openid | varchar(150) | Y | UNI | - | 文本字段[推断-待确认] | low |
 
 ### system_users_groups（约 0 行）
@@ -776,7 +776,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

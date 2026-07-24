@@ -365,7 +365,7 @@ ORDER BY flow_cnt DESC;
 | pickup_person | varchar(80) | Y | - | - | 文本字段[推断-待确认] | low |
 | shipper | varchar(80) | Y | - | - | 文本字段[推断-待确认] | low |
 | car_number | varchar(80) | Y | - | - | 编号/代码[推断] | mid |
-| consignor | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
+| consignor | varchar(100) | Y | - | - | 发货方[推断] | mid |
 | consignee | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
 | receipt_number | varchar(30) | Y | - | - | 编号/代码[推断] | mid |
 | variety | varchar(10) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -392,7 +392,7 @@ ORDER BY flow_cnt DESC;
 | pickup_person | varchar(80) | Y | - | - | 文本字段[推断-待确认] | low |
 | shipper | varchar(80) | Y | - | - | 文本字段[推断-待确认] | low |
 | car_number | varchar(80) | Y | - | - | 编号/代码[推断] | mid |
-| consignor | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
+| consignor | varchar(100) | Y | - | - | 发货方[推断] | mid |
 | consignee | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
 | receipt_number | varchar(30) | Y | - | - | 编号/代码[推断] | mid |
 | variety | varchar(10) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -519,7 +519,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

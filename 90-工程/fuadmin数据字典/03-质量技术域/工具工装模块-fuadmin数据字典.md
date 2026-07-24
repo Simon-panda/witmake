@@ -153,7 +153,7 @@ GROUP BY st.cabinet_id, st.model;   -- 未扣领用/报废，仅为入库侧
 | factory_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | cabinet_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | admin | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| return_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| return_reason | varchar(255) | Y | - | - | 原因[推断] | mid |
 | model_type | varchar(255) | Y | - | - | 类型[推断] | mid |
 | supplier_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | barcode | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -182,7 +182,7 @@ GROUP BY st.cabinet_id, st.model;   -- 未扣领用/报废，仅为入库侧
 | barcode | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | time | datetime(6) | Y | - | - | 时间[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
-| scrap_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| scrap_reason | varchar(255) | Y | - | - | 报废原因[推断] | mid |
 | _MASK_TO_V2 | bigint | Y | MUL | - | 数值字段[推断-待确认] | low |
 
 ### generator_tool_storage（约 50440 行）
@@ -335,7 +335,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

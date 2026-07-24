@@ -143,7 +143,7 @@ WHERE contact_person LIKE '%王秀阳%' OR contact_phone LIKE '%1345169%';
 | sort | int | Y | - | - | 排序号 | high |
 | is_active | tinyint(1) | Y | - | - | 标志位（布尔）[推断] | mid |
 | company_documents | json | Y | - | - | 待确认 | low |
-| represented_brands | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| represented_brands | varchar(255) | Y | - | - | 品牌[推断] | high |
 | has_signed_agreement | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | category | varchar(50) | Y | - | - | 分类[推断] | mid |
@@ -173,7 +173,7 @@ WHERE contact_person LIKE '%王秀阳%' OR contact_phone LIKE '%1345169%';
 | sort | int | Y | - | - | 排序号 | high |
 | is_active | tinyint(1) | Y | - | - | 标志位（布尔）[推断] | mid |
 | company_documents | json | Y | - | - | 待确认 | low |
-| represented_brands | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| represented_brands | varchar(255) | Y | - | - | 品牌[推断] | high |
 | has_signed_agreement | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | category | varchar(50) | Y | - | - | 分类[推断] | mid |
@@ -295,7 +295,7 @@ WHERE contact_person LIKE '%王秀阳%' OR contact_phone LIKE '%1345169%';
 | sort | int | Y | - | - | 排序号 | high |
 | is_active | tinyint(1) | Y | - | - | 标志位（布尔）[推断] | mid |
 | company_documents | json | Y | - | - | 待确认 | low |
-| represented_brands | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| represented_brands | varchar(255) | Y | - | - | 品牌[推断] | high |
 | has_signed_agreement | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | category | varchar(50) | Y | - | - | 分类[推断] | mid |
@@ -325,7 +325,7 @@ WHERE contact_person LIKE '%王秀阳%' OR contact_phone LIKE '%1345169%';
 | sort | int | Y | - | - | 排序号 | high |
 | is_active | tinyint(1) | Y | - | - | 标志位（布尔）[推断] | mid |
 | company_documents | json | Y | - | - | 待确认 | low |
-| represented_brands | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| represented_brands | varchar(255) | Y | - | - | 品牌[推断] | high |
 | has_signed_agreement | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | category | varchar(50) | Y | - | - | 分类[推断] | mid |
@@ -415,7 +415,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

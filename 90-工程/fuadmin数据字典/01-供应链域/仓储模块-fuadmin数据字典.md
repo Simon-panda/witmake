@@ -160,7 +160,7 @@ ORDER BY create_datetime DESC;
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | project_qrcode | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | supplier_material_map_id | bigint | Y | - | - | 关联ID（目标表待确认）[推断] | low |
 
 ### generator_warehouse_inventory_gh（约 118 行）
@@ -183,7 +183,7 @@ ORDER BY create_datetime DESC;
 | inventory_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -211,7 +211,7 @@ ORDER BY create_datetime DESC;
 | inventory_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -239,7 +239,7 @@ ORDER BY create_datetime DESC;
 | inventory_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -280,7 +280,7 @@ ORDER BY create_datetime DESC;
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | project_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | project_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | stock_date | date | Y | - | - | 日期[推断] | high |
@@ -298,7 +298,7 @@ ORDER BY create_datetime DESC;
 | warehouse_transaction_id | bigint | Y | MUL | - | 关联ID → generator_warehouse_transaction.id[推断] | mid |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | purchase_order_detail_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order_detail.id[推断] | mid |
 
@@ -317,7 +317,7 @@ ORDER BY create_datetime DESC;
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | project_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | project_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | stock_date | date | Y | - | - | 日期[推断] | high |
@@ -336,7 +336,7 @@ ORDER BY create_datetime DESC;
 | warehouse_transaction_id | bigint | Y | MUL | - | 关联ID → generator_warehouse_transaction.id[推断] | mid |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 
 ### generator_warehouse_transaction_detail_gh（约 126 行）
@@ -355,7 +355,7 @@ ORDER BY create_datetime DESC;
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | project_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | project_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
@@ -367,7 +367,7 @@ ORDER BY create_datetime DESC;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -392,7 +392,7 @@ ORDER BY create_datetime DESC;
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | project_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | project_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
@@ -404,7 +404,7 @@ ORDER BY create_datetime DESC;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -429,7 +429,7 @@ ORDER BY create_datetime DESC;
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | project_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | project_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
@@ -441,7 +441,7 @@ ORDER BY create_datetime DESC;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -618,7 +618,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

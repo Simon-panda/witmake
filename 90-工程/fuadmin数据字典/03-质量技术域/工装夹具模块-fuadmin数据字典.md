@@ -141,7 +141,7 @@ ORDER BY repair_cnt DESC;
 | manufacturer | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | material | varchar(255) | Y | - | - | 物料[推断] | high |
 | url | varchar(255) | Y | - | - | 路径/链接[推断] | mid |
-| size | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| size | varchar(255) | Y | - | - | 尺寸[推断] | mid |
 | type | varchar(255) | Y | - | - | 类型[推断] | mid |
 | name | varchar(255) | Y | - | - | 名称[推断] | high |
 | code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
@@ -214,7 +214,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

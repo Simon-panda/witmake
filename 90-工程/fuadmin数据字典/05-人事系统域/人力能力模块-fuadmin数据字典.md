@@ -223,11 +223,11 @@ LIMIT 20;
 | contribution_ratio | decimal(8,2) | Y | - | - | 比率/百分比[推断] | high |
 | is_sign | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
 | is_floor | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
-| plan_output | int | Y | - | - | 计划值[推断] | mid |
+| plan_output | int | Y | - | - | 计划产量[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | parent_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -250,8 +250,8 @@ LIMIT 20;
 | is_active | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | devices_id | bigint | Y | MUL | - | 关联ID → generator_devices.id[推断] | mid |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -311,7 +311,7 @@ LIMIT 20;
 | home_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | registered_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | phone | varchar(20) | Y | - | - | 联系电话[推断] | high |
-| resignation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| resignation_reason | varchar(255) | Y | - | - | 原因[推断] | mid |
 | resignation_date | date | Y | - | - | 日期[推断] | high |
 | contract_end_date | date | Y | - | - | 日期[推断] | high |
 | contract_start_date | date | Y | - | - | 日期[推断] | high |
@@ -327,9 +327,9 @@ LIMIT 20;
 | residence_permit | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | veteran_status | tinyint(1) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | political_status | varchar(10) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| work_certificate | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
+| work_certificate | varchar(100) | Y | - | - | 工作证书[推断] | mid |
 | major | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
-| education | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| education | varchar(20) | Y | - | - | 学历[推断] | high |
 | location | varchar(30) | Y | - | - | 库位/位置[推断] | mid |
 | position | varchar(30) | Y | - | - | 库位/位置[推断] | mid |
 | department | varchar(30) | Y | - | - | 部门[推断] | high |
@@ -359,7 +359,7 @@ LIMIT 20;
 | hourly_wage | decimal(13,2) | Y | - | - | 年龄[推断] | high |
 | holiday_overtime | decimal(13,2) | Y | - | - | 时间[推断] | high |
 | regular_overtime | decimal(13,2) | Y | - | - | 时间[推断] | high |
-| normal_salary | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
+| normal_salary | decimal(13,2) | Y | - | - | 基本工资[推断] | mid |
 | night_shift_allowance | decimal(13,2) | Y | - | - | 班次[推断] | high |
 | other_subsidies | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | reward | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
@@ -391,7 +391,7 @@ LIMIT 20;
 | sort | int | Y | - | - | 排序号 | high |
 | veteran_status | tinyint(1) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | residence_permit | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
-| work_certificate | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
+| work_certificate | varchar(100) | Y | - | - | 工作证书[推断] | mid |
 | political_status | varchar(10) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | self_introduction | longtext | Y | - | - | 待确认 | low |
 | family_information | json | Y | - | - | 待确认 | low |
@@ -399,7 +399,7 @@ LIMIT 20;
 | major | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
 | graduation_school | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | graduation_date | date | Y | - | - | 日期[推断] | high |
-| education | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| education | varchar(20) | Y | - | - | 学历[推断] | high |
 | id_number | varchar(18) | Y | - | - | 编号/代码[推断] | mid |
 | household_registration_type | varchar(50) | Y | - | - | 类型[推断] | mid |
 | emergency_contact_phone | varchar(30) | Y | - | - | 联系电话[推断] | high |
@@ -469,7 +469,7 @@ LIMIT 20;
 | is_sign | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
 | range_price | json | Y | - | - | 单价[推断] | high |
 | is_floor | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
-| plan_output | int | Y | - | - | 计划值[推断] | mid |
+| plan_output | int | Y | - | - | 计划产量[推断] | high |
 | station_group | varchar(100) | Y | - | - | 工位/站点[推断] | mid |
 
 ### generator_job_code_product（约 1715 行）
@@ -637,7 +637,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

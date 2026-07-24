@@ -175,12 +175,12 @@ ORDER BY date;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspectors | varchar(30) | Y | - | - | 规格/型号[推断] | mid |
+| inspectors | varchar(30) | Y | - | - | 检验员[推断] | mid |
 | carbide | decimal(5,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | pearlite | decimal(5,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | ball_rate | decimal(5,2) | Y | - | - | 比率/百分比[推断] | high |
 | type | varchar(30) | Y | - | - | 类型[推断] | mid |
-| measured_hardness | int | Y | - | - | 数值字段[推断-待确认] | low |
+| measured_hardness | int | Y | - | - | 硬度[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | furnace_number | int | Y | - | - | 编号/代码[推断] | mid |
 | date_only | date | Y | MUL | - | 日期时间[推断] | mid |
@@ -253,10 +253,10 @@ ORDER BY date;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| Instantaneous_power_of_furnace_D | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| Instantaneous_power_of_furnace_C | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| Instantaneous_power_of_furnace_B | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| Instantaneous_power_of_furnace_A | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| Instantaneous_power_of_furnace_D | varchar(255) | Y | - | - | 熔炉[推断] | mid |
+| Instantaneous_power_of_furnace_C | varchar(255) | Y | - | - | 熔炉[推断] | mid |
+| Instantaneous_power_of_furnace_B | varchar(255) | Y | - | - | 熔炉[推断] | mid |
+| Instantaneous_power_of_furnace_A | varchar(255) | Y | - | - | 熔炉[推断] | mid |
 | total_instantaneous_power | varchar(255) | Y | - | - | 累计/合计[推断] | high |
 | date | datetime(6) | Y | - | - | 日期[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -276,7 +276,7 @@ ORDER BY date;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | abnormal_production_situation | varchar(255) | Y | - | - | 产品[推断] | high |
-| furnace_information | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| furnace_information | varchar(255) | Y | - | - | 熔炉[推断] | mid |
 | date | date | Y | - | - | 日期[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | furnace_number | varchar(10) | Y | - | - | 编号/代码[推断] | mid |
@@ -297,20 +297,20 @@ ORDER BY date;
 | sort | int | Y | - | - | 排序号 | high |
 | carbon_Si | decimal(6,3) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | carbon_C | decimal(6,3) | Y | - | - | 数值（小数）[推断-待确认] | low |
-| spectrum_Sn | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_Mg | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_Cu | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_Mn | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_Si | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_C | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
+| spectrum_Sn | decimal(6,3) | Y | - | - | 光谱Sn含量（%）[推断] | mid |
+| spectrum_Mg | decimal(6,3) | Y | - | - | 光谱Mg含量（%）[推断] | mid |
+| spectrum_Cu | decimal(6,3) | Y | - | - | 光谱Cu含量（%）[推断] | mid |
+| spectrum_Mn | decimal(6,3) | Y | - | - | 光谱Mn含量（%）[推断] | mid |
+| spectrum_Si | decimal(6,3) | Y | - | - | 光谱Si含量（%）[推断] | mid |
+| spectrum_C | decimal(6,3) | Y | - | - | 光谱C含量（%）[推断] | mid |
 | date_time | datetime(6) | Y | - | - | 时间[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | furnace_number | int | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | date_only | date | Y | MUL | - | 日期时间[推断] | mid |
-| spectrum_Cr | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_P | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
-| spectrum_S | decimal(6,3) | Y | - | - | 规格/型号[推断] | mid |
+| spectrum_Cr | decimal(6,3) | Y | - | - | 光谱Cr含量（%）[推断] | mid |
+| spectrum_P | decimal(6,3) | Y | - | - | 光谱P含量（%）[推断] | mid |
+| spectrum_S | decimal(6,3) | Y | - | - | 光谱S含量（%）[推断] | mid |
 
 ### generator_tf_furnace_smelt_production_plan（约 16367 行）
 业务定义: 熔炼光谱记录与生产批次计划的多对多桥表 ｜ 表注释: -
@@ -334,7 +334,7 @@ ORDER BY date;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | sum_count | int | Y | - | - | 数量[推断] | high |
-| entry_time | date | Y | - | - | 时间[推断] | high |
+| entry_time | date | Y | - | - | 录入时间[推断] | mid |
 | manufacturers | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | type | varchar(255) | Y | - | - | 类型[推断] | mid |
@@ -354,7 +354,7 @@ ORDER BY date;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| mould_confirmation | int | Y | - | - | 数值字段[推断-待确认] | low |
+| mould_confirmation | int | Y | - | - | 模具[推断] | high |
 | stop_statistics | longtext | Y | - | - | 待确认 | low |
 | updown_model | int | Y | - | - | 规格/型号[推断] | mid |
 | mould_number | int | Y | - | - | 编号/代码[推断] | mid |
@@ -363,14 +363,14 @@ ORDER BY date;
 | time | int | Y | - | - | 时间[推断] | high |
 | tf_product_name | varchar(30) | Y | - | - | 名称[推断] | high |
 | serial_number | int | Y | - | - | 单号/编号[推断] | high |
-| mould_worker | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
+| mould_worker | varchar(50) | Y | - | - | 模具[推断] | high |
 | work_date | datetime(6) | Y | - | - | 日期[推断] | high |
 | classes | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
-| mold_release | decimal(8,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
+| mold_release | decimal(8,2) | Y | - | - | 模具[推断] | high |
 | strainer | decimal(8,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
-| hardness_down | int | Y | - | - | 数值字段[推断-待确认] | low |
-| hardness_up | int | Y | - | - | 数值字段[推断-待确认] | low |
+| hardness_down | int | Y | - | - | 硬度[推断] | mid |
+| hardness_up | int | Y | - | - | 硬度上限[推断] | mid |
 | height_down | int | Y | - | - | 数值字段[推断-待确认] | low |
 | height_up | int | Y | - | - | 数值字段[推断-待确认] | low |
 | press_down | decimal(4,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
@@ -493,12 +493,12 @@ ORDER BY date;
 | first_temper | int | Y | - | - | 数值字段[推断-待确认] | low |
 | last_temper | int | Y | - | - | 数值字段[推断-待确认] | low |
 | mode_clean | int | Y | - | - | 数值字段[推断-待确认] | low |
-| quality_signature | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| quality_signature | varchar(30) | Y | - | - | 质量签名[推断] | mid |
 | responser | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
 | tf_product_name | varchar(30) | Y | - | - | 名称[推断] | high |
 | tf_product_type | varchar(30) | Y | - | - | 类型[推断] | mid |
 | heat_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
-| filter_size | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| filter_size | varchar(20) | Y | - | - | 尺寸[推断] | mid |
 | _MASK_FROM_V2 | timestamp | N | MUL | - | 待确认 | low |
 
 ### generator_tf_rapid_goldtest（约 7807 行）
@@ -515,7 +515,7 @@ ORDER BY date;
 | sort | int | Y | - | - | 排序号 | high |
 | two_ball | decimal(4,3) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | one_ball | decimal(4,3) | Y | - | - | 数值（小数）[推断-待确认] | low |
-| size | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| size | varchar(30) | Y | - | - | 尺寸[推断] | mid |
 | date_time | datetime(6) | Y | - | - | 时间[推断] | high |
 | furnace_number | int | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -661,7 +661,7 @@ ORDER BY date;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | weight | varchar(255) | Y | - | - | 重量[推断] | high |
-| package_count | varchar(255) | Y | - | - | 数量[推断] | high |
+| package_count | varchar(255) | Y | - | - | 包数[推断] | high |
 | batch_number | varchar(255) | Y | - | - | 单号/编号[推断] | high |
 | furnace_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | time | datetime(6) | Y | - | - | 时间[推断] | high |
@@ -819,7 +819,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

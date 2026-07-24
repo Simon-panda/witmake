@@ -142,13 +142,13 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | safety_stock | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
 | cost | decimal(15,4) | Y | - | - | 金额[推断] | high |
 | standard_price | decimal(15,4) | Y | - | - | 单价[推断] | high |
-| processing_product | varchar(50) | Y | - | - | 工序[推断] | mid |
+| processing_product | varchar(50) | Y | - | - | 加工产品[推断] | mid |
 | product_type | varchar(50) | Y | - | - | 类型[推断] | mid |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | material_qrcode | varchar(50) | Y | - | - | 物料[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | internal_category | varchar(50) | Y | - | - | 分类[推断] | mid |
 | material_attachments | json | Y | - | - | 物料[推断] | high |
 
@@ -169,9 +169,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | cost | decimal(15,4) | Y | - | - | 金额[推断] | high |
 | standard_price | decimal(15,4) | Y | - | - | 单价[推断] | high |
 | internal_category | varchar(50) | Y | - | - | 分类[推断] | mid |
-| processing_product | varchar(50) | Y | - | - | 工序[推断] | mid |
+| processing_product | varchar(50) | Y | - | - | 加工产品[推断] | mid |
 | product_type | varchar(50) | Y | - | - | 类型[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | material_qrcode | varchar(50) | Y | - | - | 物料[推断] | high |
@@ -195,9 +195,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | cost | decimal(15,4) | Y | - | - | 金额[推断] | high |
 | standard_price | decimal(15,4) | Y | - | - | 单价[推断] | high |
 | internal_category | varchar(50) | Y | - | - | 分类[推断] | mid |
-| processing_product | varchar(50) | Y | - | - | 工序[推断] | mid |
+| processing_product | varchar(50) | Y | - | - | 加工产品[推断] | mid |
 | product_type | varchar(50) | Y | - | - | 类型[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | material_qrcode | varchar(50) | Y | - | - | 物料[推断] | high |
@@ -221,9 +221,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | cost | decimal(15,4) | Y | - | - | 金额[推断] | high |
 | standard_price | decimal(15,4) | Y | - | - | 单价[推断] | high |
 | internal_category | varchar(50) | Y | - | - | 分类[推断] | mid |
-| processing_product | varchar(50) | Y | - | - | 工序[推断] | mid |
+| processing_product | varchar(50) | Y | - | - | 加工产品[推断] | mid |
 | product_type | varchar(50) | Y | - | - | 类型[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
 | material_qrcode | varchar(50) | Y | - | - | 物料[推断] | high |
@@ -243,17 +243,17 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | order_type | int | Y | - | - | 类型[推断] | mid |
 
 ### generator_purchase_order_copy1（约 678 行）
@@ -269,17 +269,17 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 
 ### generator_purchase_order_detail（约 2630 行）
 业务定义: 采购订单明细：回链申请行与供应商物料映射，含入库数/结算状态 ｜ 表注释: [脏注释-待清理] 'fuadmin.generator_machined_number_view' is not BASE TABLE
@@ -316,8 +316,8 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | supplier_material_map_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | settlement_status | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
@@ -359,8 +359,8 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | supplier_material_map_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 
 ### generator_purchase_order_detail_gh（约 176 行）
@@ -378,7 +378,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -392,7 +392,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -419,7 +419,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -433,7 +433,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -460,7 +460,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -474,7 +474,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -499,12 +499,12 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | doc_type | varchar(20) | Y | - | - | 类型[推断] | mid |
-| doc_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| doc_number | varchar(255) | Y | - | - | 单据编号[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | signing_date | date | Y | - | - | 日期[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 
 ### generator_purchase_order_document_copy1（约 1040 行）
@@ -520,7 +520,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | doc_type | varchar(20) | Y | - | - | 类型[推断] | mid |
-| doc_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| doc_number | varchar(255) | Y | - | - | 单据编号[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -538,11 +538,11 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | doc_type | varchar(20) | Y | - | - | 类型[推断] | mid |
-| doc_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| doc_number | varchar(255) | Y | - | - | 单据编号[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | signing_date | date | Y | - | - | 日期[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
@@ -559,11 +559,11 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | doc_type | varchar(20) | Y | - | - | 类型[推断] | mid |
-| doc_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| doc_number | varchar(255) | Y | - | - | 单据编号[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | signing_date | date | Y | - | - | 日期[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
@@ -580,11 +580,11 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | doc_type | varchar(20) | Y | - | - | 类型[推断] | mid |
-| doc_number | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| doc_number | varchar(255) | Y | - | - | 单据编号[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | signing_date | date | Y | - | - | 日期[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
@@ -600,17 +600,17 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | order_type | int | Y | - | - | 类型[推断] | mid |
 
@@ -626,17 +626,17 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | order_type | int | Y | - | - | 类型[推断] | mid |
 
@@ -652,17 +652,17 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | order_type | int | Y | - | - | 类型[推断] | mid |
 
@@ -678,9 +678,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
@@ -712,9 +712,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | required_time | date | Y | - | - | 时间[推断] | high |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 
 ### generator_purchase_requisition_detail_gh（约 0 行）
 业务定义: 广汇站点采购申请明细（当前0行未启用） ｜ 表注释: -
@@ -728,7 +728,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -740,7 +740,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -759,7 +759,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -771,7 +771,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -790,7 +790,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -802,7 +802,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -821,9 +821,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
@@ -840,9 +840,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
@@ -859,9 +859,9 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
@@ -878,22 +878,22 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | order_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -916,7 +916,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -931,15 +931,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_order_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order.id[推断] | mid |
@@ -966,7 +966,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -981,15 +981,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_order_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order.id[推断] | mid |
@@ -1016,7 +1016,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -1031,15 +1031,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_order_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order.id[推断] | mid |
@@ -1066,7 +1066,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | approval_comment | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | predict_date | date | Y | - | - | 日期[推断] | high |
 | predict_days | smallint unsigned | Y | - | - | 待确认 | low |
@@ -1081,15 +1081,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_order_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order.id[推断] | mid |
@@ -1113,22 +1113,22 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | order_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1148,22 +1148,22 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | order_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1183,22 +1183,22 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| order_belong | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| order_belong | varchar(30) | Y | - | - | 订单归属站点[推断] | mid |
 | total_price | decimal(13,2) | Y | - | - | 单价[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | order_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | order_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | payment_term | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | deposit_bank | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | bank_account | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1218,15 +1218,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1246,7 +1246,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -1258,14 +1258,14 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_requisition_id | bigint | Y | MUL | - | 关联ID → generator_purchase_requisition.id[推断] | mid |
@@ -1286,7 +1286,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -1298,14 +1298,14 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_requisition_id | bigint | Y | MUL | - | 关联ID → generator_purchase_requisition.id[推断] | mid |
@@ -1326,7 +1326,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -1338,14 +1338,14 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_requisition_id | bigint | Y | MUL | - | 关联ID → generator_purchase_requisition.id[推断] | mid |
@@ -1366,7 +1366,7 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| operation_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| operation_reason | varchar(255) | Y | - | - | 操作原因[推断] | mid |
 | requisition_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | delivery_address | varchar(255) | Y | - | - | 地址[推断] | high |
 | required_time | date | Y | - | - | 时间[推断] | high |
@@ -1378,14 +1378,14 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | material_category | varchar(20) | Y | - | - | 分类[推断] | mid |
 | quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(50) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | purchase_requisition_id | bigint | Y | MUL | - | 关联ID → generator_purchase_requisition.id[推断] | mid |
@@ -1406,15 +1406,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1434,15 +1434,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1462,15 +1462,15 @@ UNION ALL SELECT 'TF铸造', SUM(total_price) FROM generator_purchase_order_tf;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| requisition_reason | int | Y | - | - | 数值字段[推断-待确认] | low |
+| requisition_reason | int | Y | - | - | 原因[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | requisition_type | int | Y | - | - | 类型[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | requisition_number | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
 | history_id | int | N | PRI | - | 关联ID（目标表待确认）[推断] | low |
 | history_date | datetime(6) | N | MUL | - | 日期[推断] | high |
-| history_change_reason | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| history_type | varchar(1) | N | - | - | 类型[推断] | mid |
+| history_change_reason | varchar(100) | Y | - | - | 原因[推断] | mid |
+| history_type | varchar(1) | N | - | - | 快照操作类型（+新增/~修改/-删除）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | history_user_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | operation_id | varchar(36) | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -1586,7 +1586,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

@@ -130,7 +130,7 @@ GROUP BY o.id HAVING diff <> 0;
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | phase | int | Y | - | - | 数值字段[推断-待确认] | low |
 | return_quantity | int | Y | - | - | 数量[推断] | high |
-| return_reason | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
+| return_reason | varchar(50) | Y | - | - | 原因[推断] | mid |
 | product_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | belong | int | Y | - | - | 数值字段[推断-待确认] | low |
 | tracking_number | varchar(100) | Y | - | - | 编号/代码[推断] | mid |
@@ -149,7 +149,7 @@ GROUP BY o.id HAVING diff <> 0;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspection_record | json | Y | - | - | 规格/型号[推断] | mid |
+| inspection_record | json | Y | - | - | 待确认 | low |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | is_returned_to_factory | tinyint(1) | Y | - | - | 标志位（布尔）[推断] | mid |
@@ -231,7 +231,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

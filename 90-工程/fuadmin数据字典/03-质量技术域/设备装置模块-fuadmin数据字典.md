@@ -83,7 +83,7 @@ FROM generator_devices WHERE is_delete=0 GROUP BY manufacturer ORDER BY 台数 D
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspection_content | json | Y | - | - | 规格/型号[推断] | mid |
+| inspection_content | json | Y | - | - | 内容[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | inspector_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 
@@ -127,7 +127,7 @@ FROM generator_devices WHERE is_delete=0 GROUP BY manufacturer ORDER BY 台数 D
 | production_line | varchar(255) | Y | - | - | 产线[推断] | mid |
 | four_axis_config | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | tool_config | varchar(255) | Y | - | - | 刀具/工具[推断] | mid |
-| power_parameters | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| power_parameters | varchar(255) | Y | - | - | 功率/电源[推断] | mid |
 | manufacturer | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | manufacturing_date | date | Y | - | - | 日期[推断] | high |
 | arrival_date | date | Y | - | - | 日期[推断] | high |
@@ -205,7 +205,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

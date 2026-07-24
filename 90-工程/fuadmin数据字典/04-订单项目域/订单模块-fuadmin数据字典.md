@@ -12,16 +12,16 @@ tags: [工程, 数据管道, 索引, 管理]
 
 ## 1 模块概述
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 2 Agent快速上岗指南
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 3 数据字典
 
 ### generator_order_detail_document_mapping（约 4899 行）
-业务定义: 见同域总览或相关主模块 ｜ 表注释: [脏注释-待清理] 'fuadmin.generator_machined_number_view' is not BASE TABLE
+业务定义: （待补充） ｜ 表注释: [脏注释-待清理] 'fuadmin.generator_machined_number_view' is not BASE TABLE
 
 | 字段 | 类型 | 可空 | 键 | 原始注释 | 推断语义 | 置信度 |
 |---|---|---|---|---|---|---|
@@ -38,7 +38,7 @@ tags: [工程, 数据管道, 索引, 管理]
 | actual_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 
 ### generator_order_detail_document_mapping_gh（约 133 行）
-业务定义: 见同域总览或相关主模块 ｜ 表注释: -
+业务定义: （待补充） ｜ 表注释: -
 
 | 字段 | 类型 | 可空 | 键 | 原始注释 | 推断语义 | 置信度 |
 |---|---|---|---|---|---|---|
@@ -55,7 +55,7 @@ tags: [工程, 数据管道, 索引, 管理]
 | purchase_order_detail_id | bigint | N | MUL | - | 关联ID → generator_purchase_order_detail.id[推断] | mid |
 
 ### generator_order_detail_document_mapping_tf（约 26 行）
-业务定义: 见同域总览或相关主模块 ｜ 表注释: -
+业务定义: （待补充） ｜ 表注释: -
 
 | 字段 | 类型 | 可空 | 键 | 原始注释 | 推断语义 | 置信度 |
 |---|---|---|---|---|---|---|
@@ -72,7 +72,7 @@ tags: [工程, 数据管道, 索引, 管理]
 | purchase_order_detail_id | bigint | N | MUL | - | 关联ID → generator_purchase_order_detail.id[推断] | mid |
 
 ### generator_order_detail_document_mapping_zt（约 0 行）
-业务定义: 见同域总览或相关主模块 ｜ 表注释: -
+业务定义: （待补充） ｜ 表注释: -
 
 | 字段 | 类型 | 可空 | 键 | 原始注释 | 推断语义 | 置信度 |
 |---|---|---|---|---|---|---|
@@ -89,7 +89,7 @@ tags: [工程, 数据管道, 索引, 管理]
 | purchase_order_detail_id | bigint | N | MUL | - | 关联ID → generator_purchase_order_detail.id[推断] | mid |
 
 ### generator_customer_order（约 2361 行）
-业务定义: 见同域总览或相关主模块 ｜ 表注释: -
+业务定义: （待补充） ｜ 表注释: -
 
 | 字段 | 类型 | 可空 | 键 | 原始注释 | 推断语义 | 置信度 |
 |---|---|---|---|---|---|---|
@@ -102,7 +102,7 @@ tags: [工程, 数据管道, 索引, 管理]
 | sort | int | Y | - | - | 排序号 | high |
 | image | varchar(255) | Y | - | - | 图片路径[推断] | mid |
 | count | int | Y | - | - | 数量[推断] | high |
-| box_number | int | Y | - | - | 编号/代码[推断] | mid |
+| box_number | int | Y | - | - | 箱数[推断] | mid |
 | number | int | Y | - | - | 编号/代码[推断] | mid |
 | product_name | varchar(20) | Y | - | - | 名称[推断] | high |
 | customer_name | varchar(30) | Y | - | - | 名称[推断] | high |
@@ -114,15 +114,15 @@ tags: [工程, 数据管道, 索引, 管理]
 
 ## 4 模块ER图
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 5 跨模块接口
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

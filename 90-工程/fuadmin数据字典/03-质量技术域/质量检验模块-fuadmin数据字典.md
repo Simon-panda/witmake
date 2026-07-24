@@ -112,8 +112,8 @@ ORDER BY dot;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspection_standards | longtext | Y | - | - | 规格/型号[推断] | mid |
-| inspection_item | longtext | Y | - | - | 规格/型号[推断] | mid |
+| inspection_standards | longtext | Y | - | - | 待确认 | low |
+| inspection_item | longtext | Y | - | - | 待确认 | low |
 | inspection_object_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | classification_5s_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -147,7 +147,7 @@ ORDER BY dot;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| inspection_details | json | Y | - | - | 规格/型号[推断] | mid |
+| inspection_details | json | Y | - | - | 待确认 | low |
 | device_type | varchar(50) | Y | - | - | 类型[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | device_name_id | bigint | Y | MUL | - | 关联ID（目标表待确认）[推断] | low |
@@ -171,7 +171,7 @@ ORDER BY dot;
 | img | json | Y | - | - | 待确认 | low |
 | code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | type | varchar(50) | Y | - | - | 类型[推断] | mid |
-| inspector | varchar(20) | Y | - | - | 规格/型号[推断] | mid |
+| inspector | varchar(20) | Y | - | - | 检验员[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | associated_infor | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
 
@@ -308,7 +308,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

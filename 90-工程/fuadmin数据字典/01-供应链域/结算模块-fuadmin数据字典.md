@@ -140,7 +140,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | invoiced_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | settlement_type | varchar(30) | Y | - | - | 类型[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | is_closed | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
@@ -247,7 +247,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | invoiced_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | settlement_type | varchar(30) | Y | - | - | 类型[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | is_closed | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
@@ -270,7 +270,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | invoiced_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | settlement_type | varchar(30) | Y | - | - | 类型[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | is_closed | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
@@ -293,7 +293,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | invoiced_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | paid_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | settlement_type | varchar(30) | Y | - | - | 类型[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | is_closed | tinyint(1) | N | - | - | 标志位（布尔）[推断] | mid |
@@ -315,7 +315,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | invoice_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | invoice_date | date | Y | - | - | 日期[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -417,7 +417,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | invoice_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | invoice_date | date | Y | - | - | 日期[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -507,7 +507,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | invoice_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | invoice_date | date | Y | - | - | 日期[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -529,7 +529,7 @@ UNION ALL SELECT '治通分表', SUM(due_amount), SUM(paid_amount) FROM generato
 | invoice_number | varchar(50) | Y | - | - | 单号/编号[推断] | high |
 | invoice_date | date | Y | - | - | 日期[推断] | high |
 | total_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
-| due_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
+| due_amount | decimal(13,2) | Y | - | - | 应付金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | file_url | json | Y | - | - | 路径/链接[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -723,7 +723,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

@@ -240,7 +240,7 @@ GROUP BY supplier ORDER BY recycle_cnt DESC;
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
 | name | varchar(80) | Y | - | - | 名称[推断] | high |
 | bar_code | varchar(20) | Y | - | - | 编号/代码[推断] | mid |
-| subclass | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| subclass | varchar(20) | Y | - | - | 子类[推断] | mid |
 | classes | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | project | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | supplier | varchar(50) | Y | - | - | 供应商[推断] | high |
@@ -389,7 +389,7 @@ GROUP BY supplier ORDER BY recycle_cnt DESC;
 | external_inspection_quantity | varchar(255) | Y | - | - | 数量[推断] | high |
 | old_knife_barcode | varchar(255) | Y | - | - | 刀具/工具[推断] | mid |
 | new_knife_barcode | varchar(255) | Y | - | - | 刀具/工具[推断] | mid |
-| time_end | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| time_end | varchar(255) | Y | - | - | 结束时间[推断] | mid |
 | time_on | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | operator | varchar(255) | Y | - | - | 操作人[推断] | high |
 | action | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -520,11 +520,11 @@ GROUP BY supplier ORDER BY recycle_cnt DESC;
 | old_bar_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
 | model | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | new_tool_supplier | varchar(255) | Y | - | - | 供应商[推断] | high |
-| change_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| change_reason | varchar(255) | Y | - | - | 原因[推断] | mid |
 | working_shift | varchar(255) | Y | - | - | 班次[推断] | high |
 | update_time | datetime | Y | - | - | 时间[推断] | high |
 | status | varchar(255) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| inspector | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
+| inspector | varchar(255) | Y | - | - | 检验员[推断] | mid |
 | tool_change_qrcode | varchar(255) | Y | - | - | 刀具/工具[推断] | mid |
 | processing_quantity_machine | varchar(255) | Y | - | - | 工序[推断] | mid |
 | processing_data_worker | varchar(255) | Y | - | - | 工序[推断] | mid |
@@ -659,7 +659,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

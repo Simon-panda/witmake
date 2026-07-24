@@ -134,7 +134,7 @@ GROUP BY pay_method;
 | application_number | varchar(50) | Y | UNI | - | 编号/代码[推断] | mid |
 | application_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | purchase_order_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order.id[推断] | mid |
 | pay_method | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -157,7 +157,7 @@ GROUP BY pay_method;
 | application_number | varchar(50) | Y | UNI | - | 编号/代码[推断] | mid |
 | application_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | pay_time | date | Y | - | - | 时间[推断] | high |
 | pay_method | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -180,7 +180,7 @@ GROUP BY pay_method;
 | application_number | varchar(50) | Y | UNI | - | 编号/代码[推断] | mid |
 | application_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | pay_time | date | Y | - | - | 时间[推断] | high |
 | pay_method | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -203,7 +203,7 @@ GROUP BY pay_method;
 | application_number | varchar(50) | Y | UNI | - | 编号/代码[推断] | mid |
 | application_amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | pay_time | date | Y | - | - | 时间[推断] | high |
 | pay_method | varchar(50) | Y | - | - | 文本字段[推断-待确认] | low |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -376,7 +376,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

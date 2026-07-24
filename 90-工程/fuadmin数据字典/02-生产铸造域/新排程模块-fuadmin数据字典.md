@@ -105,9 +105,9 @@ ORDER BY date DESC;
 | train_user | varchar(30) | Y | - | - | 用户[推断] | mid |
 | right | int | Y | - | - | 数值字段[推断-待确认] | low |
 | left | int | Y | - | - | 数值字段[推断-待确认] | low |
-| actual_output | int | Y | - | - | 实际值[推断] | high |
-| plan_output | int | Y | - | - | 计划值[推断] | mid |
-| work_hours | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
+| actual_output | int | Y | - | - | 实际产量[推断] | high |
+| plan_output | int | Y | - | - | 计划产量[推断] | high |
+| work_hours | decimal(13,2) | Y | - | - | 工时/小时[推断] | mid |
 | work_state | varchar(20) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | job_code_name | varchar(80) | Y | - | - | 名称[推断] | high |
 | day_night | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
@@ -119,7 +119,7 @@ ORDER BY date DESC;
 | date | date | Y | - | - | 日期[推断] | high |
 | product_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | downtime | decimal(6,1) | Y | - | - | 时间[推断] | high |
-| finance_hours | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
+| finance_hours | decimal(13,2) | Y | - | - | 工时/小时[推断] | mid |
 
 ### generator_newscheduling_temp（约 42987 行）
 业务定义: 报工暂存与审批区（含员工备注/审批人/历史快照，审批后转正式表） ｜ 表注释: -
@@ -140,8 +140,8 @@ ORDER BY date DESC;
 | day_night | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | job_code_name | varchar(80) | Y | - | - | 名称[推断] | high |
 | product_name | varchar(50) | Y | - | - | 名称[推断] | high |
-| actual_output | int | Y | - | - | 实际值[推断] | high |
-| work_hours | decimal(13,2) | Y | - | - | 数值（小数）[推断-待确认] | low |
+| actual_output | int | Y | - | - | 实际产量[推断] | high |
+| work_hours | decimal(13,2) | Y | - | - | 工时/小时[推断] | mid |
 | industrial_waste | int | Y | - | - | 数值字段[推断-待确认] | low |
 | scrap_waste | int | Y | - | - | 数值字段[推断-待确认] | low |
 | user_remark | varchar(255) | Y | - | - | 用户[推断] | mid |
@@ -196,7 +196,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[TF铸造模块-fuadmin数据字典]]

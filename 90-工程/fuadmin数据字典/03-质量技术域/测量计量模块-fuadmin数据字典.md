@@ -148,10 +148,10 @@ ORDER BY site, cnt DESC;
 | person | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | status | varchar(255) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | result | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| temperature | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| temperature | varchar(255) | Y | - | - | 温度[推断] | high |
 | time | datetime(6) | Y | - | - | 时间[推断] | high |
-| inspection_person | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
-| first_article_reason | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| inspection_person | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
+| first_article_reason | varchar(255) | Y | - | - | 原因[推断] | mid |
 | is_first_article | varchar(255) | Y | - | - | 标志位（布尔）[推断] | mid |
 | inspection_status | varchar(255) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | mold_no | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
@@ -291,7 +291,7 @@ cmm_inspection_log(3.77万)
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

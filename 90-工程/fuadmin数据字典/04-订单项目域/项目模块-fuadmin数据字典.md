@@ -136,7 +136,7 @@ ORDER BY s.planned_end;
 | sort | int | Y | - | - | 排序号 | high |
 | date | date | Y | - | - | 日期[推断] | high |
 | user_id | bigint | Y | MUL | - | 关联ID → system_users.id[推断] | mid |
-| working_hours | varchar(30) | Y | - | - | 文本字段[推断-待确认] | low |
+| working_hours | varchar(30) | Y | - | - | 工时/小时[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
 ### generator_project_info（约 325 行）
@@ -202,7 +202,7 @@ ORDER BY s.planned_end;
 | sort | int | Y | - | - | 排序号 | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | tax_rate | decimal(6,2) | Y | - | - | 比率/百分比[推断] | high |
@@ -223,7 +223,7 @@ ORDER BY s.planned_end;
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | purchase_order_detail_id | bigint | Y | MUL | - | 关联ID → generator_purchase_order_detail.id[推断] | mid |
 
 ### generator_project_material_summary_detail_copy1（约 3361 行）
@@ -240,7 +240,7 @@ ORDER BY s.planned_end;
 | sort | int | Y | - | - | 排序号 | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | remaining_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | tax_rate | decimal(6,2) | Y | - | - | 比率/百分比[推断] | high |
@@ -262,7 +262,7 @@ ORDER BY s.planned_end;
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
 | purchase_requisition_detail_id | bigint | Y | - | - | 关联ID → generator_purchase_requisition_detail.id[推断] | mid |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 
 ### generator_project_material_summary_detail_gh（约 0 行）
 业务定义: 项目物料明细广汇站点分表（同构，0行未启用） ｜ 表注释: -
@@ -282,7 +282,7 @@ ORDER BY s.planned_end;
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_date | date | Y | - | - | 日期[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | tax_rate | decimal(6,2) | Y | - | - | 比率/百分比[推断] | high |
@@ -292,7 +292,7 @@ ORDER BY s.planned_end;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -320,7 +320,7 @@ ORDER BY s.planned_end;
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_date | date | Y | - | - | 日期[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | tax_rate | decimal(6,2) | Y | - | - | 比率/百分比[推断] | high |
@@ -330,7 +330,7 @@ ORDER BY s.planned_end;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -358,7 +358,7 @@ ORDER BY s.planned_end;
 | stock_quantity | decimal(13,2) | Y | - | - | 数量[推断] | high |
 | stock_date | date | Y | - | - | 日期[推断] | high |
 | location | varchar(50) | Y | - | - | 库位/位置[推断] | mid |
-| recipient | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| recipient | varchar(20) | Y | - | - | 接收人[推断] | high |
 | supplier_name | varchar(50) | Y | - | - | 名称[推断] | high |
 | amount | decimal(13,2) | Y | - | - | 金额[推断] | high |
 | tax_rate | decimal(6,2) | Y | - | - | 比率/百分比[推断] | high |
@@ -368,7 +368,7 @@ ORDER BY s.planned_end;
 | material_subcategory | varchar(50) | Y | - | - | 分类[推断] | mid |
 | applicant | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
 | unit | varchar(10) | Y | - | - | 计量单位[推断] | high |
-| brand | varchar(20) | Y | - | - | 文本字段[推断-待确认] | low |
+| brand | varchar(20) | Y | - | - | 品牌[推断] | high |
 | config_requirement | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
 | specification | varchar(255) | Y | - | - | 规格/型号[推断] | mid |
 | material_name | varchar(255) | Y | - | - | 名称[推断] | high |
@@ -607,7 +607,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[fuadmin数据字典总览]]

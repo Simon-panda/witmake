@@ -164,7 +164,7 @@ WHERE r.product_qrcode = 'V210126#SR40661121#P5511700270#';
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| box_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(255) | Y | - | - | 箱码[推断] | mid |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | type | varchar(20) | Y | - | - | 类型[推断] | mid |
 | job_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
@@ -210,7 +210,7 @@ WHERE r.product_qrcode = 'V210126#SR40661121#P5511700270#';
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| approval_process | json | Y | - | - | 工序[推断] | mid |
+| approval_process | json | Y | - | - | 审批流程（JSON）[推断] | high |
 | picture | json | Y | - | - | 图片路径[推断] | mid |
 | phase | int | Y | - | - | 数值字段[推断-待确认] | low |
 | exception_record_datetime | datetime | Y | - | - | 时间[推断] | high |
@@ -330,7 +330,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[TF铸造模块-fuadmin数据字典]]

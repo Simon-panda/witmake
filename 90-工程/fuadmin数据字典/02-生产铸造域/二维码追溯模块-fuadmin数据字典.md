@@ -144,14 +144,14 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
-| Inspection_data | json | Y | - | - | 规格/型号[推断] | mid |
+| Inspection_data | json | Y | - | - | 待确认 | low |
 | certigier | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
 | state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | boxstate | varchar(10) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | number | int | Y | - | - | 编号/代码[推断] | mid |
-| box_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(255) | Y | - | - | 箱码[推断] | mid |
 | user | varchar(20) | Y | - | - | 用户[推断] | mid |
-| entry_time | datetime(6) | Y | - | - | 时间[推断] | high |
+| entry_time | datetime(6) | Y | - | - | 录入时间[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
 ### generator_qrcode_out（约 0 行）
@@ -167,11 +167,11 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | certigier | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
-| consignor | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
+| consignor | varchar(100) | Y | - | - | 发货方[推断] | mid |
 | consignee | varchar(100) | Y | - | - | 文本字段[推断-待确认] | low |
 | car_number | varchar(20) | Y | - | - | 编号/代码[推断] | mid |
 | number | int | Y | - | - | 编号/代码[推断] | mid |
-| box_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(255) | Y | - | - | 箱码[推断] | mid |
 | user | varchar(20) | Y | - | - | 用户[推断] | mid |
 | out_time | datetime(6) | Y | - | - | 时间[推断] | high |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -189,7 +189,7 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | sort | int | Y | - | - | 排序号 | high |
 | user | varchar(20) | N | - | - | 用户[推断] | mid |
-| box_code | varchar(255) | N | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(255) | N | - | - | 箱码[推断] | mid |
 | product_name | varchar(20) | N | - | - | 名称[推断] | high |
 | bar_code | varchar(30) | N | - | - | 编号/代码[推断] | mid |
 | number | int | N | - | - | 编号/代码[推断] | mid |
@@ -218,10 +218,10 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | product_qr | varchar(50) | Y | - | - | 产品[推断] | high |
 | product_qr_verified | int | Y | - | - | 产品[推断] | high |
 | p_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
-| ai_state | int | Y | - | - | 状态（枚举值待确认）[推断] | mid |
+| ai_state | int | Y | - | - | AI复核状态（枚举待确认）[推断] | mid |
 | number | int | Y | - | - | 编号/代码[推断] | mid |
 | product_name | varchar(20) | Y | - | - | 名称[推断] | high |
-| box_code | varchar(50) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(50) | Y | - | - | 箱码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 | flag | tinyint(1) | Y | - | - | 数值字段[推断-待确认] | low |
 | image_md5 | json | Y | - | - | 图片路径[推断] | mid |
@@ -263,7 +263,7 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | update_datetime | datetime(6) | Y | - | - | 最后更新时间 | high |
 | create_datetime | datetime(6) | Y | - | - | 创建时间 | high |
 | system_user | tinyint(1) | Y | - | - | 用户[推断] | mid |
-| box_code | varchar(100) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(100) | Y | - | - | 箱码[推断] | mid |
 | img | json | Y | - | - | 待确认 | low |
 | operate_state | varchar(50) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
@@ -299,7 +299,7 @@ GROUP BY tracking_id, from_station_id, to_station_id;
 | state | tinyint(1) | Y | - | - | 状态（枚举值待确认）[推断] | mid |
 | type | varchar(20) | Y | - | - | 类型[推断] | mid |
 | qrcode | varchar(255) | Y | - | - | 文本字段[推断-待确认] | low |
-| box_code | varchar(255) | Y | - | - | 编号/代码[推断] | mid |
+| box_code | varchar(255) | Y | - | - | 箱码[推断] | mid |
 | creator_id | bigint | Y | MUL | - | 创建人ID → system_users.id | high |
 
 ### track_route（约 0 行）
@@ -560,7 +560,7 @@ erDiagram
 
 ## 6 字段备注改进建议
 
-（本模块为小型/过渡性模块，业务语义与归属建议见同域《零散模块总览》或域内相关主模块文档）
+（待 enrich 补充）
 
 ## 相关页面
 - [[TF铸造模块-fuadmin数据字典]]
