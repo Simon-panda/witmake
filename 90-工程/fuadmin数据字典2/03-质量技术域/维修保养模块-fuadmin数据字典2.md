@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 维修保养]
 ---
 
 # 维修保养模块 · fuadmin 数据字典2（代码实证版）
-> 域: 03-质量技术域 | 表数: 2 | 字段: 34 | 代码锚定: 32(94%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/03-质量技术域/维修保养模块-fuadmin数据字典]]
+> 域: 03-质量技术域 | 表数: 2 | 字段: 34 | 代码锚定: 34(100%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/03-质量技术域/维修保养模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -16,21 +16,21 @@ tags: [工程, 数据字典2, 代码实证, 维修保养]
 ## 表清单
 | 表 | 定义 | 行数(估) | 锚点 |
 |---|---|---|---|
-| `generator_maintenance_records` | 设备维修记录 | 3 | 💻 |
-| `generator_maintenance_schedule` | 设备维修计划表 | 9 | 💻 |
+| `generator_maintenance_records` | 设备维修执行明细（配件、维修时长、技师、前后照片） | 3 | 💻 |
+| `generator_maintenance_schedule` | 设备维修/保养计划排程表 | 9 | 💻 |
 
 ---
 
 ### generator_maintenance_records
-**定义**：设备维修记录 ｜ **代码**：`generator/maintenance_records/model.py` ｜ **行数(估)**：3
+**定义**：设备维修执行明细（配件、维修时长、技师、前后照片） ｜ **流角色**：设备维修执行 ｜ **代码**：`generator/maintenance_records/model.py` ｜ **行数(估)**：3
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:设备名称） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `remarks` | longtext | Y | - | 备注 | ✅ |  |
@@ -45,24 +45,38 @@ tags: [工程, 数据字典2, 代码实证, 维修保养]
 | `technician` | varchar(255) | Y | - | 维修人员 | ✅ |  |
 | `type` | varchar(255) | Y | - | 事件类型 | ✅ |  |
 | `name` | varchar(255) | Y | - | 事件名称 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 | →system_users |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `device_id` | bigint | Y | MUL | 设备名称；→generator_devices | ✅🔗 | →generator_devices |
 
 ### generator_maintenance_schedule
-**定义**：设备维修计划表 ｜ **代码**：`generator/maintenance_schedule/model.py` ｜ **行数(估)**：9
+**定义**：设备维修/保养计划排程表 ｜ **流角色**：设备维保计划 ｜ **代码**：`generator/maintenance_schedule/model.py` ｜ **行数(估)**：9
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:设备名称） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `status` | varchar(255) | Y | - | 状态 | ✅ |  |
 | `description` | longtext | Y | - | 描述 | ✅ |  |
 | `type` | varchar(255) | Y | - | 事件类型 | ✅ |  |
 | `date_time` | datetime(6) | Y | - | 预定日期 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `device_id` | bigint | Y | MUL | 设备名称；→generator_devices | ✅🔗 | →generator_devices |
+
+---
+
+## 同域兄弟模块
+- [[03-质量技术域/设备装置模块-fuadmin数据字典2|设备装置模块]]
+- [[03-质量技术域/设备模块-fuadmin数据字典2|设备模块]]
+- [[03-质量技术域/工装夹具模块-fuadmin数据字典2|工装夹具模块]]
+- [[03-质量技术域/质量检验模块-fuadmin数据字典2|质量检验模块]]
+- [[03-质量技术域/刀具模块-fuadmin数据字典2|刀具模块]]
+- [[03-质量技术域/测量计量模块-fuadmin数据字典2|测量计量模块]]
+- [[03-质量技术域/工艺技术模块-fuadmin数据字典2|工艺技术模块]]
+- [[03-质量技术域/产品模块-fuadmin数据字典2|产品模块]]
+- [[03-质量技术域/工具工装模块-fuadmin数据字典2|工具工装模块]]
+- [[03-质量技术域/03-质量技术域-业务流|03-质量技术域业务流(代码验证版)]]

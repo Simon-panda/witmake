@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 ---
 
 # 结算模块 · fuadmin 数据字典2（代码实证版）
-> 域: 01-供应链域 | 表数: 24 | 字段: 336 | 代码锚定: 312(93%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/结算模块-fuadmin数据字典]]
+> 域: 01-供应链域 | 表数: 24 | 字段: 336 | 代码锚定: 336(100%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/结算模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -48,11 +48,11 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `bill_number` | varchar(50) | Y | UNI | 结算单编号 | ✅ |  |
@@ -64,27 +64,27 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `settlement_type` | varchar(30) | Y | - | 结算类型 | ✅ |  |
 | `state` | int | Y | - | 结算状态；0草稿 1处理中 100已作废 | ✅ |  |
 | `is_closed` | tinyint(1) | N | - | 是否关闭 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_settlement_bill_detail
 **定义**：结算单行，分摊自采购订单明细并保留来源快照，按订单/入库数量口径结算（未启用） ｜ **流角色**：结算行：分摊采购订单明细（未启用） ｜ **代码**：`generator/settlement_bill/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `source_purchase_order_detail_id` | bigint | Y | - | 来源采购订单明细ID；来源采购订单明细ID快照 | ✅ |  |
 | `allocated_quantity` | decimal(13,2) | Y | - | 结算数量 | ✅ |  |
-| `allocated_amount` | decimal(13,2) | Y | - | 结算金额（界面:分配金额） | ✅🖥️ |  |
+| `allocated_amount` | decimal(13,2) | Y | - | 结算金额 | ✅ |  |
 | `quantity_basis` | varchar(30) | Y | - | 开票数量口径；order_quantity按订单数量，inbound_quantity按入库数量 | ✅ |  |
 | `source_snapshot` | json | Y | - | 来源明细快照；来源订单明细的不可变快照 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail（界面:采购订单明细ID） | ✅🔗🖥️ | →generator_purchase_order_detail |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail | ✅🔗 | →generator_purchase_order_detail |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill | ✅🔗 | →generator_settlement_bill |
 
 ### generator_settlement_bill_detail_gh
@@ -92,20 +92,20 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `source_purchase_order_detail_id` | bigint | Y | - | 来源采购订单明细ID；来源采购订单明细ID快照 | ✅ |  |
 | `allocated_quantity` | decimal(13,2) | Y | - | 结算数量 | ✅ |  |
-| `allocated_amount` | decimal(13,2) | Y | - | 结算金额（界面:分配金额） | ✅🖥️ |  |
+| `allocated_amount` | decimal(13,2) | Y | - | 结算金额 | ✅ |  |
 | `quantity_basis` | varchar(30) | Y | - | 开票数量口径；order_quantity按订单数量，inbound_quantity按入库数量 | ✅ |  |
 | `source_snapshot` | json | Y | - | 来源明细快照；来源订单明细的不可变快照 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_gh（界面:采购订单明细ID） | ✅🔗🖥️ | →generator_purchase_order_detail_gh |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_gh | ✅🔗 | →generator_purchase_order_detail_gh |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_gh | ✅🔗 | →generator_settlement_bill_gh |
 
 ### generator_settlement_bill_detail_tf
@@ -113,20 +113,20 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `source_purchase_order_detail_id` | bigint | Y | - | 来源采购订单明细ID；来源采购订单明细ID快照 | ✅ |  |
 | `allocated_quantity` | decimal(13,2) | Y | - | 结算数量 | ✅ |  |
-| `allocated_amount` | decimal(13,2) | Y | - | 结算金额（界面:分配金额） | ✅🖥️ |  |
+| `allocated_amount` | decimal(13,2) | Y | - | 结算金额 | ✅ |  |
 | `quantity_basis` | varchar(30) | Y | - | 开票数量口径；order_quantity按订单数量，inbound_quantity按入库数量 | ✅ |  |
 | `source_snapshot` | json | Y | - | 来源明细快照；来源订单明细的不可变快照 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_tf（界面:采购订单明细ID） | ✅🔗🖥️ | →generator_purchase_order_detail_tf |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_tf | ✅🔗 | →generator_purchase_order_detail_tf |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_tf | ✅🔗 | →generator_settlement_bill_tf |
 
 ### generator_settlement_bill_detail_zt
@@ -134,20 +134,20 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `source_purchase_order_detail_id` | bigint | Y | - | 来源采购订单明细ID；来源采购订单明细ID快照 | ✅ |  |
 | `allocated_quantity` | decimal(13,2) | Y | - | 结算数量 | ✅ |  |
-| `allocated_amount` | decimal(13,2) | Y | - | 结算金额（界面:分配金额） | ✅🖥️ |  |
+| `allocated_amount` | decimal(13,2) | Y | - | 结算金额 | ✅ |  |
 | `quantity_basis` | varchar(30) | Y | - | 开票数量口径；order_quantity按订单数量，inbound_quantity按入库数量 | ✅ |  |
 | `source_snapshot` | json | Y | - | 来源明细快照；来源订单明细的不可变快照 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_zt（界面:采购订单明细ID） | ✅🔗🖥️ | →generator_purchase_order_detail_zt |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_detail_id` | bigint | Y | MUL | 采购订单明细；→generator_purchase_order_detail_zt | ✅🔗 | →generator_purchase_order_detail_zt |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_zt | ✅🔗 | →generator_settlement_bill_zt |
 
 ### generator_settlement_bill_gh
@@ -155,11 +155,11 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `bill_number` | varchar(50) | Y | UNI | 结算单编号 | ✅ |  |
@@ -171,18 +171,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `settlement_type` | varchar(30) | Y | - | 结算类型 | ✅ |  |
 | `state` | int | Y | - | 结算状态；0草稿 1处理中 100已作废 | ✅ |  |
 | `is_closed` | tinyint(1) | N | - | 是否关闭 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_settlement_bill_tf
 **定义**：泰峰站点分表：与供应商对账的结算单头，记录结算总额、已开票、已付、未付与关闭标志（未启用） ｜ **流角色**：结算链起点：结算单头（未启用） ｜ **代码**：`generator/settlement_bill/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `bill_number` | varchar(50) | Y | UNI | 结算单编号 | ✅ |  |
@@ -194,18 +194,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `settlement_type` | varchar(30) | Y | - | 结算类型 | ✅ |  |
 | `state` | int | Y | - | 结算状态；0草稿 1处理中 100已作废 | ✅ |  |
 | `is_closed` | tinyint(1) | N | - | 是否关闭 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_settlement_bill_zt
 **定义**：治通站点分表：与供应商对账的结算单头，记录结算总额、已开票、已付、未付与关闭标志（未启用） ｜ **流角色**：结算链起点：结算单头（未启用） ｜ **代码**：`generator/settlement_bill/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `bill_number` | varchar(50) | Y | UNI | 结算单编号 | ✅ |  |
@@ -217,18 +217,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `settlement_type` | varchar(30) | Y | - | 结算类型 | ✅ |  |
 | `state` | int | Y | - | 结算状态；0草稿 1处理中 100已作废 | ✅ |  |
 | `is_closed` | tinyint(1) | N | - | 是否关闭 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_settlement_invoice
 **定义**：供应商发票登记表，挂结算单，记录发票代码号码、金额与支付状态（未启用） ｜ **流角色**：发票登记：挂结算单（未启用） ｜ **代码**：`generator/settlement_bill/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_code` | varchar(50) | Y | - | 发票代码 | ✅ |  |
@@ -237,8 +237,8 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `total_amount` | decimal(13,2) | Y | - | 发票金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 发票未付金额 | ✅ |  |
 | `state` | int | Y | - | 发票支付状态；0草稿 1未支付 2部分支付 3全部支付 100已作废 | ✅ |  |
-| `file_url` | json | Y | - | 发票附件（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `file_url` | json | Y | - | 发票附件 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill | ✅🔗 | →generator_settlement_bill |
 
 ### generator_settlement_invoice_detail
@@ -246,18 +246,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_quantity` | decimal(13,2) | Y | - | 开票数量 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 开票含税单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 开票税率（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 开票税率 | ✅ |  |
 | `invoice_amount` | decimal(13,2) | Y | - | 开票金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail | ✅🔗 | →generator_settlement_bill_detail |
 | `settlement_invoice_id` | bigint | Y | MUL | 结算发票；→generator_settlement_invoice | ✅🔗 | →generator_settlement_invoice |
 
@@ -266,18 +266,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_quantity` | decimal(13,2) | Y | - | 开票数量 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 开票含税单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 开票税率（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 开票税率 | ✅ |  |
 | `invoice_amount` | decimal(13,2) | Y | - | 开票金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_gh | ✅🔗 | →generator_settlement_bill_detail_gh |
 | `settlement_invoice_id` | bigint | Y | MUL | 结算发票；→generator_settlement_invoice_gh | ✅🔗 | →generator_settlement_invoice_gh |
 
@@ -286,18 +286,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_quantity` | decimal(13,2) | Y | - | 开票数量 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 开票含税单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 开票税率（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 开票税率 | ✅ |  |
 | `invoice_amount` | decimal(13,2) | Y | - | 开票金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_tf | ✅🔗 | →generator_settlement_bill_detail_tf |
 | `settlement_invoice_id` | bigint | Y | MUL | 结算发票；→generator_settlement_invoice_tf | ✅🔗 | →generator_settlement_invoice_tf |
 
@@ -306,18 +306,18 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_quantity` | decimal(13,2) | Y | - | 开票数量 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 开票含税单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 开票税率（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 开票税率 | ✅ |  |
 | `invoice_amount` | decimal(13,2) | Y | - | 开票金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_zt | ✅🔗 | →generator_settlement_bill_detail_zt |
 | `settlement_invoice_id` | bigint | Y | MUL | 结算发票；→generator_settlement_invoice_zt | ✅🔗 | →generator_settlement_invoice_zt |
 
@@ -326,11 +326,11 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_code` | varchar(50) | Y | - | 发票代码 | ✅ |  |
@@ -339,8 +339,8 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `total_amount` | decimal(13,2) | Y | - | 发票金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 发票未付金额 | ✅ |  |
 | `state` | int | Y | - | 发票支付状态；0草稿 1未支付 2部分支付 3全部支付 100已作废 | ✅ |  |
-| `file_url` | json | Y | - | 发票附件（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `file_url` | json | Y | - | 发票附件 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_gh | ✅🔗 | →generator_settlement_bill_gh |
 
 ### generator_settlement_invoice_payment_allocation
@@ -348,15 +348,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_invoice_detail_id` | bigint | Y | MUL | 结算发票明细；→generator_settlement_invoice_detail | ✅🔗 | →generator_settlement_invoice_detail |
 | `settlement_payment_allocation_id` | bigint | Y | MUL | 结算付款分摊；→generator_settlement_payment_allocation | ✅🔗 | →generator_settlement_payment_allocation |
 
@@ -365,15 +365,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_invoice_detail_id` | bigint | Y | MUL | 结算发票明细；→generator_settlement_invoice_detail_gh | ✅🔗 | →generator_settlement_invoice_detail_gh |
 | `settlement_payment_allocation_id` | bigint | Y | MUL | 结算付款分摊；→generator_settlement_payment_allocation_gh | ✅🔗 | →generator_settlement_payment_allocation_gh |
 
@@ -382,15 +382,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_invoice_detail_id` | bigint | Y | MUL | 结算发票明细；→generator_settlement_invoice_detail_tf | ✅🔗 | →generator_settlement_invoice_detail_tf |
 | `settlement_payment_allocation_id` | bigint | Y | MUL | 结算付款分摊；→generator_settlement_payment_allocation_tf | ✅🔗 | →generator_settlement_payment_allocation_tf |
 
@@ -399,15 +399,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_invoice_detail_id` | bigint | Y | MUL | 结算发票明细；→generator_settlement_invoice_detail_zt | ✅🔗 | →generator_settlement_invoice_detail_zt |
 | `settlement_payment_allocation_id` | bigint | Y | MUL | 结算付款分摊；→generator_settlement_payment_allocation_zt | ✅🔗 | →generator_settlement_payment_allocation_zt |
 
@@ -416,11 +416,11 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_code` | varchar(50) | Y | - | 发票代码 | ✅ |  |
@@ -429,8 +429,8 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `total_amount` | decimal(13,2) | Y | - | 发票金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 发票未付金额 | ✅ |  |
 | `state` | int | Y | - | 发票支付状态；0草稿 1未支付 2部分支付 3全部支付 100已作废 | ✅ |  |
-| `file_url` | json | Y | - | 发票附件（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `file_url` | json | Y | - | 发票附件 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_tf | ✅🔗 | →generator_settlement_bill_tf |
 
 ### generator_settlement_invoice_zt
@@ -438,11 +438,11 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `invoice_code` | varchar(50) | Y | - | 发票代码 | ✅ |  |
@@ -451,8 +451,8 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 | `total_amount` | decimal(13,2) | Y | - | 发票金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 发票未付金额 | ✅ |  |
 | `state` | int | Y | - | 发票支付状态；0草稿 1未支付 2部分支付 3全部支付 100已作废 | ✅ |  |
-| `file_url` | json | Y | - | 发票附件（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `file_url` | json | Y | - | 发票附件 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `settlement_bill_id` | bigint | Y | MUL | 结算单；→generator_settlement_bill_zt | ✅🔗 | →generator_settlement_bill_zt |
 
 ### generator_settlement_payment_allocation
@@ -460,15 +460,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `payment_record_id` | bigint | Y | MUL | 付款记录；→generator_payment_record | ✅🔗 | →generator_payment_record |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail | ✅🔗 | →generator_settlement_bill_detail |
 
@@ -477,15 +477,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `payment_record_id` | bigint | Y | MUL | 付款记录；→generator_payment_record_gh | ✅🔗 | →generator_payment_record_gh |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_gh | ✅🔗 | →generator_settlement_bill_detail_gh |
 
@@ -494,15 +494,15 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `payment_record_id` | bigint | Y | MUL | 付款记录；→generator_payment_record_tf | ✅🔗 | →generator_payment_record_tf |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_tf | ✅🔗 | →generator_settlement_bill_detail_tf |
 
@@ -511,14 +511,25 @@ tags: [工程, 数据字典2, 代码实证, 结算]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `amount` | decimal(13,2) | Y | - | 分摊金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `payment_record_id` | bigint | Y | MUL | 付款记录；→generator_payment_record_zt | ✅🔗 | →generator_payment_record_zt |
 | `settlement_bill_detail_id` | bigint | Y | MUL | 结算单明细；→generator_settlement_bill_detail_zt | ✅🔗 | →generator_settlement_bill_detail_zt |
+
+---
+
+## 同域兄弟模块
+- [[01-供应链域/物流模块-fuadmin数据字典2|物流模块]]
+- [[01-供应链域/付款模块-fuadmin数据字典2|付款模块]]
+- [[01-供应链域/采购模块-fuadmin数据字典2|采购模块]]
+- [[01-供应链域/退货模块-fuadmin数据字典2|退货模块]]
+- [[01-供应链域/供应商模块-fuadmin数据字典2|供应商模块]]
+- [[01-供应链域/仓储模块-fuadmin数据字典2|仓储模块]]
+- [[01-供应链域/01-供应链域-业务流|01-供应链域业务流(代码验证版)]]

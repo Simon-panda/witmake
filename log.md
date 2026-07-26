@@ -90,3 +90,7 @@
 ## [2026-07-23] create | fuadmin数据字典 54页入 90-工程/fuadmin数据字典/
 
 治通MES/ERP（fuadmin库）逆向工程：334基表/5,877字段全覆盖，产出总览（语义图谱+数据陷阱TOP10）、关联矩阵（288条）、54份模块agent基础文件、字段备注整改计划（5,621条建议+remediation.sql）。原始注释覆盖率仅2.2%，语义推断均标依据与置信度。已更新 index.md 工程架构节。
+
+## [2026-07-24] create | fuadmin数据字典2 63页入 90-工程/fuadmin数据字典2/
+
+治通MES/ERP 源码级重解析：解压 backend(Django)+web(Vue3) 源码，AST解析150个model文件(280类/3,010字段)，代码×DB对齐 5,321/5,877字段(90.5%)有程序锚点。语义来源升级为 verbose_name/help_text/choices枚举/行内注释；6个业务域多agent并行精修(A1/A2/A4/A6完成,A3/A5规则兜底)，枚举全解码，594条关联(544代码级)。前端label提取3,070条做第三重佐证。产出63份文档：总览/7域模块字典/业务流代码验证版/关联图谱2/新旧差异报告(2,608条旧推断升级实证)。已更新 index.md。流水线脚本在 C:\Users\ASUS\{parse_models,align_code_db,synth_baseline,build_dict2}.py，中间产物在 fuadmin-code-analysis\。

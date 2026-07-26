@@ -16,30 +16,38 @@ tags: [工程, 数据字典2, 代码实证, 考勤打卡]
 ## 表清单
 | 表 | 定义 | 行数(估) | 锚点 |
 |---|---|---|---|
-| `att_transaction` |  | 189974 | 🔍 |
+| `att_transaction` | [推断] 考勤打卡记录表：外部考勤机对接推送的原始打卡流水（含人脸/测温/GPS） | 189974 | 🔍 |
 
 ---
 
 ### att_transaction
-**定义**：打卡记录表 ｜ **行数(估)**：189974
+**定义**：[推断] 考勤打卡记录表：外部考勤机对接推送的原始打卡流水（含人脸/测温/GPS） ｜ **流角色**：考勤源数据→薪资核算输入 ｜ **行数(估)**：189974
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | （界面:列表权限） | 🔍🖥️ |  |
-| `verify_type` | tinyint | Y | - | 🔍待补充 | 🔍 |  |
-| `source` | tinyint | Y | - | （界面:来源） | 🔍🖥️ |  |
-| `punch_time` | datetime | Y | MUL | 🔍待补充 | 🔍 |  |
-| `temperature` | varchar(20) | Y | - | （界面:测量温度） | 🔍🖥️ |  |
-| `terminal_sn` | varchar(50) | Y | - | 🔍待补充 | 🔍 |  |
-| `terminal_alias` | varchar(100) | Y | - | 🔍待补充 | 🔍 |  |
-| `att_photo_url` | varchar(500) | Y | - | 🔍待补充 | 🔍 |  |
-| `mask_flag` | varchar(20) | Y | - | 🔍待补充 | 🔍 |  |
-| `upload_time` | datetime | Y | - | 🔍待补充 | 🔍 |  |
-| `timezone` | varchar(10) | Y | - | 🔍待补充 | 🔍 |  |
-| `gps_location` | varchar(200) | Y | - | 🔍待补充 | 🔍 |  |
-| `device_verify_type` | varchar(10) | Y | - | 🔍待补充 | 🔍 |  |
-| `employee_code` | varchar(20) | Y | MUL | 🔍待补充 | 🔍 | →system_users(推断) |
-| `first_name` | varchar(50) | Y | - | 🔍待补充 | 🔍 |  |
-| `dept_name` | varchar(100) | Y | MUL | （界面:部门） | 🔍🖥️ | →system_dept(推断) |
-| `status` | varchar(20) | Y | - | （界面:完成状态） | 🔍🖥️ |  |
-| `created_at` | datetime | Y | - | 🔍待补充 | 🔍 |  |
+| `id` | bigint | N | PRI | [推断] 记录ID，主键 | 🔍 |  |
+| `verify_type` | tinyint | Y | - | [推断] 验证类型（考勤机验证方式代码，如指纹/人脸/密码） | 🔍 |  |
+| `source` | tinyint | Y | - | [推断] 打卡来源标识（设备/手动补录等） | 🔍 |  |
+| `punch_time` | datetime | Y | MUL | [推断] 打卡时间（考勤机原始打卡时刻） | 🔍 |  |
+| `temperature` | varchar(20) | Y | - | [推断] 打卡时测量体温（考勤机测温功能） | 🔍 |  |
+| `terminal_sn` | varchar(50) | Y | - | [推断] 打卡设备SN序列号 | 🔍 |  |
+| `terminal_alias` | varchar(100) | Y | - | [推断] 打卡设备别名/名称 | 🔍 |  |
+| `att_photo_url` | varchar(500) | Y | - | [推断] 打卡照片URL（人脸抓拍图地址） | 🔍 |  |
+| `mask_flag` | varchar(20) | Y | - | [推断] 口罩状态（打卡时是否佩戴口罩标识） | 🔍 |  |
+| `upload_time` | datetime | Y | - | [推断] 上传时间（设备记录上传到服务器时刻） | 🔍 |  |
+| `timezone` | varchar(10) | Y | - | [推断] 打卡设备时区 | 🔍 |  |
+| `gps_location` | varchar(200) | Y | - | [推断] GPS位置（移动端打卡定位信息） | 🔍 |  |
+| `device_verify_type` | varchar(10) | Y | - | [推断] 设备验证类型（考勤机端验证方式） | 🔍 |  |
+| `employee_code` | varchar(20) | Y | MUL | [推断] 员工工号 | 🔍 | →system_users(推断) |
+| `first_name` | varchar(50) | Y | - | [推断] 员工姓名 | 🔍 |  |
+| `dept_name` | varchar(100) | Y | MUL | [推断] 所属部门名称 | 🔍 | →system_dept(推断) |
+| `status` | varchar(20) | Y | - | [推断] 打卡状态（如正常/迟到/早退/无效） | 🔍 |  |
+| `created_at` | datetime | Y | - | [推断] 入库时间（记录写入本库时间） | 🔍 |  |
+
+---
+
+## 同域兄弟模块
+- [[05-人事系统域/日报任务模块-fuadmin数据字典2|日报任务模块]]
+- [[05-人事系统域/人力能力模块-fuadmin数据字典2|人力能力模块]]
+- [[05-人事系统域/用户权限模块-fuadmin数据字典2|用户权限模块]]
+- [[05-人事系统域/05-人事系统域-业务流|05-人事系统域业务流(代码验证版)]]

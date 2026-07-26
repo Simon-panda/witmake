@@ -1,14 +1,14 @@
 ---
-title: triangle模块-fuadmin数据字典2
+title: misc-triangle模块-fuadmin数据字典2
 created: 2026-07-24
 updated: 2026-07-24
 type: reference
 domain: 06-其他定制
-tags: [工程, 数据字典2, 代码实证, triangle]
+tags: [工程, 数据字典2, 代码实证, misc-triangle]
 ---
 
-# triangle模块 · fuadmin 数据字典2（代码实证版）
-> 域: 06-其他定制 | 表数: 2 | 字段: 93 | 代码锚定: 89(96%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/06-其他定制/triangle模块-fuadmin数据字典]]
+# misc-triangle模块 · fuadmin 数据字典2（代码实证版）
+> 域: 06-其他定制 | 表数: 2 | 字段: 93 | 代码锚定: 91(98%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/06-其他定制/misc-triangle模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -17,37 +17,37 @@ tags: [工程, 数据字典2, 代码实证, triangle]
 | 表 | 定义 | 行数(估) | 锚点 |
 |---|---|---|---|
 | `generator_triangle_beam_count_data` | 三角梁监测检查计数 | 246 | 💻 |
-| `generator_triangle_beam_monitoring_system` | 三角梁监控系统 | 14210 | 💻 |
+| `generator_triangle_beam_monitoring_system` | 三角梁监控系统（分区加工结果/时间） | 14210 | 💻 |
 
 ---
 
 ### generator_triangle_beam_count_data
-**定义**：三角梁监测检查计数 ｜ **代码**：`generator/triangle_beam_count_data/model.py` ｜ **行数(估)**：246
+**定义**：三角梁监测检查计数 ｜ **流角色**：三角梁-检查计数 ｜ **代码**：`generator/triangle_beam_count_data/model.py` ｜ **行数(估)**：246
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:日期时间） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `check_count` | int | Y | - | 检查数量 | ✅ |  |
 | `datetime` | datetime(6) | Y | - | 日期时间 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断] 外部系统同步掩码（迁移痕迹） | 🔍 |  |
 
 ### generator_triangle_beam_monitoring_system
-**定义**：三角梁监控系统 ｜ **代码**：`generator/triangle_beam_monitoring_system/model.py` ｜ **行数(估)**：14210
+**定义**：三角梁监控系统（分区加工结果/时间） ｜ **流角色**：三角梁-加工监控 ｜ **代码**：`generator/triangle_beam_monitoring_system/model.py` ｜ **行数(估)**：14210
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:姓名） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:更新时间） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `user_name` | varchar(100) | Y | - | 姓名；操作人姓名 | ✅ |  |
@@ -123,5 +123,29 @@ tags: [工程, 数据字典2, 代码实证, triangle]
 | `source_addr` | varchar(500) | Y | - | 资源地址；检测数据来源地址（如设备IP、存储路径） | ✅ |  |
 | `start_datetime` | datetime(6) | Y | - | 开始时间；监测流程开始时间 | ✅ |  |
 | `end_datetime` | datetime(6) | Y | - | 结束时间；监测流程结束时间 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断] 外部系统同步掩码（迁移痕迹） | 🔍 |  |
+
+---
+
+## 同域兄弟模块
+- [[06-其他定制/answer定制模块模块-fuadmin数据字典2|answer定制模块模块]]
+- [[06-其他定制/liqiang定制模块模块-fuadmin数据字典2|liqiang定制模块模块]]
+- [[06-其他定制/lizhu定制模块模块-fuadmin数据字典2|lizhu定制模块模块]]
+- [[06-其他定制/misc-alarm模块-fuadmin数据字典2|misc-alarm模块]]
+- [[06-其他定制/misc-commentsmessage模块-fuadmin数据字典2|misc-commentsmessage模块]]
+- [[06-其他定制/misc-cooperation模块-fuadmin数据字典2|misc-cooperation模块]]
+- [[06-其他定制/misc-definition模块-fuadmin数据字典2|misc-definition模块]]
+- [[06-其他定制/misc-demo模块-fuadmin数据字典2|misc-demo模块]]
+- [[06-其他定制/misc-external模块-fuadmin数据字典2|misc-external模块]]
+- [[06-其他定制/misc-go模块-fuadmin数据字典2|misc-go模块]]
+- [[06-其他定制/misc-management模块-fuadmin数据字典2|misc-management模块]]
+- [[06-其他定制/misc-objective模块-fuadmin数据字典2|misc-objective模块]]
+- [[06-其他定制/misc-public模块-fuadmin数据字典2|misc-public模块]]
+- [[06-其他定制/misc-safety模块-fuadmin数据字典2|misc-safety模块]]
+- [[06-其他定制/misc-site模块-fuadmin数据字典2|misc-site模块]]
+- [[06-其他定制/misc-ticket模块-fuadmin数据字典2|misc-ticket模块]]
+- [[06-其他定制/misc-total模块-fuadmin数据字典2|misc-total模块]]
+- [[06-其他定制/misc-zj2315模块-fuadmin数据字典2|misc-zj2315模块]]
+- [[06-其他定制/test定制模块模块-fuadmin数据字典2|test定制模块模块]]
+- [[06-其他定制/06-其他定制-业务流|06-其他定制业务流(代码验证版)]]

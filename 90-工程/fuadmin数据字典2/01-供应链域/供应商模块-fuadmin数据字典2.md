@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 ---
 
 # 供应商模块 · fuadmin 数据字典2（代码实证版）
-> 域: 01-供应链域 | 表数: 8 | 字段: 164 | 代码锚定: 156(95%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/供应商模块-fuadmin数据字典]]
+> 域: 01-供应链域 | 表数: 8 | 字段: 164 | 代码锚定: 164(100%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/供应商模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -32,11 +32,11 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `is_active` | tinyint(1) | Y | - | 状态 | ✅ |  |
@@ -53,7 +53,7 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `supplier_name` | varchar(50) | Y | - | 供应商名称 | ✅ |  |
 | `use_dept` | varchar(30) | Y | - | 使用范围 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `supplier_code` | varchar(50) | Y | - | 供应商代码 | ✅ |  |
 | `email` | varchar(50) | Y | - | 电子邮箱 | ✅ |  |
 
@@ -62,11 +62,11 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `is_active` | tinyint(1) | Y | - | 状态 | ✅ |  |
@@ -85,110 +85,110 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 | `supplier_name` | varchar(50) | Y | - | 供应商名称 | ✅ |  |
 | `supplier_code` | varchar(50) | Y | - | 供应商代码 | ✅ |  |
 | `use_dept` | varchar(30) | Y | - | 使用范围 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_supplier_material_mapping
 **定义**：供应商-物料价格中间表：维护供应商对采购物料的税后单价、税点、最少采购量与有效期，供采购询价与订单取价 ｜ **流角色**：供应商报价维护 ｜ **代码**：`generator/purchase_material/model.py` ｜ **行数(估)**：806
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `unit_price` | decimal(15,4) | Y | - | 税后单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `period_type` | varchar(50) | Y | - | 类型 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 采购单位 | ✅ |  |
-| `start_date` | date | Y | - | 开始时间（界面:起始时间） | ✅🖥️ |  |
+| `start_date` | date | Y | - | 开始时间 | ✅ |  |
 | `end_date` | date | Y | - | 结束时间 | ✅ |  |
 | `min_order_quantity` | decimal(13,2) | Y | - | 最少采购数量 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `purchase_material_id` | bigint | N | MUL | 采购物料；→generator_purchase_material | ✅🔗 | →generator_purchase_material |
-| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier（界面:税前单价） | ✅🔗🖥️ | →generator_supplier |
+| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier | ✅🔗 | →generator_supplier |
 
 ### generator_supplier_material_mapping_gh
 **定义**：供应商-物料价格中间表（广汇站点分表）：同主表，站点隔离的报价记录 ｜ **流角色**：供应商报价维护(广汇) ｜ **代码**：`generator/purchase_material/model.py` ｜ **行数(估)**：183
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `unit_price` | decimal(15,4) | Y | - | 税后单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `period_type` | varchar(50) | Y | - | 类型 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 采购单位 | ✅ |  |
-| `start_date` | date | Y | - | 开始时间（界面:起始时间） | ✅🖥️ |  |
+| `start_date` | date | Y | - | 开始时间 | ✅ |  |
 | `end_date` | date | Y | - | 结束时间 | ✅ |  |
 | `min_order_quantity` | decimal(13,2) | Y | - | 最少采购数量 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `purchase_material_id` | bigint | N | MUL | 采购物料；→generator_purchase_material_gh | ✅🔗 | →generator_purchase_material_gh |
-| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_gh（界面:税前单价） | ✅🔗🖥️ | →generator_supplier_gh |
+| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_gh | ✅🔗 | →generator_supplier_gh |
 
 ### generator_supplier_material_mapping_tf
 **定义**：供应商-物料价格中间表（泰峰站点分表）：同主表，站点隔离的报价记录 ｜ **流角色**：供应商报价维护(泰峰) ｜ **代码**：`generator/purchase_material/model.py` ｜ **行数(估)**：54
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `unit_price` | decimal(15,4) | Y | - | 税后单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `period_type` | varchar(50) | Y | - | 类型 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 采购单位 | ✅ |  |
-| `start_date` | date | Y | - | 开始时间（界面:起始时间） | ✅🖥️ |  |
+| `start_date` | date | Y | - | 开始时间 | ✅ |  |
 | `end_date` | date | Y | - | 结束时间 | ✅ |  |
 | `min_order_quantity` | decimal(13,2) | Y | - | 最少采购数量 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `purchase_material_id` | bigint | N | MUL | 采购物料；→generator_purchase_material_tf | ✅🔗 | →generator_purchase_material_tf |
-| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_tf（界面:税前单价） | ✅🔗🖥️ | →generator_supplier_tf |
+| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_tf | ✅🔗 | →generator_supplier_tf |
 
 ### generator_supplier_material_mapping_zt
 **定义**：供应商-物料价格中间表（治通站点分表）：同主表，站点隔离的报价记录 ｜ **流角色**：供应商报价维护(治通) ｜ **代码**：`generator/purchase_material/model.py` ｜ **行数(估)**：23060
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `unit_price` | decimal(15,4) | Y | - | 税后单价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `period_type` | varchar(50) | Y | - | 类型 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 采购单位 | ✅ |  |
-| `start_date` | date | Y | - | 开始时间（界面:起始时间） | ✅🖥️ |  |
+| `start_date` | date | Y | - | 开始时间 | ✅ |  |
 | `end_date` | date | Y | - | 结束时间 | ✅ |  |
 | `min_order_quantity` | decimal(13,2) | Y | - | 最少采购数量 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `purchase_material_id` | bigint | N | MUL | 采购物料；→generator_purchase_material_zt | ✅🔗 | →generator_purchase_material_zt |
-| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_zt（界面:税前单价） | ✅🔗🖥️ | →generator_supplier_zt |
+| `supplier_id` | bigint | N | MUL | 供应商；→generator_supplier_zt | ✅🔗 | →generator_supplier_zt |
 
 ### generator_supplier_tf
 **定义**：供应商（泰峰站点分表）：同主表，站点隔离的供应商主数据 ｜ **流角色**：供应商主数据(泰峰) ｜ **代码**：`generator/supplier/model.py` ｜ **行数(估)**：42
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `is_active` | tinyint(1) | Y | - | 状态 | ✅ |  |
@@ -207,18 +207,18 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 | `supplier_name` | varchar(50) | Y | - | 供应商名称 | ✅ |  |
 | `supplier_code` | varchar(50) | Y | - | 供应商代码 | ✅ |  |
 | `use_dept` | varchar(30) | Y | - | 使用范围 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_supplier_zt
 **定义**：供应商（治通站点分表）：同主表，站点隔离的供应商主数据 ｜ **流角色**：供应商主数据(治通) ｜ **代码**：`generator/supplier/model.py` ｜ **行数(估)**：1467
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:供应商代码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `is_active` | tinyint(1) | Y | - | 状态 | ✅ |  |
@@ -237,4 +237,15 @@ tags: [工程, 数据字典2, 代码实证, 供应商]
 | `supplier_name` | varchar(50) | Y | - | 供应商名称 | ✅ |  |
 | `supplier_code` | varchar(50) | Y | - | 供应商代码 | ✅ |  |
 | `use_dept` | varchar(30) | Y | - | 使用范围 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+
+---
+
+## 同域兄弟模块
+- [[01-供应链域/物流模块-fuadmin数据字典2|物流模块]]
+- [[01-供应链域/付款模块-fuadmin数据字典2|付款模块]]
+- [[01-供应链域/采购模块-fuadmin数据字典2|采购模块]]
+- [[01-供应链域/退货模块-fuadmin数据字典2|退货模块]]
+- [[01-供应链域/结算模块-fuadmin数据字典2|结算模块]]
+- [[01-供应链域/仓储模块-fuadmin数据字典2|仓储模块]]
+- [[01-供应链域/01-供应链域-业务流|01-供应链域业务流(代码验证版)]]

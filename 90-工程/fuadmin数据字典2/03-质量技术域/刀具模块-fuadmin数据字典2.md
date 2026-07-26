@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 ---
 
 # 刀具模块 · fuadmin 数据字典2（代码实证版）
-> 域: 03-质量技术域 | 表数: 14 | 字段: 338 | 代码锚定: 300(89%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/03-质量技术域/刀具模块-fuadmin数据字典]]
+> 域: 03-质量技术域 | 表数: 14 | 字段: 338 | 代码锚定: 312(92%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/03-质量技术域/刀具模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -16,85 +16,85 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 ## 表清单
 | 表 | 定义 | 行数(估) | 锚点 |
 |---|---|---|---|
-| `generator_abnormal_tool_filtering_data` | 刀具异常过滤数据 | 18484 | 💻 |
-| `generator_daily_tool_summary` | 每日刀具汇总 | 0 | 💻 |
-| `generator_djgkcsl` |  | 0 | 🔍 |
-| `generator_djgsy` | 刀具柜使用情况 | 0 | 💻 |
-| `generator_djkc` | 刀具柜库存 | 4066 | 💻 |
-| `generator_eng_tool_knives` | 工程部放刀 | 15947 | 💻 |
-| `generator_knife_detail` | 刀具明细表 | 11106 | 💻 |
-| `generator_knife_life_standards` | 刀具生命周期标准 | 38 | 💻 |
-| `generator_knife_life_standards_copy1` | 刀具生命周期标准 | 89 | 🏭 |
-| `generator_knife_requisition` | 刀具领料明细 | 36808 | 💻 |
-| `generator_knife_statistics` | 刀具合并数据统计 | 26479 | 💻 |
-| `generator_machine_tool_change` | 机床换刀表 | 26984 | 💻 |
-| `generator_old_knife_recycle` | 刀具柜旧刀回收 | 9362 | 💻 |
-| `knife_jobcode` | 刀具-工作代号转换表 | 389 | 💻 |
+| `generator_abnormal_tool_filtering_data` | 刀具寿命监控算法筛出的异常刀具条码推送与处理记录 | 18484 | 💻 |
+| `generator_daily_tool_summary` | 按日汇总刀具型号/条码出入库情况的统计表（未启用） | 0 | 💻 |
+| `generator_djgkcsl` | 刀具柜库存数量快照（中文字段，无代码锚点）（未启用） | 0 | 🔍 |
+| `generator_djgsy` | 刀具柜刀具上下机/取用动作及算法检测数量记录（未启用） | 0 | 💻 |
+| `generator_djkc` | 智能刀具柜分层库存数量记录 | 4066 | 💻 |
+| `generator_eng_tool_knives` | 工程部向刀具柜投放/配置新刀的登记记录 | 15947 | 💻 |
+| `generator_knife_detail` | 单把刀具全生命周期明细账：上下机、放刀、回收、加工量与使用时长 | 11106 | 💻 |
+| `generator_knife_life_standards` | 刀具寿命标准：按型号+产品+产线定义加工量/使用时间标准值 | 38 | 💻 |
+| `generator_knife_life_standards_copy1` | 刀具生命周期标准的站点副本表（site_copy，勿当主表） | 89 | 🏭 |
+| `generator_knife_requisition` | 刀具/物料领用明细：条码、数量、单价、金额、供应商、领用部门 | 36808 | 💻 |
+| `generator_knife_statistics` | 合并换刀/返库/回收/领料多源数据的刀具全链路统计宽表 | 26479 | 💻 |
+| `generator_machine_tool_change` | 机床换刀记录：新旧刀条码、换刀人、原因、班次、首件二维码 | 26984 | 💻 |
+| `generator_old_knife_recycle` | 旧刀从机台回收至刀具柜的登记（层号、管理员） | 9362 | 💻 |
+| `knife_jobcode` | 工作代号与产线/厂内编号映射及匹配方式（手动/程序/废弃） | 389 | 💻 |
 
 ---
 
 ### generator_abnormal_tool_filtering_data
-**定义**：刀具异常过滤数据 ｜ **代码**：`generator/abnormal_tool_filtering_data/model.py` ｜ **行数(估)**：18484
+**定义**：刀具寿命监控算法筛出的异常刀具条码推送与处理记录 ｜ **流角色**：刀具寿命监控-异常推送 ｜ **代码**：`generator/abnormal_tool_filtering_data/model.py` ｜ **行数(估)**：18484
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:条形码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `barcode` | varchar(255) | Y | - | 条形码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `is_resolved` | tinyint(1) | N | - | 是否解决；标记该异常信息是否已经解决 | ✅ |  |
 | `push_datetime` | datetime(6) | Y | - | 推送时间；异常信息推送的具体时间 | ✅ |  |
 | `pushed_exception_item` | varchar(255) | Y | - | 推送异常项；记录此次推送的具体异常项 | ✅ |  |
 
 ### generator_daily_tool_summary
-**定义**：每日刀具汇总 ｜ **代码**：`generator/daily_tool_summary/model.py` ｜ **行数(估)**：0
+**定义**：按日汇总刀具型号/条码出入库情况的统计表（未启用） ｜ **流角色**：刀具日度统计 ｜ **代码**：`generator/daily_tool_summary/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:条码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `date_time` | date | Y | - | 入库时间 | ✅ |  |
 | `model` | varchar(255) | Y | - | 型号 | ✅ |  |
 | `bar_code` | varchar(255) | Y | - | 条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_djgkcsl
-**定义**：（待补充） ｜ **行数(估)**：0
+**定义**：刀具柜库存数量快照（中文字段，无代码锚点）（未启用） ｜ **流角色**：刀具柜库存 ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | （界面:条码） | 🔍🖥️ |  |
-| `remark` | varchar(255) | Y | - | （界面:备注） | 🔍🖥️ |  |
-| `modifier` | varchar(255) | Y | - | （界面:修改人） | 🔍🖥️ |  |
-| `belong_dept` | int | Y | - | （界面:所属部门） | 🔍🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | （界面:未结单） | 🔍🖥️ |  |
-| `create_datetime` | datetime(6) | Y | - | （界面:时间） | 🔍🖥️ |  |
-| `sort` | int | Y | - | （界面:排序） | 🔍🖥️ |  |
-| `数量` | decimal(13,4) | Y | - | 🔍待补充 | 🔍 |  |
-| `型号` | varchar(255) | Y | - | 🔍待补充 | 🔍 |  |
-| `条码` | varchar(255) | Y | - | 🔍待补充 | 🔍 |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `id` | bigint | N | PRI | [推断]主键 | 🔍 |  |
+| `remark` | varchar(255) | Y | - | [推断]描述 | 🔍 |  |
+| `modifier` | varchar(255) | Y | - | [推断]修改人 | 🔍 |  |
+| `belong_dept` | int | Y | - | [推断]数据归属部门 | 🔍 |  |
+| `update_datetime` | datetime(6) | Y | - | [推断]修改时间 | 🔍 |  |
+| `create_datetime` | datetime(6) | Y | - | [推断]创建时间 | 🔍 |  |
+| `sort` | int | Y | - | [推断]显示排序 | 🔍 |  |
+| `数量` | decimal(13,4) | Y | - | [推断]刀具库存数量 | 🔍 |  |
+| `型号` | varchar(255) | Y | - | [推断]刀具型号 | 🔍 |  |
+| `条码` | varchar(255) | Y | - | [推断]刀具条码 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | [推断]创建人（关联system_users） | 🔍 |  |
 
 ### generator_djgsy
-**定义**：刀具柜使用情况 ｜ **代码**：`generator/djgsy/model.py` ｜ **行数(估)**：0
+**定义**：刀具柜刀具上下机/取用动作及算法检测数量记录（未启用） ｜ **流角色**：刀具柜使用监控 ｜ **代码**：`generator/djgsy/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:柜号） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `machine_tool` | varchar(255) | Y | - | 机床 | ✅ |  |
@@ -107,47 +107,47 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `time_on` | varchar(255) | Y | - | 开始时间 | ✅ |  |
 | `operator` | varchar(255) | Y | - | 操作人 | ✅ |  |
 | `action` | varchar(255) | Y | - | 动作 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断]同步至V2系统的关联ID（技术列） | 🔍 |  |
 | `CREATE_DATE` | datetime | Y | - | 创建时间 | ✅ |  |
 | `CABINET_NUM` | varchar(255) | Y | - | 柜号 | ✅ |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
 | `reason_for_replacement` | varchar(255) | Y | - | 更换原因 | ✅ |  |
 | `tool_model` | varchar(255) | Y | - | 刀具型号 | ✅ |  |
 
 ### generator_djkc
-**定义**：刀具柜库存 ｜ **代码**：`generator/djkc/model.py` ｜ **行数(估)**：4066
+**定义**：智能刀具柜分层库存数量记录 ｜ **流角色**：刀具柜实时库存 ｜ **代码**：`generator/djkc/model.py` ｜ **行数(估)**：4066
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:工厂） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `input_number_3` | int | Y | - | 数量 | ✅ |  |
 | `input_2` | varchar(255) | Y | - | 型号 | ✅ |  |
 | `input_1` | varchar(255) | Y | - | 条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `input_number_2` | int | Y | - | 理想库存 | ✅ |  |
 | `input_number_1` | int | Y | - | 安全库存 | ✅ |  |
 | `input_5` | varchar(255) | Y | - | 工厂 | ✅ |  |
 | `input_6` | varchar(255) | Y | - | 柜号 | ✅ |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断]同步至V2系统的关联ID（技术列） | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
 
 ### generator_eng_tool_knives
-**定义**：工程部放刀 ｜ **代码**：`generator/eng_tool_knives/model.py` ｜ **行数(估)**：15947
+**定义**：工程部向刀具柜投放/配置新刀的登记记录 ｜ **流角色**：刀具生命周期-放刀 ｜ **代码**：`generator/eng_tool_knives/model.py` ｜ **行数(估)**：15947
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:时间） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `remarks` | varchar(255) | Y | - | 备注 | ✅ |  |
@@ -159,20 +159,20 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `supplier` | varchar(255) | Y | - | 供应商 | ✅ |  |
 | `bar_code` | varchar(255) | Y | - | 条码 | ✅ |  |
 | `time` | datetime(6) | Y | - | 时间 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断]同步至V2系统的关联ID（技术列） | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
 
 ### generator_knife_detail
-**定义**：刀具明细表 ｜ **代码**：`generator/knife_detail/model.py` ｜ **行数(估)**：11106
+**定义**：单把刀具全生命周期明细账：上下机、放刀、回收、加工量与使用时长 ｜ **流角色**：刀具生命周期主账 ｜ **代码**：`generator/knife_detail/model.py` ｜ **行数(估)**：11106
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:条码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `remarks` | varchar(255) | Y | - | 备注 | ✅ |  |
@@ -196,62 +196,62 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `knife_placing_time` | varchar(255) | Y | - | 放刀时间 | ✅ |  |
 | `model` | varchar(255) | Y | - | 型号 | ✅ |  |
 | `barcode` | varchar(255) | Y | - | 条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `knife_usage_hours` | varchar(255) | Y | - | 刀具使用时间 (小时) | ✅ |  |
 | `used_knife_quantity` | varchar(255) | Y | - | 旧刀数量 | ✅ |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断]同步至V2系统的关联ID（技术列） | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
 
 ### generator_knife_life_standards
-**定义**：刀具生命周期标准 ｜ **代码**：`generator/knife_life__standards/model.py` ｜ **行数(估)**：38
+**定义**：刀具寿命标准：按型号+产品+产线定义加工量/使用时间标准值 ｜ **流角色**：刀具寿命基准 ｜ **代码**：`generator/knife_life__standards/model.py` ｜ **行数(估)**：38
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `tool_model` | varchar(100) | Y | - | 刀具型号 | ✅ |  |
-| `production` | varchar(20) | Y | - | 产品（界面:选择工作代号） | ✅🖥️ |  |
+| `production` | varchar(20) | Y | - | 产品 | ✅ |  |
 | `std_completed_quatitiy` | int | Y | - | 加工量标准值 | ✅ |  |
 | `std_usage_hour` | double | Y | - | 时间标准值 | ✅ |  |
 | `production_line_id` | varchar(100) | Y | - | 产线 | ✅ | →generator_production_line(推断) |
-| `bar_code` | varchar(100) | Y | - | 条码（界面:条形码） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `bar_code` | varchar(100) | Y | - | 条码 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_knife_life_standards_copy1
-**定义**：刀具生命周期标准 ｜ **类型**：🏭站点复制 ｜ **代码**：`generator/knife_life__standards/model.py` ｜ **行数(估)**：89
+**定义**：刀具生命周期标准的站点副本表（site_copy，勿当主表） ｜ **流角色**：寿命标准副本 ｜ **类型**：🏭站点复制 ｜ **代码**：`generator/knife_life__standards/model.py` ｜ **行数(估)**：89
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `tool_model` | varchar(100) | Y | - | 刀具型号 | ✅ |  |
-| `production` | varchar(20) | Y | - | 产品（界面:选择工作代号） | ✅🖥️ |  |
+| `production` | varchar(20) | Y | - | 产品 | ✅ |  |
 | `std_completed_quatitiy` | int | Y | - | 加工量标准值 | ✅ |  |
 | `std_usage_hour` | double | Y | - | 时间标准值 | ✅ |  |
 | `production_line_id` | varchar(100) | Y | - | 产线 | ✅ | →generator_production_line(推断) |
-| `bar_code` | varchar(100) | Y | - | 条码（界面:条形码） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `bar_code` | varchar(100) | Y | - | 条码 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_knife_requisition
-**定义**：刀具领料明细 ｜ **代码**：`generator/knife_requisition/model.py` ｜ **行数(估)**：36808
+**定义**：刀具/物料领用明细：条码、数量、单价、金额、供应商、领用部门 ｜ **流角色**：刀具申领/采购入库 ｜ **代码**：`generator/knife_requisition/model.py` ｜ **行数(估)**：36808
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:月份） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
 | `remark` | varchar(255) | Y | - | 备注 | ✅ |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `newbar_code` | varchar(20) | Y | - | 新条码 | ✅ |  |
@@ -270,22 +270,22 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `project` | varchar(20) | Y | - | 项目 | ✅ |  |
 | `supplier` | varchar(50) | Y | - | 供应商 | ✅ |  |
 | `date_time` | date | Y | - | 日期 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `month_time` | varchar(20) | Y | - | 月份 | ✅ |  |
-| `PO` | varchar(20) | Y | - | PO（界面:部门） | ✅🖥️ |  |
+| `PO` | varchar(20) | Y | - | PO | ✅ |  |
 | `abnormal_info` | json | Y | - | 异常信息 | ✅ |  |
-| `_MASK_FROM_V2` | timestamp | N | MUL | 🔍待补充 | 🔍 |  |
+| `_MASK_FROM_V2` | timestamp | N | MUL | [推断]从V2系统同步的时间戳（技术列） | 🔍 |  |
 
 ### generator_knife_statistics
-**定义**：刀具合并数据统计 ｜ **代码**：`generator/knife_statistics/model.py` ｜ **行数(估)**：26479
+**定义**：合并换刀/返库/回收/领料多源数据的刀具全链路统计宽表 ｜ **流角色**：刀具数据归集统计 ｜ **代码**：`generator/knife_statistics/model.py` ｜ **行数(估)**：26479
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:使用部门） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `combined_production_line` | varchar(100) | Y | - | 合并产线 | ✅ |  |
@@ -372,23 +372,23 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `material_receiver` | varchar(20) | Y | - | 领料人 | ✅ |  |
 | `department` | varchar(20) | Y | - | 部门 | ✅ |  |
 | `use_department` | varchar(20) | Y | - | 使用部门 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `barcode_extraction` | varchar(20) | Y | - | 提取条码 | ✅ |  |
 | `supplier_extraction` | varchar(50) | Y | - | 提取供应商 | ✅ |  |
-| `merge_barcodes` | varchar(50) | Y | - | 合并条码（界面:合并产条码） | ✅🖥️ |  |
+| `merge_barcodes` | varchar(50) | Y | - | 合并条码 | ✅ |  |
 | `merge_time` | varchar(50) | Y | - | 合并时间 | ✅ |  |
-| `_MASK_FROM_V2` | timestamp | N | MUL | 🔍待补充 | 🔍 |  |
+| `_MASK_FROM_V2` | timestamp | N | MUL | [推断]从V2系统同步的时间戳（技术列） | 🔍 |  |
 
 ### generator_machine_tool_change
-**定义**：机床换刀表 ｜ **代码**：`generator/machine_tool_change/model.py` ｜ **行数(估)**：26984
+**定义**：机床换刀记录：新旧刀条码、换刀人、原因、班次、首件二维码 ｜ **流角色**：刀具生命周期-换刀 ｜ **代码**：`generator/machine_tool_change/model.py` ｜ **行数(估)**：26984
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:录入时间） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `remarks` | varchar(255) | Y | - | 备注 | ✅ |  |
@@ -412,21 +412,21 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `processing_data_worker` | varchar(255) | Y | - | 加工数据-人 | ✅ |  |
 | `bar_code` | varchar(255) | Y | - | 新刀条码 | ✅ |  |
 | `date_time` | datetime | Y | - | 录入时间 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `_MASK_TO_V2` | bigint | Y | MUL | _MASK_TO_V2 | ✅ |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_FROM_V2` | timestamp | N | MUL | 🔍待补充 | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
+| `_MASK_FROM_V2` | timestamp | N | MUL | [推断]从V2系统同步的时间戳（技术列） | 🔍 |  |
 
 ### generator_old_knife_recycle
-**定义**：刀具柜旧刀回收 ｜ **代码**：`generator/old_knife_recycle/model.py` ｜ **行数(估)**：9362
+**定义**：旧刀从机台回收至刀具柜的登记（层号、管理员） ｜ **流角色**：刀具生命周期-旧刀回收 ｜ **代码**：`generator/old_knife_recycle/model.py` ｜ **行数(估)**：9362
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:时间） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `remarks` | varchar(255) | Y | - | 备注 | ✅ |  |
@@ -438,19 +438,33 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 | `supplier` | varchar(255) | Y | - | 供应商 | ✅ |  |
 | `barcode` | varchar(255) | Y | - | 条码 | ✅ |  |
 | `time` | datetime(6) | Y | - | 时间 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MASK_TO_V2` | bigint | Y | MUL | 🔍待补充 | 🔍 |  |
-| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | 🔍待补充 | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `_MASK_TO_V2` | bigint | Y | MUL | [推断]同步至V2系统的关联ID（技术列） | 🔍 |  |
+| `_MUSID_SYNC_V2` | int unsigned | Y | MUL | [推断]V2数据同步状态/批次标识（技术列） | 🔍 |  |
 
 ### knife_jobcode
-**定义**：刀具-工作代号转换表 ｜ **代码**：`translation/models.py` ｜ **行数(估)**：389
+**定义**：工作代号与产线/厂内编号映射及匹配方式（手动/程序/废弃） ｜ **流角色**：刀具-工作代号映射 ｜ **代码**：`translation/models.py` ｜ **行数(估)**：389
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | （界面:列表权限） | 🔍🖥️ |  |
-| `line_name` | varchar(255) | Y | - | 产线（界面:产线/工序） | ✅🖥️ |  |
-| `name` | varchar(255) | Y | - | 全称（界面:原辅料名称） | ✅🖥️ |  |
+| `id` | bigint | N | PRI | [推断]主键 | 🔍 |  |
+| `line_name` | varchar(255) | Y | - | 产线 | ✅ |  |
+| `name` | varchar(255) | Y | - | 全称 | ✅ |  |
 | `internal_code` | varchar(255) | Y | - | 厂内编号 | ✅ |  |
-| `is_auto` | int | N | - | 匹配方式；0 手动匹配 1程序匹配 2废弃匹配 | ✅💬 |  |
+| `is_auto` | int | N | - | 匹配方式：0手动匹配/1程序匹配/2废弃匹配 | ✅⚖️ |  |
 | `job_code_id` | bigint | N | MUL | →generator_job_code | 🔗 | →generator_job_code |
 | `eng_name` | varchar(255) | Y | - | 英文标签 | ✅ |  |
+
+---
+
+## 同域兄弟模块
+- [[03-质量技术域/设备装置模块-fuadmin数据字典2|设备装置模块]]
+- [[03-质量技术域/设备模块-fuadmin数据字典2|设备模块]]
+- [[03-质量技术域/工装夹具模块-fuadmin数据字典2|工装夹具模块]]
+- [[03-质量技术域/质量检验模块-fuadmin数据字典2|质量检验模块]]
+- [[03-质量技术域/维修保养模块-fuadmin数据字典2|维修保养模块]]
+- [[03-质量技术域/测量计量模块-fuadmin数据字典2|测量计量模块]]
+- [[03-质量技术域/工艺技术模块-fuadmin数据字典2|工艺技术模块]]
+- [[03-质量技术域/产品模块-fuadmin数据字典2|产品模块]]
+- [[03-质量技术域/工具工装模块-fuadmin数据字典2|工具工装模块]]
+- [[03-质量技术域/03-质量技术域-业务流|03-质量技术域业务流(代码验证版)]]

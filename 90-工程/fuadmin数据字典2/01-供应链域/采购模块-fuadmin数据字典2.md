@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 ---
 
 # 采购模块 · fuadmin 数据字典2（代码实证版）
-> 域: 01-供应链域 | 表数: 43 | 字段: 1062 | 代码锚定: 985(93%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/采购模块-fuadmin数据字典]]
+> 域: 01-供应链域 | 表数: 43 | 字段: 1062 | 代码锚定: 1028(97%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/采购模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -67,15 +67,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
@@ -90,7 +90,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -100,44 +100,44 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order | ✅🔗 | →generator_purchase_order |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition | ✅🔗 | →generator_purchase_requisition |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping | ✅🔗 | →generator_supplier_material_mapping |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -148,44 +148,44 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_gh（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_gh |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_gh |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_gh | ✅🔗 | →generator_purchase_order_gh |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh | ✅🔗 | →generator_purchase_requisition_gh |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_gh | ✅🔗 | →generator_supplier_material_mapping_gh |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -196,44 +196,44 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_tf（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_tf |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_tf |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_tf | ✅🔗 | →generator_purchase_order_tf |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf | ✅🔗 | →generator_purchase_requisition_tf |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_tf | ✅🔗 | →generator_supplier_material_mapping_tf |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -244,44 +244,44 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_zt（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_zt |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_zt |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_zt | ✅🔗 | →generator_purchase_order_zt |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt | ✅🔗 | →generator_purchase_requisition_zt |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_zt | ✅🔗 | →generator_supplier_material_mapping_zt |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -292,15 +292,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
@@ -315,7 +315,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -325,15 +325,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
@@ -348,7 +348,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -358,15 +358,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
@@ -381,7 +381,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -391,23 +391,23 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -417,18 +417,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -439,14 +439,14 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition | ✅🔗 | →generator_purchase_requisition |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
 
@@ -455,18 +455,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -477,14 +477,14 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_gh |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh | ✅🔗 | →generator_purchase_requisition_gh |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
 
@@ -493,18 +493,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -515,14 +515,14 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_tf |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf | ✅🔗 | →generator_purchase_requisition_tf |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
 
@@ -531,18 +531,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -553,14 +553,14 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_zt |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt | ✅🔗 | →generator_purchase_requisition_zt |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
 
@@ -569,23 +569,23 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -595,23 +595,23 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -621,23 +621,23 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | MUL | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
 | `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
 | `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
 | `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
 | `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
 | `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
 | `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
@@ -647,11 +647,11 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:物料条码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `stock_unit` | varchar(10) | Y | - | 库存单位 | ✅ |  |
@@ -663,7 +663,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
 | `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
 | `material_qrcode` | varchar(50) | Y | - | 物料条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `internal_category` | varchar(50) | Y | - | 内部分类 | ✅ |  |
 | `material_attachments` | json | Y | - | 物料附件 | ✅ |  |
@@ -673,11 +673,11 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `stock_unit` | varchar(10) | Y | - | 库存单位 | ✅ |  |
@@ -689,9 +689,9 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `product_type` | varchar(50) | Y | - | 产品类型 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
 | `material_qrcode` | varchar(50) | Y | - | 物料条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `material_attachments` | json | Y | - | 物料附件 | ✅ |  |
 
 ### generator_purchase_material_tf
@@ -699,11 +699,11 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `stock_unit` | varchar(10) | Y | - | 库存单位 | ✅ |  |
@@ -715,9 +715,9 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `product_type` | varchar(50) | Y | - | 产品类型 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
 | `material_qrcode` | varchar(50) | Y | - | 物料条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `material_attachments` | json | Y | - | 物料附件 | ✅ |  |
 
 ### generator_purchase_material_zt
@@ -725,11 +725,11 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `stock_unit` | varchar(10) | Y | - | 库存单位 | ✅ |  |
@@ -741,9 +741,9 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `product_type` | varchar(50) | Y | - | 产品类型 | ✅ |  |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
 | `material_qrcode` | varchar(50) | Y | - | 物料条码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `material_attachments` | json | Y | - | 物料附件 | ✅ |  |
 
 ### generator_purchase_order
@@ -751,18 +751,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:订单类型） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
-| `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请（界面:到货状态） | 💬⚖️🖥️ |  |
+| `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `order_number` | varchar(50) | Y | - | 采购订单编号 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总金额） | ✅🖥️ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `deposit_bank` | varchar(50) | Y | - | 开户行 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 未付金额 | ✅ |  |
@@ -777,18 +777,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `order_number` | varchar(50) | Y | - | 采购订单编号 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `deposit_bank` | varchar(50) | Y | - | 开户行 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 未付金额 | ✅ |  |
@@ -802,11 +802,11 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:采购订单） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `picture` | json | Y | - | 图片 | ✅ |  |
@@ -814,9 +814,9 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `amount` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
 | `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价（界面:含税单价(元)） | ✅🖥️ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
-| `project_name` | varchar(50) | Y | - | 项目名称（界面:请选择或输入项目名称） | ✅🖥️ |  |
-| `project_number` | varchar(50) | Y | - | 项目号（界面:请选择或输入项目号） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
+| `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
+| `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
@@ -824,14 +824,14 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
 | `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order | ✅🔗 | →generator_purchase_order |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition | ✅🔗 | →generator_purchase_requisition |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间（界面:预计交付时间(天)） | ✅🖥️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping | ✅🔗 | →generator_supplier_material_mapping |
@@ -843,21 +843,21 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `belong` | varchar(50) | Y | - | [推断]待确认:归属（站点/部门归属） | 🔍 |  |
 | `practical_date` | date | Y | - | [推断]实际到货日期，对照predict_date预计到货日期 | 🔍 |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
@@ -866,15 +866,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition |
+| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order | ✅🔗 | →generator_purchase_order |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition | ✅🔗 | →generator_purchase_requisition |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping | ✅🔗 | →generator_supplier_material_mapping |
@@ -884,24 +884,24 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
@@ -911,13 +911,13 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_gh（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_gh |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_gh |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_gh | ✅🔗 | →generator_purchase_order_gh |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh | ✅🔗 | →generator_purchase_requisition_gh |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_gh | ✅🔗 | →generator_supplier_material_mapping_gh |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `settlement_status` | int | Y | - | 结算状态；0未结算 1部分结算 2已全部结算 | ✅ |  |
 
 ### generator_purchase_order_detail_tf
@@ -925,24 +925,24 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
@@ -952,13 +952,13 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_tf（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_tf |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_tf |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_tf | ✅🔗 | →generator_purchase_order_tf |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf | ✅🔗 | →generator_purchase_requisition_tf |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_tf | ✅🔗 | →generator_supplier_material_mapping_tf |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `settlement_status` | int | Y | - | 结算状态；0未结算 1部分结算 2已全部结算 | ✅ |  |
 
 ### generator_purchase_order_detail_zt
@@ -966,24 +966,24 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
 | `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
 | `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
 | `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价（界面:金额） | ✅🖥️ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点（界面:税点(%)） | ✅🖥️ |  |
+| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
+| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
 | `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人（界面:请购人） | ✅🖥️ |  |
+| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
@@ -993,13 +993,13 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID（界面:采购申请明细ID） | ✅🖥️ | →generator_purchase_requisition_detail(推断) |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_zt（界面:采购订单ID） | ✅🔗🖥️ | →generator_purchase_order_zt |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_zt |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_zt | ✅🔗 | →generator_purchase_order_zt |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt | ✅🔗 | →generator_purchase_requisition_zt |
 | `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_zt | ✅🔗 | →generator_supplier_material_mapping_zt |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量（界面:单位） | ✅🖥️ |  |
+| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
 | `settlement_status` | int | Y | - | 结算状态；0未结算 1部分结算 2已全部结算 | ✅ |  |
 
 ### generator_purchase_order_document
@@ -1007,18 +1007,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:附件编号） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `doc_type` | varchar(20) | Y | - | 附件类型 | ✅ |  |
 | `doc_number` | varchar(255) | Y | - | 附件编号；如发票号等 | ✅ |  |
-| `total_amount` | decimal(13,2) | Y | - | 附件总金额（界面:税后附件总额） | ✅🖥️ |  |
-| `file_url` | json | Y | - | 附件URL（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `total_amount` | decimal(13,2) | Y | - | 附件总金额 | ✅ |  |
+| `file_url` | json | Y | - | 附件URL | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `signing_date` | date | Y | - | 签订日期 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 待付金额 | ✅ |  |
 | `state` | int | Y | - | 支付状态；0草稿 1未支付 2部分支付 3全部支付 | 💬⚖️ |  |
@@ -1028,96 +1028,96 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `doc_type` | varchar(20) | Y | - | 附件类型 | ✅ |  |
 | `doc_number` | varchar(255) | Y | - | 附件编号；如发票号等 | ✅ |  |
 | `total_amount` | decimal(13,2) | Y | - | 附件总金额 | ✅ |  |
-| `file_url` | json | Y | - | 附件URL（界面:上传附件） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `file_url` | json | Y | - | 附件URL | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_purchase_order_document_gh
 **定义**：广汇站点分表：采购订单附件（合同/发票等）凭证表，记录附件类型、编号、金额与支付状态 ｜ **流角色**：订单凭证：合同/发票附件 ｜ **代码**：`generator/purchase_order_document/model.py` ｜ **行数(估)**：70
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `doc_type` | varchar(20) | Y | - | 附件类型 | ✅ |  |
 | `doc_number` | varchar(255) | Y | - | 附件编号；如发票号等 | ✅ |  |
 | `total_amount` | decimal(13,2) | Y | - | 附件总金额 | ✅ |  |
-| `file_url` | json | Y | - | 附件URL（界面:上传附件） | ✅🖥️ |  |
+| `file_url` | json | Y | - | 附件URL | ✅ |  |
 | `signing_date` | date | Y | - | 签订日期 | ✅ |  |
-| `due_amount` | decimal(13,2) | Y | - | 待付金额（界面:未付金额） | ✅🖥️ |  |
+| `due_amount` | decimal(13,2) | Y | - | 待付金额 | ✅ |  |
 | `state` | int | Y | - | 支付状态；0草稿 1未支付 2部分支付 3全部支付 | 💬⚖️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_purchase_order_document_tf
 **定义**：泰峰站点分表：采购订单附件（合同/发票等）凭证表，记录附件类型、编号、金额与支付状态 ｜ **流角色**：订单凭证：合同/发票附件 ｜ **代码**：`generator/purchase_order_document/model.py` ｜ **行数(估)**：23
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `doc_type` | varchar(20) | Y | - | 附件类型 | ✅ |  |
 | `doc_number` | varchar(255) | Y | - | 附件编号；如发票号等 | ✅ |  |
 | `total_amount` | decimal(13,2) | Y | - | 附件总金额 | ✅ |  |
-| `file_url` | json | Y | - | 附件URL（界面:上传附件） | ✅🖥️ |  |
+| `file_url` | json | Y | - | 附件URL | ✅ |  |
 | `signing_date` | date | Y | - | 签订日期 | ✅ |  |
-| `due_amount` | decimal(13,2) | Y | - | 待付金额（界面:未付金额） | ✅🖥️ |  |
+| `due_amount` | decimal(13,2) | Y | - | 待付金额 | ✅ |  |
 | `state` | int | Y | - | 支付状态；0草稿 1未支付 2部分支付 3全部支付 | 💬⚖️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_purchase_order_document_zt
 **定义**：治通站点分表：采购订单附件（合同/发票等）凭证表，记录附件类型、编号、金额与支付状态 ｜ **流角色**：订单凭证：合同/发票附件 ｜ **代码**：`generator/purchase_order_document/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `doc_type` | varchar(20) | Y | - | 附件类型 | ✅ |  |
 | `doc_number` | varchar(255) | Y | - | 附件编号；如发票号等 | ✅ |  |
 | `total_amount` | decimal(13,2) | Y | - | 附件总金额 | ✅ |  |
-| `file_url` | json | Y | - | 附件URL（界面:上传附件） | ✅🖥️ |  |
+| `file_url` | json | Y | - | 附件URL | ✅ |  |
 | `signing_date` | date | Y | - | 签订日期 | ✅ |  |
-| `due_amount` | decimal(13,2) | Y | - | 待付金额（界面:未付金额） | ✅🖥️ |  |
+| `due_amount` | decimal(13,2) | Y | - | 待付金额 | ✅ |  |
 | `state` | int | Y | - | 支付状态；0草稿 1未支付 2部分支付 3全部支付 | 💬⚖️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_purchase_order_gh
 **定义**：广汇站点分表：采购员根据申请单下达的采购订单头，记录供应商、总价、结算方式与收付款进度 ｜ **流角色**：采购链核心：订单头 ｜ **代码**：`generator/purchase_order/model.py` ｜ **行数(估)**：73
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `order_number` | varchar(50) | Y | - | 采购订单编号 | ✅ |  |
@@ -1127,7 +1127,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `paid_amount` | decimal(13,2) | Y | - | 已付金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 未付金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_order_tf
@@ -1135,15 +1135,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `order_number` | varchar(50) | Y | - | 采购订单编号 | ✅ |  |
@@ -1153,7 +1153,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `paid_amount` | decimal(13,2) | Y | - | 已付金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 未付金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_order_zt
@@ -1161,15 +1161,15 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `order_belong` | varchar(30) | Y | - | 订单归属 | ✅ |  |
-| `total_price` | decimal(13,2) | Y | - | 总价（界面:总价(元)） | ✅🖥️ |  |
+| `total_price` | decimal(13,2) | Y | - | 总价 | ✅ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `order_number` | varchar(50) | Y | - | 采购订单编号 | ✅ |  |
@@ -1179,7 +1179,7 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `bank_account` | varchar(50) | Y | - | 银行账号 | ✅ |  |
 | `paid_amount` | decimal(13,2) | Y | - | 已付金额 | ✅ |  |
 | `due_amount` | decimal(13,2) | Y | - | 未付金额 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `order_type` | int | Y | - | 订单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_requisition
@@ -1187,18 +1187,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:物料名称） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
-| `create_datetime` | datetime(6) | Y | - | 创建时间（界面:申请时间） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
+| `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
 | `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_requisition_detail
@@ -1206,16 +1206,16 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:采购申请编号） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `picture` | json | Y | - | 图片 | ✅ |  |
-| `project_name` | varchar(50) | Y | - | 项目名称（界面:请选择或输入项目名称） | ✅🖥️ |  |
-| `project_number` | varchar(50) | Y | - | 项目号（界面:请选择或输入项目号） | ✅🖥️ |  |
+| `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
+| `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
 | `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
 | `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
 | `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
@@ -1223,8 +1223,8 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
 | `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition | ✅🔗 | →generator_purchase_requisition |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
@@ -1237,18 +1237,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -1259,27 +1259,27 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_gh |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh | ✅🔗 | →generator_purchase_requisition_gh |
 
 ### generator_purchase_requisition_detail_tf
 **定义**：泰峰站点分表：采购申请行，记录物料名称/规格/数量/需求时间及项目归属，挂申请单 ｜ **流角色**：申请行：物料需求明细 ｜ **代码**：`generator/purchase_requisition_detail/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -1290,27 +1290,27 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_tf |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_tf | ✅🔗 | →generator_purchase_requisition_tf |
 
 ### generator_purchase_requisition_detail_zt
 **定义**：治通站点分表：采购申请行，记录物料名称/规格/数量/需求时间及项目归属，挂申请单 ｜ **流角色**：申请行：物料需求明细 ｜ **代码**：`generator/purchase_requisition_detail/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请（界面:申请状态） | 💬⚖️🖥️ |  |
+| `requisition_state` | int | Y | - | 申请明细状态；0假删除 1正常采购 100取消申请 | 💬⚖️ |  |
 | `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
 | `required_time` | date | Y | - | 需求时间 | ✅ |  |
-| `picture` | json | Y | - | 图片（界面:图片信息） | ✅🖥️ |  |
+| `picture` | json | Y | - | 图片 | ✅ |  |
 | `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
 | `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
 | `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
@@ -1321,27 +1321,27 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 | `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
 | `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
 | `specification` | varchar(255) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(255) | Y | - | 物料名称（界面:产品名称） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt（界面:采购申请ID） | ✅🔗🖥️ | →generator_purchase_requisition_zt |
+| `material_name` | varchar(255) | Y | - | 物料名称 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_zt | ✅🔗 | →generator_purchase_requisition_zt |
 
 ### generator_purchase_requisition_gh
 **定义**：广汇站点分表：员工发起的采购申请单头，记录申请编号、原因、类型与审批状态，由需求部门创建 ｜ **流角色**：采购链起点：申请单头 ｜ **代码**：`generator/purchase_requisition/model.py` ｜ **行数(估)**：0
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_requisition_tf
@@ -1349,18 +1349,18 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
 
 ### generator_purchase_requisition_zt
@@ -1368,16 +1368,27 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:列表权限） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `requisition_reason` | int | Y | - | 申请原因；0项目需求 1设计变更 2功能新增 3漏买 4办公用品 5备件耗材 6其他 | 💬⚖️ |  |
 | `state` | int | Y | - | 审批状态；0不通过 1已申请 2已复核 3已批准 100取消申请 | 💬⚖️ |  |
 | `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `requisition_number` | varchar(50) | Y | - | 采购申请编号（界面:申请单号） | ✅🖥️ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，外键关联system_users.id | 🔍 |  |
+| `requisition_number` | varchar(50) | Y | - | 采购申请编号 | ✅ |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `requisition_type` | int | Y | - | 申请单类型；0普通 1紧急 | 💬⚖️ |  |
+
+---
+
+## 同域兄弟模块
+- [[01-供应链域/物流模块-fuadmin数据字典2|物流模块]]
+- [[01-供应链域/付款模块-fuadmin数据字典2|付款模块]]
+- [[01-供应链域/退货模块-fuadmin数据字典2|退货模块]]
+- [[01-供应链域/结算模块-fuadmin数据字典2|结算模块]]
+- [[01-供应链域/供应商模块-fuadmin数据字典2|供应商模块]]
+- [[01-供应链域/仓储模块-fuadmin数据字典2|仓储模块]]
+- [[01-供应链域/01-供应链域-业务流|01-供应链域业务流(代码验证版)]]

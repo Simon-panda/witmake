@@ -8,7 +8,7 @@ tags: [工程, 数据字典2, 代码实证, 退货]
 ---
 
 # 退货模块 · fuadmin 数据字典2（代码实证版）
-> 域: 01-供应链域 | 表数: 2 | 字段: 33 | 代码锚定: 31(94%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/退货模块-fuadmin数据字典]]
+> 域: 01-供应链域 | 表数: 2 | 字段: 33 | 代码锚定: 33(100%) | 生成: 2026-07-24 | 上游: [[fuadmin数据字典2总览]] | 旧版: [[90-工程/fuadmin数据字典/01-供应链域/退货模块-fuadmin数据字典]]
 
 > [!info] 证据图例
 > ✅代码verbose/help实证 ｜ 💬行内注释 ｜ 🔢枚举解码 ｜ 🔗代码级关联 ｜ 🖥️前端界面label ｜ ⚖️冲突仲裁 ｜ 🔍推断(无代码锚点) ｜ 📦框架/基类字段
@@ -26,11 +26,11 @@ tags: [工程, 数据字典2, 代码实证, 退货]
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:退货单编号） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `return_process` | json | Y | - | 退货单流程 | ✅ |  |
@@ -42,18 +42,18 @@ tags: [工程, 数据字典2, 代码实证, 退货]
 | `belong` | int | Y | - | 归属工作站点：0治通 1智机 2广汇 3泰峰 4娄塘 | ✅⚖️ |  |
 | `tracking_number` | varchar(100) | Y | - | 物流单号 | ✅ |  |
 | `return_number` | varchar(20) | Y | - | 退货单编号 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 
 ### generator_return_order_detail
 **定义**：退货单明细：按二维码逐件记录退货品的检查记录与处置状态（合格/隔离/报废/返厂），可触发黄单（返工记录） ｜ **流角色**：退货逐件处置 ｜ **代码**：`generator/return_order_detail/model.py` ｜ **行数(估)**：1087
 
 | 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
 |---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id（界面:二维码） | ✅📦🖥️ |  |
-| `remark` | varchar(255) | Y | - | 描述（界面:备注） | ✅📦🖥️ |  |
+| `id` | bigint | N | PRI | Id | ✅📦 |  |
+| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
 | `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门（界面:所属部门） | ✅📦🖥️ |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间（界面:未结单） | ✅📦🖥️ |  |
+| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
+| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
 | `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
 | `sort` | int | Y | - | 显示排序 | ✅📦 |  |
 | `inspection_record` | json | Y | - | 检查记录 | ✅ |  |
@@ -62,6 +62,17 @@ tags: [工程, 数据字典2, 代码实证, 退货]
 | `is_returned_to_factory` | tinyint(1) | Y | - | 是否返厂 | ✅ |  |
 | `quantity` | int | Y | - | 数量 | ✅ |  |
 | `qrcode` | varchar(255) | Y | - | 二维码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | [推断]创建人ID，关联系统用户表（与modifier修改人对应） | 🔍 |  |
+| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
 | `return_order_header_id` | bigint | Y | MUL | 退货单；→generator_return_order | ✅🔗 | →generator_return_order |
 | `is_rework_record_generated` | tinyint(1) | Y | - | 是否生成黄单 | ✅ |  |
+
+---
+
+## 同域兄弟模块
+- [[01-供应链域/物流模块-fuadmin数据字典2|物流模块]]
+- [[01-供应链域/付款模块-fuadmin数据字典2|付款模块]]
+- [[01-供应链域/采购模块-fuadmin数据字典2|采购模块]]
+- [[01-供应链域/结算模块-fuadmin数据字典2|结算模块]]
+- [[01-供应链域/供应商模块-fuadmin数据字典2|供应商模块]]
+- [[01-供应链域/仓储模块-fuadmin数据字典2|仓储模块]]
+- [[01-供应链域/01-供应链域-业务流|01-供应链域业务流(代码验证版)]]
