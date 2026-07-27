@@ -76,25 +76,25 @@ tags: [工程, 数据字典2, 代码实证, 付款]
 ### generator_payment_application_tf
 **定义**：付款申请（泰峰站点分表）：同主表，按站点隔离的付款申请与审批（0行，未启用） ｜ **流角色**：付款审批入口(泰峰) ｜ **代码**：`generator/purchase_order/model.py` ｜ **行数(估)**：0
 
-| 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
-|---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id | ✅📦 |  |
-| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
-| `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
-| `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
-| `sort` | int | Y | - | 显示排序 | ✅📦 |  |
-| `application_number` | varchar(50) | Y | UNI | 付款申请编号 | ✅ |  |
-| `application_amount` | decimal(13,2) | Y | - | 申请金额 | ✅ |  |
-| `state` | int | Y | - | 审批状态：0未申请/不通过 1已申请(已提交) 2审批中 3已批准 100取消申请 | ✅⚖️ |  |
-| `approval_process` | json | Y | - | 审批流程 | ✅ |  |
-| `pay_time` | date | Y | - | 付款日期 | ✅ |  |
-| `pay_method` | varchar(50) | Y | - | 付款方式 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_tf | ✅🔗 | →generator_purchase_order_tf |
-| `bill_type` | varchar(30) | Y | - | 账单类型 | ✅ |  |
-| `settlement_bill_id` | bigint | Y | - | 结算单；→generator_settlement_bill_tf | ✅🔗 | →generator_settlement_bill_tf |
+| 字段                   | 类型            | 可空  | 键   | 语义                                        | 证据    | 关联                            |
+| -------------------- | ------------- | --- | --- | ----------------------------------------- | ----- | ----------------------------- |
+| `id`                 | bigint        | N   | PRI | Id                                        | ✅📦   |                               |
+| `remark`             | varchar(255)  | Y   | -   | 描述                                        | ✅📦   |                               |
+| `modifier`           | varchar(255)  | Y   | -   | 修改人                                       | ✅📦   |                               |
+| `belong_dept`        | int           | Y   | -   | 数据归属部门                                    | ✅📦   |                               |
+| `update_datetime`    | datetime(6)   | Y   | -   | 修改时间                                      | ✅📦   |                               |
+| `create_datetime`    | datetime(6)   | Y   | -   | 创建时间                                      | ✅📦   |                               |
+| `sort`               | int           | Y   | -   | 显示排序                                      | ✅📦   |                               |
+| `application_number` | varchar(50)   | Y   | UNI | 付款申请编号                                    | ✅     |                               |
+| `application_amount` | decimal(13,2) | Y   | -   | 申请金额                                      | ✅     |                               |
+| `state`              | int           | Y   | -   | 审批状态：0未申请/不通过 1已申请(已提交) 2审批中 3已批准 100取消申请 | ✅⚖️   |                               |
+| `approval_process`   | json          | Y   | -   | 审批流程                                      | ✅     |                               |
+| `pay_time`           | date          | Y   | -   | 付款日期                                      | ✅     |                               |
+| `pay_method`         | varchar(50)   | Y   | -   | 付款方式                                      | ✅     |                               |
+| `creator_id`         | bigint        | Y   | MUL | 创建人；→system_users(软)                      | ✅🔗📦 | →system_users(软)              |
+| `purchase_order_id`  | bigint        | Y   | MUL | 采购订单；→generator_purchase_order_tf         | ✅🔗   | →generator_purchase_order_tf  |
+| `bill_type`          | varchar(30)   | Y   | -   | 账单类型                                      | ✅     |                               |
+| `settlement_bill_id` | bigint        | Y   | -   | 结算单；→generator_settlement_bill_tf         | ✅🔗   | →generator_settlement_bill_tf |
 
 ### generator_payment_application_zt
 **定义**：付款申请（治通站点分表）：同主表，按站点隔离的付款申请与审批（0行，未启用） ｜ **流角色**：付款审批入口(治通) ｜ **代码**：`generator/purchase_order/model.py` ｜ **行数(估)**：0

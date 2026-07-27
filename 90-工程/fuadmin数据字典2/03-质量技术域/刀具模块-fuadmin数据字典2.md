@@ -36,20 +36,20 @@ tags: [工程, 数据字典2, 代码实证, 刀具]
 ### generator_abnormal_tool_filtering_data
 **定义**：刀具寿命监控算法筛出的异常刀具条码推送与处理记录 ｜ **流角色**：刀具寿命监控-异常推送 ｜ **代码**：`generator/abnormal_tool_filtering_data/model.py` ｜ **行数(估)**：18484
 
-| 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
-|---|---|---|---|---|---|---|
-| `id` | bigint | N | PRI | Id | ✅📦 |  |
-| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
-| `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
-| `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
-| `sort` | int | Y | - | 显示排序 | ✅📦 |  |
-| `barcode` | varchar(255) | Y | - | 条形码 | ✅ |  |
-| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
-| `is_resolved` | tinyint(1) | N | - | 是否解决；标记该异常信息是否已经解决 | ✅ |  |
-| `push_datetime` | datetime(6) | Y | - | 推送时间；异常信息推送的具体时间 | ✅ |  |
-| `pushed_exception_item` | varchar(255) | Y | - | 推送异常项；记录此次推送的具体异常项 | ✅ |  |
+| 字段                      | 类型           | 可空  | 键   | 语义                   | 证据    | 关联               |
+| ----------------------- | ------------ | --- | --- | -------------------- | ----- | ---------------- |
+| `id`                    | bigint       | N   | PRI | Id                   | ✅📦   |                  |
+| `remark`                | varchar(255) | Y   | -   | 描述                   | ✅📦   |                  |
+| `modifier`              | varchar(255) | Y   | -   | 修改人                  | ✅📦   |                  |
+| `belong_dept`           | int          | Y   | -   | 数据归属部门               | ✅📦   |                  |
+| `update_datetime`       | datetime(6)  | Y   | -   | 修改时间                 | ✅📦   |                  |
+| `create_datetime`       | datetime(6)  | Y   | -   | 创建时间                 | ✅📦   |                  |
+| `sort`                  | int          | Y   | -   | 显示排序                 | ✅📦   |                  |
+| `barcode`               | varchar(255) | Y   | -   | 条形码                  | ✅     |                  |
+| `creator_id`            | bigint       | Y   | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
+| `is_resolved`           | tinyint(1)   | N   | -   | 是否解决；标记该异常信息是否已经解决   | ✅     |                  |
+| `push_datetime`         | datetime(6)  | Y   | -   | 推送时间；异常信息推送的具体时间     | ✅     |                  |
+| `pushed_exception_item` | varchar(255) | Y   | -   | 推送异常项；记录此次推送的具体异常项   | ✅     |                  |
 
 ### generator_daily_tool_summary
 **定义**：按日汇总刀具型号/条码出入库情况的统计表（未启用） ｜ **流角色**：刀具日度统计 ｜ **代码**：`generator/daily_tool_summary/model.py` ｜ **行数(估)**：0

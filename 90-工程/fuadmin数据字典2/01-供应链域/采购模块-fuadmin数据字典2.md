@@ -146,50 +146,50 @@ tags: [工程, 数据字典2, 代码实证, 采购]
 ### generator_historicalpurchaseorderdetailgh
 **定义**：采购订单明细历史表：django-simple-history自动记录的变更快照，operation_id归组同次操作 ｜ **流角色**：审计回溯：变更历史快照 ｜ **类型**：📸历史快照 ｜ **代码**：`generator/purchase_order_detail/model.py` ｜ **行数(估)**：1161
 
-| 字段 | 类型 | 可空 | 键 | 语义 | 证据 | 关联 |
-|---|---|---|---|---|---|---|
-| `id` | bigint | N | MUL | Id | ✅📦 |  |
-| `remark` | varchar(255) | Y | - | 描述 | ✅📦 |  |
-| `modifier` | varchar(255) | Y | - | 修改人 | ✅📦 |  |
-| `belong_dept` | int | Y | - | 数据归属部门 | ✅📦 |  |
-| `update_datetime` | datetime(6) | Y | - | 修改时间 | ✅📦 |  |
-| `create_datetime` | datetime(6) | Y | - | 创建时间 | ✅📦 |  |
-| `sort` | int | Y | - | 显示排序 | ✅📦 |  |
-| `delivery_address` | varchar(255) | Y | - | 送货地址 | ✅ |  |
-| `picture` | json | Y | - | 图片 | ✅ |  |
-| `approval_comment` | varchar(255) | Y | - | 审核意见 | ✅ |  |
-| `operation_reason` | varchar(255) | Y | - | 操作原因 | ✅ |  |
-| `state` | int | Y | - | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请 | 💬⚖️ |  |
-| `predict_date` | date | Y | - | 预计到货日期 | ✅ |  |
-| `predict_days` | smallint unsigned | Y | - | 预计交付时间 | ✅ |  |
-| `amount` | decimal(13,2) | Y | - | 总价 | ✅ |  |
-| `tax_rate` | decimal(6,2) | Y | - | 税点 | ✅ |  |
-| `unit_price` | decimal(15,4) | Y | - | 含税单价 | ✅ |  |
-| `applicant` | varchar(20) | Y | - | 采购申请人 | ✅ |  |
-| `project_name` | varchar(50) | Y | - | 项目名称 | ✅ |  |
-| `project_number` | varchar(50) | Y | - | 项目号 | ✅ |  |
-| `material_subcategory` | varchar(50) | Y | - | 物料子类 | ✅ |  |
-| `material_category` | varchar(20) | Y | - | 物料大类 | ✅ |  |
-| `quantity` | decimal(13,2) | Y | - | 数量 | ✅ |  |
-| `stock_quantity` | decimal(13,2) | Y | - | 入库数量 | ✅ |  |
-| `unit` | varchar(10) | Y | - | 单位 | ✅ |  |
-| `brand` | varchar(20) | Y | - | 品牌 | ✅ |  |
-| `config_requirement` | varchar(255) | Y | - | 配置要求 | ✅ |  |
-| `specification` | varchar(50) | Y | - | 物料规格型号 | ✅ |  |
-| `material_name` | varchar(50) | Y | - | 物料名称 | ✅ |  |
-| `purchase_requisition_detail_id` | bigint | Y | - | 采购申请单明细ID | ✅ | →generator_purchase_requisition_detail(推断) |
-| `history_id` | int | N | PRI | 历史记录ID | ✅📦 |  |
-| `history_date` | datetime(6) | N | MUL | 历史记录时间 | ✅📦 |  |
-| `history_change_reason` | varchar(100) | Y | - | 变更原因 | ✅📦 |  |
-| `history_type` | varchar(1) | N | - | 变更类型；+新增 / ~修改 / -删除 | ✅📦 |  |
-| `creator_id` | bigint | Y | MUL | 创建人；→system_users(软) | ✅🔗📦 | →system_users(软) |
-| `history_user_id` | bigint | Y | MUL | 操作人 | ✅📦 | →system_users |
-| `purchase_order_id` | bigint | Y | MUL | 采购订单；→generator_purchase_order_gh | ✅🔗 | →generator_purchase_order_gh |
-| `purchase_requisition_id` | bigint | Y | MUL | 采购申请单；→generator_purchase_requisition_gh | ✅🔗 | →generator_purchase_requisition_gh |
-| `supplier_material_map_id` | bigint | Y | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_gh | ✅🔗 | →generator_supplier_material_mapping_gh |
-| `operation_id` | varchar(36) | Y | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享 | 🔍 |  |
-| `operation_label` | varchar(100) | Y | - | [推断]历史操作标签（如新建/修改/取消申请） | 🔍 |  |
-| `settlement_status` | int | Y | - | 结算状态；0未结算 1部分结算 2已全部结算 | ✅ |  |
+| 字段                               | 类型                | 可空  | 键   | 语义                                                           | 证据    | 关联                                         |
+| -------------------------------- | ----------------- | --- | --- | ------------------------------------------------------------ | ----- | ------------------------------------------ |
+| `id`                             | bigint            | N   | MUL | Id                                                           | ✅📦   |                                            |
+| `remark`                         | varchar(255)      | Y   | -   | 描述                                                           | ✅📦   |                                            |
+| `modifier`                       | varchar(255)      | Y   | -   | 修改人                                                          | ✅📦   |                                            |
+| `belong_dept`                    | int               | Y   | -   | 数据归属部门                                                       | ✅📦   |                                            |
+| `update_datetime`                | datetime(6)       | Y   | -   | 修改时间                                                         | ✅📦   |                                            |
+| `create_datetime`                | datetime(6)       | Y   | -   | 创建时间                                                         | ✅📦   |                                            |
+| `sort`                           | int               | Y   | -   | 显示排序                                                         | ✅📦   |                                            |
+| `delivery_address`               | varchar(255)      | Y   | -   | 送货地址                                                         | ✅     |                                            |
+| `picture`                        | json              | Y   | -   | 图片                                                           | ✅     |                                            |
+| `approval_comment`               | varchar(255)      | Y   | -   | 审核意见                                                         | ✅     |                                            |
+| `operation_reason`               | varchar(255)      | Y   | -   | 操作原因                                                         | ✅     |                                            |
+| `state`                          | int               | Y   | -   | 到货状态；1000退换货 1未到货 2全部到货 3部分到货 100取消申请                        | 💬⚖️  |                                            |
+| `predict_date`                   | date              | Y   | -   | 预计到货日期                                                       | ✅     |                                            |
+| `predict_days`                   | smallint unsigned | Y   | -   | 预计交付时间                                                       | ✅     |                                            |
+| `amount`                         | decimal(13,2)     | Y   | -   | 总价                                                           | ✅     |                                            |
+| `tax_rate`                       | decimal(6,2)      | Y   | -   | 税点                                                           | ✅     |                                            |
+| `unit_price`                     | decimal(15,4)     | Y   | -   | 含税单价                                                         | ✅     |                                            |
+| `applicant`                      | varchar(20)       | Y   | -   | 采购申请人                                                        | ✅     |                                            |
+| `project_name`                   | varchar(50)       | Y   | -   | 项目名称                                                         | ✅     |                                            |
+| `project_number`                 | varchar(50)       | Y   | -   | 项目号                                                          | ✅     |                                            |
+| `material_subcategory`           | varchar(50)       | Y   | -   | 物料子类                                                         | ✅     |                                            |
+| `material_category`              | varchar(20)       | Y   | -   | 物料大类                                                         | ✅     |                                            |
+| `quantity`                       | decimal(13,2)     | Y   | -   | 数量                                                           | ✅     |                                            |
+| `stock_quantity`                 | decimal(13,2)     | Y   | -   | 入库数量                                                         | ✅     |                                            |
+| `unit`                           | varchar(10)       | Y   | -   | 单位                                                           | ✅     |                                            |
+| `brand`                          | varchar(20)       | Y   | -   | 品牌                                                           | ✅     |                                            |
+| `config_requirement`             | varchar(255)      | Y   | -   | 配置要求                                                         | ✅     |                                            |
+| `specification`                  | varchar(50)       | Y   | -   | 物料规格型号                                                       | ✅     |                                            |
+| `material_name`                  | varchar(50)       | Y   | -   | 物料名称                                                         | ✅     |                                            |
+| `purchase_requisition_detail_id` | bigint            | Y   | -   | 采购申请单明细ID                                                    | ✅     | →generator_purchase_requisition_detail(推断) |
+| `history_id`                     | int               | N   | PRI | 历史记录ID                                                       | ✅📦   |                                            |
+| `history_date`                   | datetime(6)       | N   | MUL | 历史记录时间                                                       | ✅📦   |                                            |
+| `history_change_reason`          | varchar(100)      | Y   | -   | 变更原因                                                         | ✅📦   |                                            |
+| `history_type`                   | varchar(1)        | N   | -   | 变更类型；+新增 / ~修改 / -删除                                         | ✅📦   |                                            |
+| `creator_id`                     | bigint            | Y   | MUL | 创建人；→system_users(软)                                         | ✅🔗📦 | →system_users(软)                           |
+| `history_user_id`                | bigint            | Y   | MUL | 操作人                                                          | ✅📦   | →system_users                              |
+| `purchase_order_id`              | bigint            | Y   | MUL | 采购订单；→generator_purchase_order_gh                            | ✅🔗   | →generator_purchase_order_gh               |
+| `purchase_requisition_id`        | bigint            | Y   | MUL | 采购申请单；→generator_purchase_requisition_gh                     | ✅🔗   | →generator_purchase_requisition_gh         |
+| `supplier_material_map_id`       | bigint            | Y   | MUL | 关联供应商物料；指向供应商-物料报价记录；→generator_supplier_material_mapping_gh | ✅🔗   | →generator_supplier_material_mapping_gh    |
+| `operation_id`                   | varchar(36)       | Y   | MUL | [推断]历史操作分组UUID，同一次操作跨表历史记录共享                                 | 🔍    |                                            |
+| `operation_label`                | varchar(100)      | Y   | -   | [推断]历史操作标签（如新建/修改/取消申请）                                      | 🔍    |                                            |
+| `settlement_status`              | int               | Y   | -   | 结算状态；0未结算 1部分结算 2已全部结算                                       | ✅     |                                            |
 
 ### generator_historicalpurchaseorderdetailtf
 **定义**：采购订单明细历史表：django-simple-history自动记录的变更快照，operation_id归组同次操作 ｜ **流角色**：审计回溯：变更历史快照 ｜ **类型**：📸历史快照 ｜ **代码**：`generator/purchase_order_detail/model.py` ｜ **行数(估)**：206
