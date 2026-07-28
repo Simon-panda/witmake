@@ -94,3 +94,7 @@
 ## [2026-07-24] create | fuadmin数据字典2 63页入 90-工程/fuadmin数据字典2/
 
 治通MES/ERP 源码级重解析：解压 backend(Django)+web(Vue3) 源码，AST解析150个model文件(280类/3,010字段)，代码×DB对齐 5,321/5,877字段(90.5%)有程序锚点。语义来源升级为 verbose_name/help_text/choices枚举/行内注释；6个业务域多agent并行精修(A1/A2/A4/A6完成,A3/A5规则兜底)，枚举全解码，594条关联(544代码级)。前端label提取3,070条做第三重佐证。产出63份文档：总览/7域模块字典/业务流代码验证版/关联图谱2/新旧差异报告(2,608条旧推断升级实证)。已更新 index.md。流水线脚本在 C:\Users\ASUS\{parse_models,align_code_db,synth_baseline,build_dict2}.py，中间产物在 fuadmin-code-analysis\。
+
+## [2026-07-27] create | 深入理解AI-Agent 开源书籍入 40-知识库/深入理解AI-Agent/
+
+李博杰《深入理解 AI Agent：设计原理与工程实践》（github.com/bojieli/ai-agent-book，22.2k⭐，Apache-2.0）全书入库：引言+10章+后记+思考题参考答案共13个markdown（1.4MB正文）+133张配图（images/），sparse-checkout 经 gh-proxy 镜像拉取。章节文件按中文章节名重命名，图片相对路径保持有效。另建入口页「深入理解AI-Agent-总索引」（含章节导航、核心公式、与本厂MCP/数据Agent/多Agent系统的关联映射）。配套PDF（11MB）入 raw/assets/。92个实验代码未入库（依赖外部仓库，链接保留在入口页）。已更新 index.md 知识库节。
