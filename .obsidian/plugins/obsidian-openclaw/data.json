@@ -1,0 +1,54 @@
+{
+  "gatewayUrl": "http://127.0.0.1:18789",
+  "gatewayTokenEncrypted": "",
+  "gatewayTokenPlaintext": "160c64e7d9519970cb6aaef77996b619cc71413355a2fb4b",
+  "showActionsInChat": true,
+  "auditLogEnabled": true,
+  "auditLogPath": "OpenClaw/audit-log.md",
+  "syncEnabled": true,
+  "syncServerUrl": "http://127.0.0.1:18791",
+  "syncPaths": [
+    {
+      "remotePath": "notes",
+      "localPath": "OpenClaw/Notes",
+      "enabled": true
+    },
+    {
+      "remotePath": "memory",
+      "localPath": "OpenClaw/Memory",
+      "enabled": true
+    },
+    {
+      "remotePath": "inbox",
+      "localPath": "00-Inbox",
+      "enabled": true
+    },
+    {
+      "remotePath": "production",
+      "localPath": "60-生产",
+      "enabled": true
+    },
+    {
+      "remotePath": "quality",
+      "localPath": "70-质量",
+      "enabled": true
+    },
+    {
+      "remotePath": "supplychain",
+      "localPath": "80-供应链",
+      "enabled": true
+    },
+    {
+      "remotePath": "engineering",
+      "localPath": "90-工程",
+      "enabled": true
+    },
+    {
+      "remotePath": "management",
+      "localPath": "100-管理",
+      "enabled": true
+    }
+  ],
+  "syncInterval": 30,
+  "syncConflictBehavior": "ask"
+}

@@ -1,0 +1,47 @@
+/* Calendar plugin styles */
+.workspace-leaf-content[data-type="calendar"] .view-content {
+  padding: 0;
+}
+.Calendar {
+  padding: 10px;
+}
+.Calendar .Calendar-month {
+  font-weight: 600;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.Calendar .Calendar-weekday {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8em;
+  padding: 2px 0;
+}
+.Calendar .Calendar-day {
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.Calendar .Calendar-day:hover {
+  background: var(--background-modifier-hover);
+}
+.Calendar .Calendar-day.today {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+.Calendar .Calendar-day.active {
+  background: var(--interactive-accent-hover);
+  color: var(--text-on-accent);
+}
+.Calendar .Calendar-dot-container {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+.Calendar .Calendar-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--interactive-accent);
+}

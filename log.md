@@ -98,3 +98,15 @@
 ## [2026-07-27] create | 深入理解AI-Agent 开源书籍入 40-知识库/深入理解AI-Agent/
 
 李博杰《深入理解 AI Agent：设计原理与工程实践》（github.com/bojieli/ai-agent-book，22.2k⭐，Apache-2.0）全书入库：引言+10章+后记+思考题参考答案共13个markdown（1.4MB正文）+133张配图（images/），sparse-checkout 经 gh-proxy 镜像拉取。章节文件按中文章节名重命名，图片相对路径保持有效。另建入口页「深入理解AI-Agent-总索引」（含章节导航、核心公式、与本厂MCP/数据Agent/多Agent系统的关联映射）。配套PDF（11MB）入 raw/assets/。92个实验代码未入库（依赖外部仓库，链接保留在入口页）。已更新 index.md 知识库节。
+
+## [2026-07-28] migrate+update | MySQL迁移F→E + fuadmin字典2备注落库
+
+①MySQL 8.0.29物理迁移：F:/mysql-8.0.29-winx64+F:/mysql-data(15.49GB) → E盘对应路径，robocopy 5分15秒(521MB/s)。三库完整(fuadmin 355/zt_server_data 35/zt_produce 43表，6403列)，大表行数抽查一致。当前E盘库console模式运行(proc_6836c5497012)；服务MySQLZT注册仍指F盘(STOPPED)，需管理员修正(命令见执行报告)。F盘原目录保留。②字典2备注落库：remediation2.sql(表级334+列级5855条)执行44秒，表备注100%、列备注99.3%(6325/6369)，44列未覆盖均为视图；1条json超长已截断修复。SQL+快照归档 90-工程/fuadmin数据字典2/附件/，报告 [[fuadmin字段备注整改执行报告2]]。已更新 index.md。
+
+## [2026-07-28] fix | MySQLZT服务注册修正完成
+
+Simon管理员PowerShell执行：sc.exe delete(实际已删,标记删除在mysqld停止后生效)→E盘mysqld --install→sc.exe start。验证：服务RUNNING、BINARY_PATH=E盘、@@datadir=E:/mysql-data、三库表数完整、备注覆盖率保持(列6325/6369,表355/355)。重启自启恢复。坑：PowerShell中sc是Set-Content别名,须用sc.exe。
+
+## [2026-07-28] create | 智机日报7月提交情况分析入 10-工作/人事/
+
+数据源 fuadmin.generator_liqiang_report_journals（快照窗口7/1~7/21，15工作日）：38人提交436条。分档：优秀8/良好11/一般8/偏差4/异常7。7月零提交5人中3人离职合理（孙永金/宋家伟/袁明），李秀娟7/10离职，李丹洋在职零提交为真异常；张方印6月全勤7/9起断交。人事部换血：刘文婕7/13入职补位。账号映射走 system_users.wechat_id（37/38可映射）。报告 [[智机日报7月提交情况分析]]。
