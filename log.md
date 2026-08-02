@@ -125,4 +125,17 @@ Simon确认名单：B类班长=王付毫(系统用字,注意与"王付豪"统一
 
 ## [2026-07-31] distill | 《深入理解AI Agent》cangjie 蒸馏完成（方案A试点）
 
+## [2026-07-31] create | 设备台账 — fuadmin.generator_devices 导入 Obsidian
+
+来源：`fuadmin.generator_devices`（E盘MySQL直连），560台在用设备（28台已删除剔除）。
+产出：`40-知识库/设备台账/` 目录，共7个文件：
+- 设备台账.md（总览：统计+数据字典+厂商Top10）
+- 设备台账-缸盖.md（162台）/ 缸体（57台）/ 结构件（34台）/ 差壳（42台）/ 转向节（10台）/ 其他（255台）
+统计：运行85台 / 报警1台 / 状态未知474台；主要厂商：智机109台、友佳30台、现代威亚29台、宝鸡27台。
+index.md 已同步更新。
+
+## [2026-07-31] delete | 删除旧占位设备台账文件 + 清理引用
+
+删除 `40-知识库/设备台账.md`（2026-04-26 旧占位文件，虚构200台数据，与真实台账冲突并造成 wikilink 歧义）。README.md 快速索引中 `[[设备台账]]` 描述已改为指向新真实台账（560台）。index.md 无旧残留。
+
 按 Simon 指令以本书验证"书→skills"流水线（cangjie RIA-TV++ Hermes 适配版）。51.6万字符→374候选→三重验证→13个skills（8★★★+5★★）装入 Hermes skills/ai-agent-book/；盲测65 prompts通过率98.5%（诱饵0失败）。人读产出已入本库 蒸馏产物/：蒸馏总览、精华长文、大白话笔记、16条话术、71术语词典。应用方向：智机自建企业级agents体系+组织数智化进化。工作目录 C:\Users\ASUS\books\ai-agents-in-depth\（含candidates/rejected审计轨迹/test-prompts.json）。
