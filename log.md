@@ -195,3 +195,7 @@ E:\qm-lab 便携化实验室：Node v24.15.0 便携版（QM 要求≥24.15，系
 测试3 Strict安全档: 暂缓。工具调用需Docker sandbox,本机无Docker(WSL2未装)。方案B: 留到阿里云ECS(Linux)测,贴近生产。
 
 附加: QM core曾两次静默退出(code=1无栈),稳定性观察项。ADMIN_GRANTS=zhangdi已配。
+
+## [2026-08-02] create | QM学习实验室全程记录归档
+
+Simon 指令将本 session 全部对话消化归档。新建 `90-工程/主动智能层/QM学习实验室全程记录-20260802.md`（10.8KB）：选型决策/三入口架构/实验室建设实录/9项踩坑表/模型方言突破/三项测试证据/MCP实测+口径教训/Docker sandbox 解析/账号预算三问/补丁清单(private fork迁移用)/重启手册/6项遗留事项。index.md 已同步。
