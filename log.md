@@ -199,3 +199,7 @@ E:\qm-lab 便携化实验室：Node v24.15.0 便携版（QM 要求≥24.15，系
 ## [2026-08-02] create | QM学习实验室全程记录归档
 
 Simon 指令将本 session 全部对话消化归档。新建 `90-工程/主动智能层/QM学习实验室全程记录-20260802.md`（10.8KB）：选型决策/三入口架构/实验室建设实录/9项踩坑表/模型方言突破/三项测试证据/MCP实测+口径教训/Docker sandbox 解析/账号预算三问/补丁清单(private fork迁移用)/重启手册/6项遗留事项。index.md 已同步。
+
+## [2026-08-06] create | QM架构A2A与Webhook适配性评估-20260806 + 告警中心事件驱动实施清单-20260806
+
+Simon 指令评估 Hermes v0.20.0 两项架构级能力对 QM 四层架构的适配性。实证来源：本机 Hermes 源码（outbound_webhooks.py/a2a 插件）+ QM 源码（provenance.ts wake 模型原生建模 cron/webhook/monitor）。结论：Webhook 采纳（W1 引擎→QM scope 唤醒/W2 cron 回推企业云/W3 外部回调入网关），A2A 战略跟踪（2027-02 验证期再评）。Simon 批准方案 A 后，新建实施清单：事件 schema/过滤规则表（事件→唤醒比≤20% 为上线闸门）/紧急度路由/token 成本（过滤后≈¥9/月）/四项量化验收标准/三项前置验证项，总工时 5.5 人日，落地窗口 M3-4。index.md 已同步。
