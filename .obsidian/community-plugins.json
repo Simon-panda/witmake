@@ -4,5 +4,9 @@
   "obsidian-tasks-plugin",
   "table-editor-obsidian",
   "quickadd",
-  "obsidian-git"
+  "obsidian-git",
+  "dataview",
+  "calendar",
+  "omnisearch",
+  "obsidian-style-settings"
 ]
