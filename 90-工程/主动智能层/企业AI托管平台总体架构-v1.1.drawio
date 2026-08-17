@@ -1,0 +1,252 @@
+<mxfile host="app.diagrams.net" agent="Woker" version="24.0.0" type="device">
+  <diagram name="QM-AI-平台总体架构" id="qm-arch-001">
+    <mxGraphModel dx="1600" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="智机科技 · 企业 AI 托管平台总体架构 —— QM 主导 × authentik 统一身份 × MCP 能力联邦（v1.0 · 2026-08）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="12" width="1500" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l0_label" value="① 用户层" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#666666;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="64" width="120" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="u_backbone" value="40 骨干（班长以上）&lt;br&gt;人手一个 Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="64" width="190" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="u_it" value="IT 软件小组&lt;br&gt;平台运维 / connector 开发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="470" y="64" width="190" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="u_ai" value="AI 视觉小组&lt;br&gt;supervision 算法开发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="64" width="190" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="u_mech" value="机械 / 电气小组&lt;br&gt;图纸 / 程序产出方" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="930" y="64" width="190" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l1_label" value="② 入口层" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#666666;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="158" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wechat_mini" value="微信小程序&lt;br&gt;员工主入口&lt;br&gt;（connector 待写）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="158" width="210" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wecom" value="企业微信&lt;br&gt;消息 / 审批通知 / 文件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="158" width="210" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="e_web" value="Web 浏览器&lt;br&gt;QM Web UI ✅已通" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="158" width="210" height="56" as="geometry" />
+        </mxCell>
+
+        <mxCell id="idp_box" value="身份星型 · authentik SSO 中枢（已部署 ✅）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#FAF6FC;strokeColor=#9673A6;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="270" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="idp" value="authentik IdP&lt;br&gt;OIDC / SSO 签发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="320" width="150" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sync_wecom" value="企微&lt;br&gt;身份 / 入离职" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="120" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sync_fuadmin" value="fuadmin 组织&lt;br&gt;dept_level 1–8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="190" y="400" width="110" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="idp_rule" value="铁律：全系统 username = 工号&lt;br&gt;中文名仅作显示名&lt;br&gt;（治通≠冶通教训）" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;size=14;" vertex="1" parent="1">
+          <mxGeometry x="70" y="470" width="210" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="idp_note" value="已接：Outline ✅&lt;br&gt;待接：QM / Gitea / Nextcloud / OpenObserve" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#666666;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="70" y="540" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="qm_box" value="QM Core · Agent 托管运行时 —— 能力星型中心（本地实验室已通 ✅ → 生产目标：阿里云 ECS）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=14;fontStyle=1;align=center;fillColor=#F4F8FF;strokeColor=#1F3864;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="260" width="610" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_scope" value="scope 多租户隔离 ✅&lt;br&gt;记忆 / 密钥 / 权限 / cron&lt;br&gt;人级 · 房间级独立" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="330" width="185" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_sec" value="安全三档 ✅&lt;br&gt;Strict 全审批 / Auto&lt;br&gt;工具执行前拦截" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="565" y="330" width="185" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_budget" value="预算帽 ✅&lt;br&gt;个人 / 组织双级&lt;br&gt;防 Token 无底洞" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="330" width="180" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_model" value="模型目录审批 ✅&lt;br&gt;未注册模型直接 refuse&lt;br&gt;锁国产 = 成本锁死" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="410" width="185" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_sandbox" value="sidecar 沙箱&lt;br&gt;Docker jail · 密钥隔离&lt;br&gt;（上 ECS 后启用执行）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="565" y="410" width="185" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_audit" value="全息审计&lt;br&gt;run / 工具调用留痕&lt;br&gt;actor = 工号可溯源" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="760" y="410" width="180" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_skill" value="skill 晋升体系 ✅&lt;br&gt;个人 → 组织（业务人员自助沉淀能力）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="490" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_conn" value="connector 插件机制&lt;br&gt;web-ui ✅ / 小程序 · 企微待写" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1F3864;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="490" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qm_state" value="已实测：双账号隔离 / 国产模型接入 / fuadmin MCP / Strict 审批流 / skill 全生命周期 / 预算帽与模型目录" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#1F3864;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="370" y="562" width="570" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="m_box" value="模型层（目录审批后放行）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#FFFAF3;strokeColor=#D79B00;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="260" width="290" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="m_ds" value="DeepSeek deepseek-chat（主力）&lt;br&gt;¥0.27 / ¥1.1 每 M tok ✅已接入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="320" width="250" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="m_kimi" value="Kimi K3 · moonshot（备选）&lt;br&gt;¥0.6 / ¥2.5 每 M tok ✅已接入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="390" width="250" height="56" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mcp_box" value="MCP 工具平面 · 能力联邦（Agent 按 scope 权限调用 · 业务口径固化在工具 / skill 层 · 防止 40 人问出 40 个数字）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#F6FBF5;strokeColor=#82B366;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="1320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_fuadmin" value="fuadmin MCP ✅已通&lt;br&gt;只读 SELECT 白名单&lt;br&gt;生产 / 质量 / 人事 / 供应链" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="55" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_nc" value="Nextcloud MCP&lt;br&gt;受控文件读取&lt;br&gt;（社区 server）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_outline" value="Outline MCP&lt;br&gt;SOP / IATF 体系检索" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_gitea" value="Gitea MCP&lt;br&gt;程序仓读&lt;br&gt;（写操作挂审批）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_dify" value="Dify wrapper&lt;br&gt;RAG / 确定性工作流&lt;br&gt;⚠ 应用内模型锁国产" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_oo" value="OpenObserve wrapper&lt;br&gt;日志只读查询" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp_wecom" value="send_wecom_file&lt;br&gt;企微文件发送&lt;br&gt;⚠ Strict 审批" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#C00000;strokeWidth=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="715" width="170" height="72" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cli_box" value="沙箱 CLI 工具层 · Docker 镜像预装（Agent 直接执行 · 产物 → artifact → Nextcloud）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#FFFDF2;strokeColor=#D6B656;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="830" width="1320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cli_drawio" value="drawio CLI + Graphviz&lt;br&gt;架构图 / 流程图 / 产线布局图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="895" width="290" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="cli_pandoc" value="pandoc&lt;br&gt;md → docx / pdf 报告生成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="895" width="270" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="cli_mkdocs" value="MkDocs&lt;br&gt;文档站构建发布" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="690" y="895" width="270" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="cli_sv" value="supervision（roboflow）· AI 视觉小组算法库&lt;br&gt;检测后处理 / 标注 / ByteTrack 追踪" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="990" y="895" width="350" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_box" value="系统与数据层" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#F7F7F7;strokeColor=#999999;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="990" width="1320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="d_fuadmin" value="fuadmin MySQL&lt;br&gt;业务主库&lt;br&gt;（在职 378）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_nc" value="Nextcloud + NAS&lt;br&gt;图纸 2–3TB 收拢&lt;br&gt;版本 / 权限 / 快照" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_outline" value="Outline&lt;br&gt;知识库&lt;br&gt;✅SSO 已接" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_gitea" value="Gitea&lt;br&gt;PLC / G代码 /&lt;br&gt;上位机源码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_dify" value="Dify CE&lt;br&gt;RAG / 工作流应用&lt;br&gt;（已部署 · 仅作 API）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_oo" value="OpenObserve&lt;br&gt;全栈日志汇聚" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="d_pg" value="PostgreSQL&lt;br&gt;QM 会话 / run /&lt;br&gt;artifact 持久化 ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="1055" width="150" height="66" as="geometry" />
+        </mxCell>
+
+        <mxCell id="iot_box" value="IoT 边缘层 · Node-RED（设备接入与事件转译 —— 确定性管道，不含判断逻辑）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#F0FAFA;strokeColor=#008C8C;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1170" width="1320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nodered_edge" value="Node-RED 边缘实例（车间级 ×N）&lt;br&gt;flows.json → Gitea 版本化 + 评审&lt;br&gt;editor 前置 authentik 代理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCEDED;strokeColor=#008C8C;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1235" width="380" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nodered_proto" value="协议适配&lt;br&gt;FANUC FOCAS / MTConnect / Modbus / OPC UA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCEDED;strokeColor=#008C8C;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1235" width="400" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="nodered_event" value="事件转译&lt;br&gt;防抖 + 统一 schema（机台 / 报警码 / 时间戳 / 严重度）&lt;br&gt;⚠ 阈值 = 隐性口径，须评审" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCEDED;strokeColor=#008C8C;fontSize=11;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="1235" width="400" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dev_box" value="设备层 · 200 台加工中心 + PLC + 视觉工位（设备网与办公网隔离 · 边缘实例单向上行）" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=8;fontSize=13;fontStyle=1;align=center;fillColor=#F2F2F2;strokeColor=#666666;strokeWidth=2;container=0;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1320" width="1320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_cnc" value="加工中心 ×200&lt;br&gt;FANUC 95% / Siemens / 三菱 5%&lt;br&gt;采集分级：新机 FOCAS · 老机外挂 IO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1385" width="400" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_plc" value="PLC（西门子为主 / 偶三菱）&lt;br&gt;Modbus TCP / OPC UA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1385" width="350" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="d_vision" value="产线视觉工位&lt;br&gt;相机 / 检测图像流（边缘处理 → 结构化结果上行）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1385" width="350" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="infra" value="基础设施：阿里云 ECS + Docker（生产目标 · 沙箱 / CLI 容器镜像）｜ E:\qm-lab 本地实验室（Node 24 + PG 17 便携 ✅已跑通）｜ E:\openobserve-lab ✅ ｜ QM 版本冷冻 + private fork（年升级 ≤4 次）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDDDDD;strokeColor=#666666;fontSize=11;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1470" width="1320" height="56" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="&lt;b&gt;图例&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#82B366&quot;&gt;━━━&lt;/font&gt; Agent 能力调用（MCP / 沙箱）&lt;br&gt;&lt;font color=&quot;#9673A6&quot;&gt;┅┅┅&lt;/font&gt; OIDC 身份联邦（人登录）&lt;br&gt;&lt;font color=&quot;#D79B00&quot;&gt;━━━&lt;/font&gt; 模型调用（审批闸后）&lt;br&gt;&lt;font color=&quot;#999999&quot;&gt;━━━&lt;/font&gt; 人员使用 / 数据流&lt;br&gt;&lt;font color=&quot;#008C8C&quot;&gt;━━━&lt;/font&gt; IoT 数据流（Node-RED 上行）&lt;br&gt;&lt;font color=&quot;#C00000&quot;&gt;红边&lt;/font&gt; = 高风险（Strict 审批）&lt;br&gt;虚线框 = 规划待建&lt;br&gt;✅ = 已实测 / 已部署" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fontSize=12;fillColor=#FFFFFF;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="260" width="270" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_u1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_backbone" target="e_wechat_mini"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_u2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_backbone" target="e_wecom"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_u3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_backbone" target="e_web"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_u4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_it" target="e_web"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_u5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_ai" target="e_web"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_u6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" edge="1" parent="1" source="u_mech" target="e_web"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_in1" value="connector 待写" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;strokeWidth=2;fontSize=10;fontColor=#6C8EBF;" edge="1" parent="1" source="e_wechat_mini" target="qm_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_in2" value="通知 / 文件" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;strokeWidth=2;fontSize=10;fontColor=#6C8EBF;" edge="1" parent="1" source="e_wecom" target="qm_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_in3" value="web-ui 插件 ✅" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#6C8EBF;strokeWidth=2;fontSize=10;fontColor=#6C8EBF;" edge="1" parent="1" source="e_web" target="qm_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_s1" value="入离职同步" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;fontSize=10;fontColor=#9673A6;" edge="1" parent="1" source="sync_wecom" target="idp"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_s2" value="dept_level→权限映射" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;fontSize=10;fontColor=#9673A6;" edge="1" parent="1" source="sync_fuadmin" target="idp"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_o1" value="OIDC connector（待写）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="qm_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_o2" value="OIDC ✅已接" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="d_outline"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_o3" value="user_oidc 插件" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="d_nc"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_o4" value="OAuth2 认证源" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="d_gitea"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_o5" value="OIDC（Dex）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="d_oo"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_m1" value="目录审批闸" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#D79B00;strokeWidth=2;fontSize=10;fontColor=#D79B00;" edge="1" parent="1" source="qm_model" target="m_ds"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_m2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#D79B00;strokeWidth=2;" edge="1" parent="1" source="qm_model" target="m_kimi"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.06;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_fuadmin"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.2;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_nc"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.34;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_outline"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.48;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_gitea"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.62;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_dify"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.76;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="mcp_oo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a7" value="发送前审批" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.9;exitY=1;exitDx=0;exitDy=0;fontSize=10;fontColor=#C00000;" edge="1" parent="1" source="qm_box" target="mcp_wecom"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a8" value="沙箱内执行" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=10;fontColor=#82B366;" edge="1" parent="1" source="qm_box" target="cli_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_d1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_fuadmin" target="d_fuadmin"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_d2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_nc" target="d_nc"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_d3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_outline" target="d_outline"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_d4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_gitea" target="d_gitea"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_d5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_dify" target="d_dify"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_d6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=1;" edge="1" parent="1" source="mcp_oo" target="d_oo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_p1" value="持久化（DATABASE_URL）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;strokeWidth=1;fontSize=10;fontColor=#666666;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qm_box" target="d_pg"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_v1" value="图像流" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#008C8C;strokeWidth=1;fontSize=10;fontColor=#008C8C;" edge="1" parent="1" source="d_vision" target="cli_sv"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_iot1" value="FOCAS / MTConnect" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#008C8C;strokeWidth=2;fontSize=10;fontColor=#008C8C;" edge="1" parent="1" source="dev_cnc" target="nodered_edge"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_iot2" value="Modbus / OPC UA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#008C8C;strokeWidth=2;fontSize=10;fontColor=#008C8C;" edge="1" parent="1" source="dev_plc" target="nodered_edge"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_iot3" value="结构化事件流（机台状态 / 报警 / 计数）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#008C8C;strokeWidth=2;fontSize=10;fontColor=#008C8C;" edge="1" parent="1" source="nodered_event" target="d_oo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_iot4" value="flows.json 版本化" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#999999;strokeWidth=1;dashed=1;fontSize=10;fontColor=#666666;" edge="1" parent="1" source="nodered_edge" target="d_gitea"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_iot5" value="告警 webhook → Agent 初诊（S2）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82B366;strokeWidth=2;dashed=1;fontSize=10;fontColor=#82B366;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="d_oo" target="qm_box"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_o6" value="editor 前置代理" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;strokeWidth=1;dashed=1;dashPattern=3 3;fontSize=10;fontColor=#9673A6;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="idp" target="nodered_edge"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

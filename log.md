@@ -231,3 +231,31 @@ Simon 要求出 8-10 周一开工清单。四开工点（跟踪单试点/付款�
 ## [2026-08-09] update | QM预算帽上调落地
 
 Simon裁决：QM预算帽调至$50。查实E:\qm-lab\qm\.env原值BUDGET_USD_PER_WINDOW=5/ORG=10（窗口=24h，budget.ts DEFAULT_BUDGET_WINDOW_MS=86400000），8-6撞顶$6.37/$5根因=个人日帽。已改：个人5→50/天、组织10→200/天（组织帽必须>个人帽，原10<50会形成倒挂）。core当前未运行，下次启动自动生效。开工清单晨会项#2已同步改为"已上调"状态+明早验证动作。
+
+## [2026-08-15] create | reverse-skill 评估 + A+B 组合落地
+
+Simon 决策对 GitHub reverse-skill（25.4k★，MIT，逆向/渗透技能路由包）采用 A+B 组合：不装整包（39/42 模块与业务无关且含进攻性内容）。A=架构借鉴：新建 [[Skill路由治理三机制-reverse-skill架构借鉴]]（90-工程/主动智能层/）——路由单一事实源+163条回归基线 / scope授权机器闸门 / field-journal踩坑表+脱敏占位符，落地方案 A1-A4（0.5天/2h/1h/1h），实施序 A2→A1→A3→A4，待 Simon 裁定立项。B=单拆参考资料：新建 90-工程/OT安全/（7 文件 byte-identical + 索引页 [[OT安全评估参考资料-索引]]），供 SCADA 上线后 OT 网络授权自检用，纪律=被动优先/未授权禁写 PLC。index.md 已同步两条。
+
+## [2026-08-15] update | QM企业级Agent框架整合架构（追加七节 Buzz 借鉴清单）
+
+Simon 批准方案 A 交付：block/buzz（27.5k★，Rust/Apache-2.0）源码实证（buzz-audit 哈希链 + buzz-workflow schema/executor），两项设计吸收入自研层、QM core 不动：①审计哈希链→网关"三通道合一审计"（tenant 绑定防跨链重放 / detail 规范JSON入哈希 / 时间戳µs归一可重算 / detail 禁秘密围栏 / 顺序重算验证），审计表加 seq+prev_hash+hash 三列，2-3 人日，M1-2 POC 期实施；②YAML 工作流→QM cron/watch 之上业务自服务层（4 触发器×7 动作，request_approval 挂起-恢复 token 机制，SEC-006 外发类 owner/admin 闸门映射 skill 晋升流），3-5 人日，M3-4 随告警中心评估。Buzz 本体不进主路线（项目仅 6 个月、Nostr 公钥身份与企微实名体系不兼容）。
+
+## [2026-08-15] update | reverse-skill 完整克隆保留
+
+Simon 决定保留仓库完整内容供查阅。已克隆至 `E:\reverse-skill`（13MB，gh-proxy 镜像，depth 1，commit dd7c50d），仅供人工查阅，不接入任何 Agent 客户端；C:/e 流浪克隆已清理。全量盘点：42 技能模块（逆向12/渗透红队8/安全评估15/通用4）+ CTF 42 场景 + burp-mcp 源码 + Kali 部署脚本 + 治理层（routing.json 41规则/benchmark 166用例/ops 9契约/field-journal 42文件）。OT安全索引页表述已同步修正。
+
+## [2026-08-15] create | QM-Agent安全自查清单-OWASP映射
+
+精读 reverse-skill llm-security 模块（5文件27KB）并蒸馏落地：新建 90-工程/主动智能层/QM-Agent安全自查清单-OWASP映射.md。内容=OWASP LLM Top10 v2.0 + Agentic AI Top10(ASI 2026) 映射我方六大攻击面（小程序/企微/日报/报工管道/浏览器/cron），十大自查项分三级：P0=工具滥用链(查工资→外发)+生产库写+人在回路绕过（T1上线前必过）；P1=记忆投毒/越权/提示词泄漏（30天）；P2=间接注入/输出链/级联故障/供应链（季度）。意外收获：模块内含《Agent服从性工程》8技术（指令置顶/RFC2119强语言/借口反驳表/上下文布局等），已一并蒸馏，可融入skill编写规范。结论：A2机器门禁立项理由进一步加强。index.md已同步。
+
+## [2026-08-16] create | AI开源课程评估与内训路径
+
+Simon 发 microsoft/AI-For-Beginners 问适用性，扩展为全量评估：微软入门三仓（AI-For-Beginners 65.0k★ / generative-ai-for-beginners 117.8k★ / ai-agents-for-beginners 72.2k★，全 MIT）API 源码级实证 + 12 个 senior 仓库（mlabonne/llm-course、LLMs-from-scratch、anomalib、mlops-zoomcamp 等）按副业五小组分派 + 量化内训路径（视觉组 5+2 周/大模型组 2+6 周/IT 组 8 周/骨干通识 1 周）。三档结论：AI-For-Beginners=借鉴吸收（仅 CV 7 课高价值）、GenAI=借鉴吸收（精华 11/15/16/18/19 课）、agents=最对口（六课精读）。预警：ultralytics 为 AGPL-3.0，副业商用前必须过 Simon；anomalib 自带汽车零部件检测基准 AutoVI，与主业质检直接对口。两仓已镜像本机 `C:\Users\ASUS\repos\`（剔除翻译包；agents 仓完整 zip 436MB 网络断流改走 API 拉课程全文）。新建 20-学习/AI开源课程评估与内训路径.md，index.md 已同步。
+
+## [2026-08-16] update | QM企业级Agent框架整合架构（追加八节 Agents 课程借鉴清单）
+
+Simon 指定对照 agents 仓 10/12/18 三课与 QM 现状。全文精读后按七节（Buzz）同格式蒸馏：①8.1 课10生产观测→run_span 表（QM 有运行级记录缺 span 级）+goldenset 50 条 skill 晋升门禁（与 A1 路由回归基线合并）+显式/隐式反馈回写，3-4+1 人日 M3-4；②8.2 课12上下文工程四失效→"记忆检疫"写入 skill 编写规范（161% 达成率事件=poisoning/confusion 活教材）、上下文检查记录只存计数/id/哈希不落原文（与 7.1 互补防泄密）、工具 loadout<30 预警线，0.5+1 人日 M3-4；③8.3 课18签名回执→7.1 无签名哈希链升级 Ed25519 签名链（IATF 外审可离线验证）+human.approval.v1 审批-执行双回执（防 digest 替换，补强 OWASP P0 人在回路绕过）+权限过期拒绝映射 skill 晋升流，随 7.1 实施 +2 人日 M1-2。frontmatter updated bump、修订记录加行、相关页面加双链，index.md 无需改动（页已存在）。
+
+## [2026-08-17] create | 企业AI托管平台融合架构与路线分析
+
+Simon 转发托管式Agent平台视频问 QM+Nextcloud+Outline+Dify 能否搭出。结论：QM 本身就是托管平台（六要素对标：scope/skill/审批/预算帽/模型目录已实测，MCP自助挂载与审计界面为缺口）；Nextcloud/Outline=数据知识源非平台组件；Dify 推荐方案A降级为RAG API（防双轨割裂+模型旁路红线锁国产）。澄清 supervision=roboflow视觉库（挂沙箱CLI层）；绘制双星型架构图（authentik身份星型+QM能力星型）v1.0→v1.1纳入Node-RED IoT边缘层（事件转译层标准答案，补融合面5最大坑；四原则：流内阈值=隐性口径须Gitea评审/采集分级FOCAS+外挂/设备网隔离单向上行/editor前置authentik）。融合四阶段S1互联8周+S1.5 IoT试点（20-30台，5-15万待询价）+S2联动+S3融合。三深水区：图纸保密红线硬隔离/actor审计链run_id关联/口径委员会裁决。4项待Simon拍板。交付：新建本页+架构图png/drawio入本目录（工作副本C:\Users\ASUS\architecture\），index.md已同步。
